@@ -215,6 +215,7 @@ img#offer-fourth
 }
 
 /* ===========================================cards Stylization=============================== */
+
 div#card-title-container
 {
     display: flex;
@@ -224,6 +225,7 @@ div#card-title-container
     height: 100px;
     margin: auto;
 }
+
 span.shoping-call
 {
     font-family: Poppins;
@@ -231,6 +233,7 @@ span.shoping-call
     font-weight: bold;
     margin-bottom: 30px;
 }
+
 div#centralizer-column
 {
     display: flex;
@@ -238,10 +241,11 @@ div#centralizer-column
     justify-content: center;
     align-items: center;
 }
+
 span.title-meat-cards
 {
     rotate: -3deg;
-   color: brown;
+    color: brown;
     font-family: MrsSaintDelafield-Regular;
     font-size: 35px;
 }
@@ -250,33 +254,48 @@ div#cards-container
 {
     margin: auto;
     width: 80%;
-    height: 400px;
+    height: 700px;
     display:flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-around;
     gap: 50px;
     
 
 }
+
 div.border-card
 {
     width: 230px;
     height: 300px;
     box-shadow: 0px 10px 20px 0px #9a9999;
+    transition: 1s;
 }
 
+div.border-card:hover
+{
+    box-shadow: 0px 10px 20px 5px #9a9999;
+}
 div.card
 {
+   cursor:pointer;
    display:flex;
    width: 230px;
    height: 300px; 
    flex-direction: column;
+   align-items: center;
    border: 1px solid rgb(141, 139, 139);
    box-shadow: 0px 0px 10px 0px gray;
    background-color: #F5F6FB;
    box-shadow: inset 0 0 50px 0 #a8a7a7;
-               
+   transform: matrix3d();
+   transition: 1s; 
 }
+div.card:hover
+{
+box-shadow: inset 0px 0px 80px 0px rgb(241, 159, 159);
+
+}
+
 img.card-image
 {
     margin-left:auto;
@@ -291,7 +310,7 @@ div.icons-container
     position: relative;
     top: -15px;
     width: 150px;
-    height: 30px;
+    height: 32px;
     display: flex;
     gap: 15px;
     justify-content: center;
@@ -302,8 +321,14 @@ div.icons-container
     border-radius: 20px;
     background-image: linear-gradient(0deg, rgb(184, 179, 179) 5%, rgb(194, 189, 189) 20%, rgb(240, 237, 237) 70%, rgb(255, 255, 255) 90%);
     box-shadow: inset 0 0 10px 0 #d9f3fa;
+    transition: 1s;
 }
 
+div.icons-container:hover
+{
+    box-shadow: inset 0 0 15px 0 rgba(255, 4, 4, 0.329);
+    
+}
 svg.card-icons
 {
     fill: brown;
@@ -313,13 +338,108 @@ svg.card-icons
 svg.card-icons:hover
 {
  width: 25px;
-
 }
+
+div.card-info
+{
+    display:block;
+    text-align: center;
+}
+span.title-card
+{
+ font-weight: bold;
+}
+span.price
+{
+    color: brown;
+}
+span.kg
+{
+    position: relative;
+    top: 2px;
+    left: 2px;
+    font-size: 11px;
+    color:brown;
+}
+
+
 /* ===============================================/////Cards Stylization ============================================= */
-img.d-block
+
+div.did-you-know
+{
+
+    display: flex;
+    background-color: rgb(250, 191, 191);
+    margin-top: 100px;
+    width: 100;
+    height: 420px;
+    box-shadow: 3px 0px 6px 0px gray;
+    
+}
+div#left-panel
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    background-color: rgba(165, 17, 17, 0.705);
+    
+}
+span#facts-about-meat
+{
+    font-size: 50px;
+    color: white;
+}
+span#curiosities
+{
+   font-family: MrsSaintDelafield-Regular;
+   font-size: 25px;
+   position: relative;
+   top: 32px;
+   right: 150px;
+   color: white; 
+}
+div#right-panel
+{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    background-color: transparent;
+}
+
+div.paragraph-container
+{
+display: flex;
+justify-content: center;
+align-items: center;
+height: 420px;
+width: 500px;
+}
+
+p.paragraph
+{
+
+    padding: 40px;
+    text-align: center;
+    /* border: 3px groove brown; */
+}
+
+
+
+
+div.espacador
+{height: 5000px;}
+
+
+/* img.d-block
 {
     height: 350px;
     width: 500px;
 
-}
+} */
 
