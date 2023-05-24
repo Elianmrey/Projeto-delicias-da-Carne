@@ -12,7 +12,13 @@
     font-weight: 300;
     src: local('fonts/Poppins-Regular.ttf'), local('fonts/Poppins-SemiBold.ttf'), url(fonts/Poppins-Regular.ttf)
 }
-
+@font-face
+{
+    font-family: 'MrsSaintDelafield-Regular';
+    font-style: normal;
+    font-weight: 300;
+    src: local('fonts/MrsSaintDelafield-Regular.ttf'), local('fonts/MrsSaintDelafield-Regular.ttf'), url(fonts/MrsSaintDelafield-Regular.ttf)
+}
 html, body {
     height: 100%;
     width: 100%;
@@ -136,9 +142,7 @@ div.image-container
     margin: auto;
     text-align: center;
     margin-bottom: 100px;
-    
-    
-    /* background-color: #E1E1E1; */
+      /* background-color: #E1E1E1; */
 }
 
 h2#exotic-meats
@@ -211,6 +215,37 @@ img#offer-fourth
 }
 
 /* ===========================================cards Stylization=============================== */
+div#card-title-container
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    height: 100px;
+    margin: auto;
+}
+span.shoping-call
+{
+    font-family: Poppins;
+    font-size: 35px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+div#centralizer-column
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+span.title-meat-cards
+{
+    rotate: -3deg;
+   color: brown;
+    font-family: MrsSaintDelafield-Regular;
+    font-size: 30px;
+}
+
 div#cards-container
 {
     margin: auto;
