@@ -223,7 +223,7 @@ div.card-title-container
     justify-content: center;
     width: 80%;
     height: 100px;
-    margin: auto;
+    margin: 100px auto 40px auto ;
 }
 
 span.shoping-call
@@ -244,6 +244,8 @@ div.centralizer-column
 
 span.title-meat-cards
 {
+    position: relative;
+    top: 10px;
     rotate: -3deg;
     color: brown;
     font-family: MrsSaintDelafield-Regular;
