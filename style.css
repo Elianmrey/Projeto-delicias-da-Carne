@@ -245,11 +245,12 @@ div.centralizer-column
 span.title-meat-cards
 {
     position: relative;
-    top: 10px;
+    top: 15px;
     rotate: -3deg;
     color: brown;
     font-family: MrsSaintDelafield-Regular;
-    font-size: 35px;
+    font-size: 45px;
+    font-weight: 500;
 }
 
 div#cards-container
