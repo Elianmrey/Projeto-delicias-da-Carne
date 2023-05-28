@@ -246,14 +246,14 @@ span.title-meat-cards
 {
     position: relative;
     top: 15px;
-    rotate: -3deg;
+    transform: rotate(-3deg);
     color: brown;
     font-family: MrsSaintDelafield-Regular;
     font-size: 45px;
     font-weight: 500;
 }
 
-div#cards-container
+div.cards-container
 {
     margin: auto;
     width: 80%;
@@ -290,7 +290,6 @@ div.card
    box-shadow: 0px 0px 10px 0px gray;
    background-color: #F5F6FB;
    box-shadow: inset 0 0 50px 0 #a8a7a7;
-   transform: matrix3d();
    transition: 1s; 
 }
 div.card:hover
@@ -375,7 +374,7 @@ div.did-you-know
     display: flex;
     background-color: rgb(250, 191, 191);
     margin-top: 100px;
-    width: 100;
+    width: 100%;
     height: 420px;
     box-shadow: 3px 0px 6px 0px gray;
     margin-bottom: 100px;
@@ -554,7 +553,10 @@ div.radio-buton
     top: 40px;
     left: 10%;
 }
-
+div.radio-buton-unselected
+{
+    display: none;
+}
 div.radio-buton-selected
 {
     display: flex;
@@ -780,7 +782,24 @@ div.radio-howtosend-buton-selected
 }
 
 /* =================================================///////Gostaria de receber nossas ofertas? (Radio Buttons) ================================= */
-
+div.submit-formulary
+{
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    border: 2px solid #fccccc;
+    background-color: brown;
+    color: #fccccc;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: 150px;
+    right: 35px;
+}
 
 /* =====================================/////formulario======================================================= */
 div.espacador
