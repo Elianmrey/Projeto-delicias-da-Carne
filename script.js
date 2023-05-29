@@ -161,8 +161,22 @@ selectEight.classList.replace("radio-buton-selected","radio-buton-unselected")
                                             selectEight.classList.replace("radio-buton-selected","radio-buton-unselected")
                                                 }} ); 
 
+// Radio button how to Send=====================================================
+
+const askOffer = document.querySelectorAll(".check-howtosend-buton-selected");
+console.log(askOffer);
+
+
+
+const howToSend = document.querySelectorAll(".check-howtosend-buton");
+
+console.log(howToSend);
+
+
+
 
 /* ///////End Radio Buttons========================================================*/
+
 
 
 
