@@ -438,7 +438,7 @@ div.formulary
 {
     margin: 70px auto;
     background-color: brown;
-    height: 1600px;
+    height: 1800px;
 }
 
 div.title-form-container
@@ -886,6 +886,111 @@ svg.check-howtosend-icon
 }
 
 /* =================================================///////Gostaria de receber nossas ofertas? (Radio Buttons) ================================= */
+
+
+/* Lista de seleção com divs============================================ */
+
+.select-list
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: left;
+    width: 290px;
+    height: 25px;
+    background-color: #fccccc;
+    border-radius: 20px;
+    user-select: none;
+    margin: 0px;
+    padding: 0px;
+   margin: auto;
+   position: relative;
+   top: 50px;
+}
+
+
+.placeholder-container
+{
+    display: flex;
+    background-color: #fccccc;
+    border-radius: 20px;
+    width: 290px;
+    height: 30px;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid #fccccc;
+    border-left: 1px solid #fccccc;
+    border-right: 1px solid #fccccc;
+    z-index: 2;
+    
+}
+.placeholder
+{
+    font-size: 15px;
+    color: gray;
+    opacity: 0.5;
+}
+
+.listdown
+{
+    width: 20px;
+    fill: brown;
+    transition: 0.5s;
+   scroll-behavior: smooth;
+   transform: rotate(90deg);
+   
+}
+.listdown:hover
+{
+    border-radius: 10px;
+    fill: #272626;
+    transform: rotate(0deg);
+}
+
+.listdown:active
+{
+    fill: #ffffff;
+}
+
+.list-container
+{
+    transform: translate(0px,0px);
+    width: 270px;
+    z-index: 0;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    transition: 0.5s;
+    
+}
+
+/* Test*/
+.list-container:active
+{
+    transform: translate(0px,-150px);  
+}
+
+.lista
+{
+    list-style: none;
+    color: brown; 
+}
+
+.elements
+{
+    border-bottom: 0.5px solid #f3a5a5; 
+    padding: 0px 80px 0px 80px;
+    background-color: #fccccc;  
+}
+.elements:last-child
+{
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    
+}
+/* ////Lista de seleção ======================================= */
+
+/* Boatão de validação========================================== */
 div.validation-button
 {
     margin-top: 50px;
@@ -894,6 +999,9 @@ div.validation-button
     display: flex;
     align-items: center;
     justify-content: center;
+    /* border: 2px solid #fccccc; */
+    position: relative;
+    top: 150px;
 }
 
 div.submit-formulary
@@ -917,20 +1025,23 @@ div.submit-formulary:hover
 {
     background-color: #fccccc;
     color: brown;
-    box-shadow: 0px 0px 10px 0px #272626;
+    box-shadow: 0px 0px 10px 0px #fccccc;
 }
 div.submit-formulary:active
 {
     background-color: #fccccc;
     color: brown;
-    box-shadow: 0px 0px 0px 0px #272626;
+    box-shadow: 0px 0px 0px 0px #fccccc;
     }
 /* Boatão de validação========================================== */
-
-
 /* =====================================/////formulario======================================================= */
+
+
+
+
+
 div.espacador
-{height: 1000px;}
+{height: 400px;}
 
 
 /* img.d-block
