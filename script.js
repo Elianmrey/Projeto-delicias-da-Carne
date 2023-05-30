@@ -192,19 +192,14 @@ console.log(howToSend);
 /* Lista funcional ============================================*/
 const listDropDown = document.querySelector(".listdown")
 console.log(listDropDown);                                
-let alternator = 0;
+
 const listBox = document.querySelector(".list-container");
 const liElement = document.querySelectorAll(".elements");
 const selectedElement = document.querySelector(".placeholder");
-const formulary = document.querySelector(".formulary")
 
 listDropDown.addEventListener("click", ()=>{
     
-    alternator +=1;
-    
-    const alternate = alternator % 2 == 0;
-    
-if(alternate === false)
+if(listBox.classList.value !=="list-container-active")
    {
 
         listBox.classList.toggle("list-container-active", true);
@@ -226,18 +221,18 @@ if(alternate === false)
                
                 listBox.classList.toggle("list-container-active", false);
                 listDropDown.style.transform = "rotate(0deg)";
-                alternator ++; 
+             
             })
             
         })
-     
-   }else if(listBox.classList !=="list-container-active")
+   }else if(listBox.classList.value === "list-container-active")
    {
 console.log(`Agora estou no else listBox.classList !=="list-container-active"`);
 
-        listBox.classList.toggle("list-container-active", true);
+        listBox.classList.toggle("list-container-active", false);
         listDropDown.style.transform = "rotate(0deg)";
    }
+   
+    
 })
-
 /* Lista funcional ============================================*/
