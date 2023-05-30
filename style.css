@@ -930,6 +930,8 @@ svg.check-howtosend-icon
     font-size: 15px;
     color: gray;
     opacity: 0.5;
+    user-select: none;
+    margin-left: 3px;
 }
 
 .listdown
@@ -955,19 +957,29 @@ svg.check-howtosend-icon
 
 .list-container
 {
-    transform: translate(0px,0px);
+   
+    user-select: none;
+    transform: translate(0px,-20px);
     width: 270px;
-    z-index: 0;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     transition: 0.5s;
-    
+    opacity: 0;
+    z-index: 0;
+    pointer-events: none;
+    outline: none;
+    text-indent: -10px;
 }
 
-/* Test*/
-.list-container:active
+
+.list-container-active
 {
-    transform: translate(0px,-150px);  
+    user-select: none;
+    transform: translate(0px,0px);
+    opacity: 1;
+    pointer-events: all;
+    outline: 1px solid #fccccc;
+    text-indent: 0px;
 }
 
 .lista
@@ -985,8 +997,14 @@ svg.check-howtosend-icon
 .elements:last-child
 {
     border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    
+    border-bottom-right-radius: 10px;  
+}
+
+.elements:hover
+{
+    background-color: brown;
+    color: #fccccc;
+
 }
 /* ////Lista de seleção ======================================= */
 

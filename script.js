@@ -181,3 +181,61 @@ console.log(howToSend);
 
 
                                             
+
+
+
+
+
+
+
+
+/* Lista funcional ============================================*/
+const listDropDown = document.querySelector(".listdown")
+console.log(listDropDown);                                
+let alternator = 0;
+const listBox = document.querySelector(".list-container");
+const liElement = document.querySelectorAll(".elements");
+const selectedElement = document.querySelector(".placeholder");
+
+listDropDown.addEventListener("click", ()=>{
+    
+    alternator +=3;
+    
+    const alternate = alternator % 2 == 0;
+    
+if(alternate === false)
+   {
+
+        listBox.classList.toggle("list-container-active", true);
+        document.querySelector(".listdown").style.transform = "rotate(180deg)";
+
+//Para cada elemento de lista dentro de Select List 
+  liElement.forEach(listElement =>{
+           
+    listElement.addEventListener("click", ()=>{
+                             
+                selectedElement.textContent = listElement.textContent;
+                console.log(`span selectedElement da lista de seleção guarda o Valor:  ${selectedElement.textContent}`);
+                selectedElement.style.color = "brown";
+                selectedElement.style.paddingLeft = "75px";
+                selectedElement.style.paddingRight = "75px";
+                selectedElement.style.opacity = "1";
+
+ // Girar botão de lista de seleção ==== e desaparecer a lista após selecionar Elemento===============
+                alternator ++; 
+                listBox.classList.toggle("list-container-active", false);
+                document.querySelector(".listdown").style.transform = "rotate(0deg)";
+                
+            })
+            
+        })
+     
+   }else if(alternate === true)
+   {
+        listBox.classList.toggle("list-container-active", false);
+        document.querySelector(".listdown").style.transform = "rotate(0deg)";
+        
+    }
+  
+})
+/* Lista funcional ============================================*/
