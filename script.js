@@ -191,7 +191,7 @@ console.log(howToSend);
 
 /* Lista funcional ============================================*/
 const listDropDown = document.querySelector(".listdown")
-console.log(listDropDown);                                
+                              
 
 const listBox = document.querySelector(".list-container");
 const liElement = document.querySelectorAll(".elements");
@@ -199,10 +199,10 @@ const selectedElement = document.querySelector(".placeholder");
 
 listDropDown.addEventListener("click", ()=>{
     
-if(listBox.classList.value !=="list-container-active")
+if(listBox.classList.value === "list-container")
    {
-
-        listBox.classList.toggle("list-container-active", true);
+    console.log(listBox.classList);  
+        listBox.classList.add("list-container-active");
         listDropDown.style.transform = "rotate(180deg)";
 
 //Para cada elemento de lista dentro de Select List 
@@ -219,17 +219,18 @@ if(listBox.classList.value !=="list-container-active")
 
  // Girar botão de lista de seleção ==== e desaparecer a lista após selecionar Elemento===============
                
-                listBox.classList.toggle("list-container-active", false);
+                listBox.classList.remove("list-container-active");
                 listDropDown.style.transform = "rotate(0deg)";
-             
+                console.log(listBox.classList);
             })
             
         })
-   }else if(listBox.classList.value === "list-container-active")
+   }else if(listBox.classList.value === "list-container list-container-active")
    {
-console.log(`Agora estou no else listBox.classList !=="list-container-active"`);
 
-        listBox.classList.toggle("list-container-active", false);
+console.log(`Agora estou no else listBox.classList !=="list-container-active"`);
+console.log(listBox.classList);
+        listBox.classList.remove("list-container-active");
         listDropDown.style.transform = "rotate(0deg)";
    }
    
