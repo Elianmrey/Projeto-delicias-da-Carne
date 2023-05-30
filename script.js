@@ -22,7 +22,11 @@ console.log("Email invalido")
 }
 
 }
+enviar.addEventListener("click",verifyEmail)
 
+
+
+// Radio butons =======================================================================
 const radButton = document.querySelectorAll(".radio-buton")
 const  selectOne = radButton[0].children[0];
 const selectTwo = radButton[1].children[0];
