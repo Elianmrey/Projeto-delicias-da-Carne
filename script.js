@@ -196,10 +196,11 @@ let alternator = 0;
 const listBox = document.querySelector(".list-container");
 const liElement = document.querySelectorAll(".elements");
 const selectedElement = document.querySelector(".placeholder");
+const formulary = document.querySelector(".formulary")
 
 listDropDown.addEventListener("click", ()=>{
     
-    alternator +=3;
+    alternator +=1;
     
     const alternate = alternator % 2 == 0;
     
@@ -207,7 +208,7 @@ if(alternate === false)
    {
 
         listBox.classList.toggle("list-container-active", true);
-        document.querySelector(".listdown").style.transform = "rotate(180deg)";
+        listDropDown.style.transform = "rotate(180deg)";
 
 //Para cada elemento de lista dentro de Select List 
   liElement.forEach(listElement =>{
@@ -222,20 +223,21 @@ if(alternate === false)
                 selectedElement.style.opacity = "1";
 
  // Girar botão de lista de seleção ==== e desaparecer a lista após selecionar Elemento===============
-                alternator ++; 
+               
                 listBox.classList.toggle("list-container-active", false);
-                document.querySelector(".listdown").style.transform = "rotate(0deg)";
-                
+                listDropDown.style.transform = "rotate(0deg)";
+                alternator ++; 
             })
             
         })
      
-   }else if(alternate === true)
+   }else if(listBox.classList !=="list-container-active")
    {
-        listBox.classList.toggle("list-container-active", false);
-        document.querySelector(".listdown").style.transform = "rotate(0deg)";
-        
-    }
-  
+console.log(`Agora estou no else listBox.classList !=="list-container-active"`);
+
+        listBox.classList.toggle("list-container-active", true);
+        listDropDown.style.transform = "rotate(0deg)";
+   }
 })
+
 /* Lista funcional ============================================*/
