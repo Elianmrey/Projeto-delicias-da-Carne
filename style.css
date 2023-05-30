@@ -903,9 +903,9 @@ svg.check-howtosend-icon
     user-select: none;
     margin: 0px;
     padding: 0px;
-   margin: auto;
-   position: relative;
-   top: 50px;
+    margin: auto;
+    position: relative;
+    top: 50px;
 }
 
 
@@ -925,13 +925,17 @@ svg.check-howtosend-icon
     z-index: 2;
     
 }
+
 .placeholder
 {
     font-size: 15px;
-    color: gray;
-    opacity: 0.5;
+    color: brown;
+    opacity: 0.8;
     user-select: none;
     margin-left: 3px;
+    padding-right: 10px;
+    padding-left: 10px;
+   
 }
 
 .listdown
@@ -941,6 +945,7 @@ svg.check-howtosend-icon
     transition: 0.5s;
    scroll-behavior: smooth;
    transform: rotate(90deg);
+   
    
 }
 .listdown:hover

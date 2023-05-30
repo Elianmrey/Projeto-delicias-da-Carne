@@ -213,8 +213,8 @@ if(listBox.classList.value === "list-container")
                 selectedElement.textContent = listElement.textContent;
                 console.log(`span selectedElement da lista de seleção guarda o Valor:  ${selectedElement.textContent}`);
                 selectedElement.style.color = "brown";
-                selectedElement.style.paddingLeft = "75px";
-                selectedElement.style.paddingRight = "75px";
+                selectedElement.style.paddingLeft = "55px";
+                selectedElement.style.paddingRight = "55px";
                 selectedElement.style.opacity = "1";
 
  // Girar botão de lista de seleção ==== e desaparecer a lista após selecionar Elemento===============
