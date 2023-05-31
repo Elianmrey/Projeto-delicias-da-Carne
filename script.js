@@ -167,17 +167,62 @@ selectEight.classList.replace("radio-buton-selected","radio-buton-unselected")
 
 // Radio button how to Send=====================================================
 
-const askOffer = document.querySelectorAll(".check-howtosend-buton-selected");
-console.log(askOffer);
-
-
 
 const howToSend = document.querySelectorAll(".check-howtosend-buton");
 
 console.log(howToSend);
+const askOffer = document.querySelectorAll(".check-howtosend-buton-selected");
+console.log(askOffer);
 
 
+howToSend.forEach(itemMarked =>{
+   
+    
+    
+    itemMarked.addEventListener("click", ()=>{
+       askOffer.forEach(offerMarked =>{  
+       
+// FIQUEI AQUI============================================================ Checkboxes via Email Via Sms via Telefone
 
+
+        if(askOffer[3].classList.contains("check-howtosend-buton-selected"))
+        {
+            // console.log();
+            offerMarked.classList.toggle("check-howtosend-buton-selected");
+            
+        }
+        else 
+        {
+            
+            offerMarked.classList.add("check-howtosend-buton-selected");
+              
+        }
+
+    })
+
+    
+});
+
+
+});
+
+askOffer[2].addEventListener("click",()=>{
+
+    if(askOffer[2].classList.contains("check-howtosend-buton-selected"))
+    {
+       
+        askOffer[2].classList.remove("check-howtosend-buton-selected");
+        
+    } 
+    else 
+    {
+        
+        askOffer[2].classList.add("check-howtosend-buton-selected");
+        console.log(askOffer[2].classList)   
+    }
+    
+})
+// FIQUEI AQUI============================================================ Checkboxes via Email Via Sms via Telefone
 
 /* ///////End Radio Buttons========================================================*/
 
@@ -225,15 +270,12 @@ if(listBox.classList.value === "list-container")
                
                 listBox.classList.remove("list-container-active");
                 listDropDown.style.transform = "rotate(0deg)";
-                console.log(listBox.classList);
+                
             })
             
         })
    }else if(listBox.classList.value === "list-container list-container-active")
    {
-
-console.log(`Agora estou no else listBox.classList !=="list-container-active"`);
-console.log(listBox.classList);
         listBox.classList.remove("list-container-active");
         listDropDown.style.transform = "rotate(0deg)";
    }
