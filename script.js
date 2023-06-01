@@ -165,14 +165,13 @@ selectEight.classList.replace("radio-buton-selected","radio-buton-unselected")
                                             selectEight.classList.replace("radio-buton-selected","radio-buton-unselected")
                                                 }} ); 
 
-// Radio button how to Send=====================================================
+// CHECK button how to Send=====================================================================================================
 
 
 const howToSend = document.querySelectorAll(".check-howtosend-buton");
-
-console.log(howToSend);
 const askOffer = document.querySelectorAll(".check-howtosend-buton-selected");
-console.log(askOffer);
+const semiSelected = document.querySelector(".semiselected")
+const checked = document.querySelectorAll(".check-howtosend-icon")
 
 
 askOffer[2].classList.remove("check-howtosend-buton-selected");
@@ -187,11 +186,54 @@ askOffer[0].classList.remove("check-howtosend-buton-selected");
         if(askOffer[0].classList.contains("check-howtosend-buton-selected"))
        {
                askOffer[0].classList.remove("check-howtosend-buton-selected");
-       } else
-       {
+               askOffer[3].classList.add("check-howtosend-buton-selected");
+               semiSelected.style.display = "flex";
+               checked[3].style.display = "none";
+
+               console.log("NÃO Selecionou Via E-MAIL");
+
+// Quando os 3 primeiros estão selecionados 
+
+if(askOffer[0].classList.contains("check-howtosend-buton-selected") && askOffer[1].classList.contains("check-howtosend-buton-selected") && askOffer[2].classList.contains("check-howtosend-buton-selected"))
+{
+    semiSelected.style.display = "none";
+    checked[3].style.display = "flex";
+
+    console.log("Selecionou AS TRÊS FORMAS DE COMUNICAÇÃO");
+}
+
+else if(askOffer[0].classList.value !== "check-howtosend-buton-selected" && askOffer[1].classList.value !== "check-howtosend-buton-selected" && askOffer[2].classList.value !== "check-howtosend-buton-selected")
+{
+    askOffer[3].classList.remove("check-howtosend-buton-selected");
+
+    console.log("NENHUMA FORMA DE COMUNICAÇÃO selecionada");
+}
+ } else
+{
+        askOffer[3].classList.add("check-howtosend-buton-selected");
+        semiSelected.style.display = "flex";
+        checked[3].style.display = "none";
         askOffer[0].classList.add("check-howtosend-buton-selected");
-        askOffer[4].classList.remove("check-howtosend-buton-selected"); 
-       }
+        askOffer[4].classList.remove("check-howtosend-buton-selected");
+        
+        console.log("Selecionou Via E-MAIL");
+// Quando os 3 primeiros estão selecionados 
+
+if(askOffer[0].classList.contains("check-howtosend-buton-selected") && askOffer[1].classList.contains("check-howtosend-buton-selected") && askOffer[2].classList.contains("check-howtosend-buton-selected"))
+{
+    semiSelected.style.display = "none";
+    checked[3].style.display = "flex";
+
+    console.log("Selecionou AS TRÊS FORMAS DE COMUNICAÇÃO");
+}
+
+else if(askOffer[0].classList.value !== "check-howtosend-buton-selected" && askOffer[1].classList.value !== "check-howtosend-buton-selected" && askOffer[2].classList.value !== "check-howtosend-buton-selected")
+{
+    askOffer[3].classList.remove("check-howtosend-buton-selected");
+
+    console.log("NENHUMA FORMA DE COMUNICAÇÃO selecionada");
+}
+}
     });
 
 // Via Telefone ===========================================
@@ -199,11 +241,56 @@ askOffer[0].classList.remove("check-howtosend-buton-selected");
        
         if(askOffer[1].classList.contains("check-howtosend-buton-selected"))
         {
+
                 askOffer[1].classList.remove("check-howtosend-buton-selected");
+                askOffer[3].classList.add("check-howtosend-buton-selected");
+                semiSelected.style.display = "flex";
+                checked[3].style.display = "none"
+
+                console.log("NÃO Selecionou Via TELEFONE");
+// Quando os 3 primeiros estão selecionados 
+
+if(askOffer[0].classList.contains("check-howtosend-buton-selected") && askOffer[1].classList.contains("check-howtosend-buton-selected") && askOffer[2].classList.contains("check-howtosend-buton-selected"))
+{
+    semiSelected.style.display = "none";
+    checked[3].style.display = "flex";
+
+    console.log("Selecionou AS TRÊS FORMAS DE COMUNICAÇÃO");
+}
+
+else if(askOffer[0].classList.value !== "check-howtosend-buton-selected" && askOffer[1].classList.value !== "check-howtosend-buton-selected" && askOffer[2].classList.value !== "check-howtosend-buton-selected")
+{
+    askOffer[3].classList.remove("check-howtosend-buton-selected");
+
+    console.log("NENHUMA FORMA DE COMUNICAÇÃO selecionada");
+}
+
         } else
         {
+       
+         askOffer[3].classList.add("check-howtosend-buton-selected");
+         semiSelected.style.display = "flex";
+         checked[3].style.display = "none"
          askOffer[1].classList.add("check-howtosend-buton-selected");
-         askOffer[4].classList.remove("check-howtosend-buton-selected"); 
+         askOffer[4].classList.remove("check-howtosend-buton-selected");
+
+         console.log("Selecionou Via TELEFONE");
+
+// Quando os 3 primeiros estão selecionados 
+if(askOffer[0].classList.contains("check-howtosend-buton-selected") && askOffer[1].classList.contains("check-howtosend-buton-selected") && askOffer[2].classList.contains("check-howtosend-buton-selected"))
+{
+    semiSelected.style.display = "none";
+    checked[3].style.display = "flex";
+
+    console.log("Selecionou AS TRÊS FORMAS DE COMUNICAÇÃO");
+}
+
+else if(askOffer[0].classList.value !== "check-howtosend-buton-selected" && askOffer[1].classList.value !== "check-howtosend-buton-selected" && askOffer[2].classList.value !== "check-howtosend-buton-selected")
+{
+    askOffer[3].classList.remove("check-howtosend-buton-selected");
+    
+    console.log("NENHUMA FORMA DE COMUNICAÇÃO selecionada");
+}
         }
      });
     
@@ -213,12 +300,54 @@ askOffer[0].classList.remove("check-howtosend-buton-selected");
         if(askOffer[2].classList.contains("check-howtosend-buton-selected"))
         {
                 askOffer[2].classList.remove("check-howtosend-buton-selected");
+                askOffer[3].classList.add("check-howtosend-buton-selected");
+                semiSelected.style.display = "flex";
+                checked[3].style.display = "none";
+
+                console.log("NÃO Selecionou Via SMS");
+
+// Quando os 3 primeiros estão selecionados 
+if(askOffer[0].classList.contains("check-howtosend-buton-selected") && askOffer[1].classList.contains("check-howtosend-buton-selected") && askOffer[2].classList.contains("check-howtosend-buton-selected"))
+{
+    semiSelected.style.display = "none";
+    checked[3].style.display = "flex";
+
+    console.log("Selecionou AS TRÊS FORMAS DE COMUNICAÇÃO")
+}
+
+else if(askOffer[0].classList.value !== "check-howtosend-buton-selected" && askOffer[1].classList.value !== "check-howtosend-buton-selected" && askOffer[2].classList.value !== "check-howtosend-buton-selected")
+{
+    askOffer[3].classList.remove("check-howtosend-buton-selected");
+
+    console.log("NENHUMA FORMA DE COMUNICAÇÃO selecionada");
+}
         } else
         {
+         askOffer[3].classList.add("check-howtosend-buton-selected");
+         semiSelected.style.display = "flex";
+         checked[3].style.display = "none"
          askOffer[2].classList.add("check-howtosend-buton-selected");
          askOffer[4].classList.remove("check-howtosend-buton-selected"); 
+
+         console.log("Selecionou Via SMS");
+
+        // Quando os 3 primeiros estão selecionados 
+        if(askOffer[0].classList.contains("check-howtosend-buton-selected") && askOffer[1].classList.contains("check-howtosend-buton-selected") && askOffer[2].classList.contains("check-howtosend-buton-selected"))
+        {
+            semiSelected.style.display = "none";
+            checked[3].style.display = "flex";
+
+            console.log("Selecionou AS TRÊS FORMAS DE COMUNICAÇÃO");
         }
-     });
+
+        else if(askOffer[0].classList.contains("") && askOffer[1].classList.contains("") && askOffer[2].classList.contains(""))
+        {
+            askOffer[3].classList.remove("check-howtosend-buton-selected");
+
+            console.log("NENHUMA FORMA DE COMUNICAÇÃO selecionada");
+        }      
+}
+});
 
 //   Todas as anteriores =======================================
     askOffer[3].classList.toggle("check-howtosend-buton-selected",false);
@@ -233,7 +362,10 @@ if(askOffer[3].classList.value !== "check-howtosend-buton-selected")
      askOffer[1].classList.add("check-howtosend-buton-selected");
     askOffer[0].classList.add("check-howtosend-buton-selected");
     askOffer[4].classList.remove("check-howtosend-buton-selected"); 
-    
+    semiSelected.style.display = "none";
+    checked[3].style.display = "flex"
+
+    console.log("Selecionou AS TRÊS (TODAS) FORMAS DE COMUNICAÇÃO");
 }
 else
 {
@@ -241,15 +373,16 @@ else
     askOffer[3].classList.remove("check-howtosend-buton-selected");
     askOffer[2].classList.remove("check-howtosend-buton-selected");
     askOffer[1].classList.remove("check-howtosend-buton-selected");
-   askOffer[0].classList.remove("check-howtosend-buton-selected"); 
-   askOffer[4].classList.remove("check-howtosend-buton-selected");
+    askOffer[0].classList.remove("check-howtosend-buton-selected"); 
+    askOffer[4].classList.remove("check-howtosend-buton-selected");
+
+    console.log("NENHUMA FORMA DE COMUNICAÇÃO selecionada (OPÇÃO MARCA E DESMARCA TODAS)");
 }
 
 });
 
-
 // Nenhuma Das anteriores Mudei de ideia======================
-askOffer[4].classList.toggle("check-howtosend-buton-selected",true);
+askOffer[4].classList.toggle("check-howtosend-buton-selected",false);
 
 askOffer[4].addEventListener("click", ()=>{
    
@@ -257,29 +390,24 @@ if(askOffer[4].classList.value === "check-howtosend-buton-selected")
 {
     console.log( askOffer[4]);
     askOffer[4].classList.toggle("check-howtosend-buton-selected",false);
+
+    console.log("HÁ FORMAS DE COMUNICAÇÃO selecionada(s)")
       
 }
 else
 { 
     askOffer[3].classList.remove("check-howtosend-buton-selected");
     askOffer[4].classList.toggle("check-howtosend-buton-selected",true);
-  
     askOffer[2].classList.remove("check-howtosend-buton-selected");
     askOffer[1].classList.remove("check-howtosend-buton-selected");
-   askOffer[0].classList.remove("check-howtosend-buton-selected"); 
+    askOffer[0].classList.remove("check-howtosend-buton-selected"); 
+
+    console.log("NÃO HÁ FORMAS DE COMUNICAÇÃO selecionada(s)");
 }
 
 });
-/* ///////End Radio Buttons========================================================*/
 
-
-
-
-                                            
-
-
-
-
+/* ///////End Check Buttons========================================================*/
 
 
 
@@ -325,7 +453,5 @@ if(listBox.classList.value === "list-container")
         listBox.classList.remove("list-container-active");
         listDropDown.style.transform = "rotate(0deg)";
    }
-   
-    
 })
 /* Lista funcional ============================================ */
