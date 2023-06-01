@@ -175,55 +175,99 @@ const askOffer = document.querySelectorAll(".check-howtosend-buton-selected");
 console.log(askOffer);
 
 
-howToSend.forEach(itemMarked =>{
+askOffer[2].classList.remove("check-howtosend-buton-selected");
+askOffer[1].classList.remove("check-howtosend-buton-selected");
+askOffer[0].classList.remove("check-howtosend-buton-selected"); 
+    
+    askOffer[0].addEventListener("click", ()=>{
+      
+  
+       if(askOffer[0].classList.contains("check-howtosend-buton-selected"))
+       {
+               askOffer[0].classList.remove("check-howtosend-buton-selected");
+       } else
+       {
+        askOffer[0].classList.add("check-howtosend-buton-selected");
+        askOffer[4].classList.remove("check-howtosend-buton-selected"); 
+       }
+    });
+
+    askOffer[1].addEventListener("click", ()=>{
+      
+  
+        if(askOffer[1].classList.contains("check-howtosend-buton-selected"))
+        {
+                askOffer[1].classList.remove("check-howtosend-buton-selected");
+        } else
+        {
+         askOffer[1].classList.add("check-howtosend-buton-selected");
+         askOffer[4].classList.remove("check-howtosend-buton-selected"); 
+        }
+     });
+    
+     askOffer[2].addEventListener("click", ()=>{
+      
+  
+        if(askOffer[2].classList.contains("check-howtosend-buton-selected"))
+        {
+                askOffer[2].classList.remove("check-howtosend-buton-selected");
+        } else
+        {
+         askOffer[2].classList.add("check-howtosend-buton-selected");
+         askOffer[4].classList.remove("check-howtosend-buton-selected"); 
+        }
+     });
+
+  
+    askOffer[3].classList.toggle("check-howtosend-buton-selected",false);
+
+askOffer[3].addEventListener("click", ()=>{
    
+if(askOffer[3].classList.value !== "check-howtosend-buton-selected")
+{
+    console.log( askOffer[3]);
+    askOffer[3].classList.toggle("check-howtosend-buton-selected",true);
+    askOffer[2].classList.add("check-howtosend-buton-selected");
+     askOffer[1].classList.add("check-howtosend-buton-selected");
+    askOffer[0].classList.add("check-howtosend-buton-selected");
+    askOffer[4].classList.remove("check-howtosend-buton-selected"); 
     
-    
-    itemMarked.addEventListener("click", ()=>{
-       askOffer.forEach(offerMarked =>{  
-       
-// FIQUEI AQUI============================================================ Checkboxes via Email Via Sms via Telefone
+}
+else
+{
+    askOffer[3].classList.toggle("check-howtosend-buton-selected",false);
+    askOffer[3].classList.remove("check-howtosend-buton-selected");
+    askOffer[2].classList.remove("check-howtosend-buton-selected");
+    askOffer[1].classList.remove("check-howtosend-buton-selected");
+   askOffer[0].classList.remove("check-howtosend-buton-selected"); 
+   askOffer[4].classList.remove("check-howtosend-buton-selected");
+}
 
-
-        if(askOffer[3].classList.contains("check-howtosend-buton-selected"))
-        {
-            // console.log();
-            offerMarked.classList.toggle("check-howtosend-buton-selected");
-            
-        }
-        else 
-        {
-            
-            offerMarked.classList.add("check-howtosend-buton-selected");
-              
-        }
-
-    })
-
-    
 });
 
 
+
+askOffer[4].classList.toggle("check-howtosend-buton-selected",true);
+
+askOffer[4].addEventListener("click", ()=>{
+   
+if(askOffer[4].classList.value === "check-howtosend-buton-selected")
+{
+    console.log( askOffer[4]);
+    askOffer[4].classList.toggle("check-howtosend-buton-selected",false);
+      
+}
+else
+{ 
+    askOffer[3].classList.remove("check-howtosend-buton-selected");
+    askOffer[4].classList.toggle("check-howtosend-buton-selected",true);
+  
+    askOffer[2].classList.remove("check-howtosend-buton-selected");
+    askOffer[1].classList.remove("check-howtosend-buton-selected");
+   askOffer[0].classList.remove("check-howtosend-buton-selected"); 
+}
+
 });
-
-askOffer[2].addEventListener("click",()=>{
-
-    if(askOffer[2].classList.contains("check-howtosend-buton-selected"))
-    {
-       
-        askOffer[2].classList.remove("check-howtosend-buton-selected");
-        
-    } 
-    else 
-    {
-        
-        askOffer[2].classList.add("check-howtosend-buton-selected");
-        console.log(askOffer[2].classList)   
-    }
-    
-})
-// FIQUEI AQUI============================================================ Checkboxes via Email Via Sms via Telefone
-
 /* ///////End Radio Buttons========================================================*/
 
 
@@ -282,4 +326,4 @@ if(listBox.classList.value === "list-container")
    
     
 })
-/* Lista funcional ============================================*/
+/* Lista funcional ============================================ */
