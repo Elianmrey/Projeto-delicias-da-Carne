@@ -165,7 +165,12 @@ selectEight.classList.replace("radio-buton-selected","radio-buton-unselected")
                                             selectEight.classList.replace("radio-buton-selected","radio-buton-unselected")
                                                 }} ); 
 
-// CHECK button how to Send=====================================================================================================
+
+
+
+
+
+// CHECK button how to Send==========COMO GOSTARIA DE RECEBER AS OFERTAS===========================================================================================
 
 
 const howToSend = document.querySelectorAll(".check-howtosend-buton");
@@ -236,7 +241,7 @@ else if(askOffer[0].classList.value !== "check-howtosend-buton-selected" && askO
 }
     });
 
-// Via Telefone ===========================================
+// Via Telefone ==============================================
     askOffer[1].addEventListener("click", ()=>{
        
         if(askOffer[1].classList.contains("check-howtosend-buton-selected"))
@@ -267,7 +272,6 @@ else if(askOffer[0].classList.value !== "check-howtosend-buton-selected" && askO
 
         } else
         {
-       
          askOffer[3].classList.add("check-howtosend-buton-selected");
          semiSelected.style.display = "flex";
          checked[3].style.display = "none"
@@ -294,7 +298,7 @@ else if(askOffer[0].classList.value !== "check-howtosend-buton-selected" && askO
         }
      });
     
-// Via Sms=========================================
+// Via Sms==================================================================
      askOffer[2].addEventListener("click", ()=>{
   
         if(askOffer[2].classList.contains("check-howtosend-buton-selected"))
@@ -349,7 +353,7 @@ else if(askOffer[0].classList.value !== "check-howtosend-buton-selected" && askO
 }
 });
 
-//   Todas as anteriores =======================================
+//   Todas as anteriores ===========================================================
     askOffer[3].classList.toggle("check-howtosend-buton-selected",false);
 
 askOffer[3].addEventListener("click", ()=>{
@@ -381,7 +385,7 @@ else
 
 });
 
-// Nenhuma Das anteriores Mudei de ideia======================
+// Nenhuma Das anteriores Mudei de ideia================================================
 askOffer[4].classList.toggle("check-howtosend-buton-selected",false);
 
 askOffer[4].addEventListener("click", ()=>{
@@ -407,12 +411,12 @@ else
 
 });
 
-/* ///////End Check Buttons========================================================*/
+/* ///////END Check Buttons==========================COMO GOSTARIA DE RECEBER AS OFERTAS==============================================================*/
 
 
 
 
-/* Lista funcional ============================================*/
+/* Lista funcional =====================================================================================================================*/
 const listDropDown = document.querySelector(".listdown")
                               
 
@@ -454,4 +458,4 @@ if(listBox.classList.value === "list-container")
         listDropDown.style.transform = "rotate(0deg)";
    }
 })
-/* Lista funcional ============================================ */
+/* END Lista funcional ================================================================================================================ */
