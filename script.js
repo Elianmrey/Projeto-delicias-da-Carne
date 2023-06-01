@@ -11,14 +11,16 @@ console.log(inputs);
 const email = inputs[1].textContent;
 const validator = email.includes("@",".com",".br")
 
-if (validator)
+if (validator === true)
 {
-    alert("Email Valido");
     console.log("Email válido");
+   return alert("Email Valido");
+    
 }else
 {
-alert("Digite um email valido")
-console.log("Email invalido")
+console.log("Email invalido");
+return alert("Digite um email valido");
+
 }
 
 }
@@ -26,7 +28,7 @@ enviar.addEventListener("click",verifyEmail)
 
 
 
-// Radio butons =======================================================================
+// START Radio butons ==============COMO CONHECEU NOSSO SITE=========================================================
 const radButton = document.querySelectorAll(".radio-buton")
 const  selectOne = radButton[0].children[0];
 const selectTwo = radButton[1].children[0];
@@ -165,12 +167,52 @@ selectEight.classList.replace("radio-buton-selected","radio-buton-unselected")
                                             selectEight.classList.replace("radio-buton-selected","radio-buton-unselected")
                                                 }} ); 
 
+// END Radio butons ==============COMO CONHECEU NOSSO SITE=========================================================
 
 
 
+//START - GOSTARIA DE RECEBER NOSSAS OFERTAS?===============================================================================
+
+const wouldYouLikeOffer = document.getElementsByClassName("radio-offer");
+
+const offerDesitionSelected = document.querySelectorAll(".radio-offer-selected");
+const offerYes = offerDesitionSelected[0];
+const offerNo = offerDesitionSelected[1];
+
+offerYes.classList.replace("radio-offer-selected", "radio-offer-unselected");
+offerNo.classList.replace("radio-offer-selected", "radio-offer-unselected");
+
+    wouldYouLikeOffer[0].addEventListener("click", ()=>{
+        
+    if(offerDesitionSelected[0].classList.contains("radio-offer-selected"))
+    {
+        offerYes.classList.replace("radio-offer-selected", "radio-offer-unselected");
+    }
+        else
+        {
+            offerYes.classList.replace("radio-offer-unselected","radio-offer-selected");
+            offerNo.classList.replace("radio-offer-selected","radio-offer-unselected");
+        }
+    })
 
 
-// CHECK button how to Send==========COMO GOSTARIA DE RECEBER AS OFERTAS===========================================================================================
+    wouldYouLikeOffer[1].addEventListener("click", ()=>{
+        
+        if(offerDesitionSelected[1].classList.contains("radio-offer-selected"))
+        {
+            offerNo.classList.replace("radio-offer-selected", "radio-offer-unselected");
+        }
+            else
+            {
+                offerNo.classList.replace("radio-offer-unselected","radio-offer-selected");
+                offerYes.classList.replace("radio-offer-selected","radio-offer-unselected");
+            }
+        })
+    
+//END - GOSTARIA DE RECEBER NOSSAS OFERTAS?===============================================================================
+
+
+// START CHECK button how to Send==========COMO GOSTARIA DE RECEBER AS OFERTAS===========================================================================================
 
 
 const howToSend = document.querySelectorAll(".check-howtosend-buton");
