@@ -423,12 +423,13 @@ const listDropDown = document.querySelector(".listdown")
 const listBox = document.querySelector(".list-container");
 const liElement = document.querySelectorAll(".elements");
 const selectedElement = document.querySelector(".placeholder");
+// const listAreaBody = document.querySelector(".placeholder-container");
 
 listDropDown.addEventListener("click", ()=>{
     
 if(listBox.classList.value === "list-container")
    {
-    console.log(listBox.classList);  
+    
         listBox.classList.add("list-container-active");
         listDropDown.style.transform = "rotate(180deg)";
 
@@ -452,10 +453,12 @@ if(listBox.classList.value === "list-container")
             })
             
         })
+
    }else if(listBox.classList.value === "list-container list-container-active")
    {
         listBox.classList.remove("list-container-active");
         listDropDown.style.transform = "rotate(0deg)";
    }
 })
+
 /* END Lista funcional ================================================================================================================ */
