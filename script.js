@@ -179,10 +179,12 @@ askOffer[2].classList.remove("check-howtosend-buton-selected");
 askOffer[1].classList.remove("check-howtosend-buton-selected");
 askOffer[0].classList.remove("check-howtosend-buton-selected"); 
     
+
+
+// Via E-mail===========================================
     askOffer[0].addEventListener("click", ()=>{
       
-  
-       if(askOffer[0].classList.contains("check-howtosend-buton-selected"))
+        if(askOffer[0].classList.contains("check-howtosend-buton-selected"))
        {
                askOffer[0].classList.remove("check-howtosend-buton-selected");
        } else
@@ -192,9 +194,9 @@ askOffer[0].classList.remove("check-howtosend-buton-selected");
        }
     });
 
+// Via Telefone ===========================================
     askOffer[1].addEventListener("click", ()=>{
-      
-  
+       
         if(askOffer[1].classList.contains("check-howtosend-buton-selected"))
         {
                 askOffer[1].classList.remove("check-howtosend-buton-selected");
@@ -205,8 +207,8 @@ askOffer[0].classList.remove("check-howtosend-buton-selected");
         }
      });
     
+// Via Sms=========================================
      askOffer[2].addEventListener("click", ()=>{
-      
   
         if(askOffer[2].classList.contains("check-howtosend-buton-selected"))
         {
@@ -218,7 +220,7 @@ askOffer[0].classList.remove("check-howtosend-buton-selected");
         }
      });
 
-  
+//   Todas as anteriores =======================================
     askOffer[3].classList.toggle("check-howtosend-buton-selected",false);
 
 askOffer[3].addEventListener("click", ()=>{
@@ -246,7 +248,7 @@ else
 });
 
 
-
+// Nenhuma Das anteriores Mudei de ideia======================
 askOffer[4].classList.toggle("check-howtosend-buton-selected",true);
 
 askOffer[4].addEventListener("click", ()=>{
