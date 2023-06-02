@@ -248,6 +248,7 @@ catFavMeat[0].addEventListener("click", ()=>{
     }
 
 });
+
 ///////////// Fiquei aqui neste bloco (Acima) Logica de Semiseleção de checkbox===================================================
 
 //END Check box QUAL A SUA CARNE FAVORITA?====================================================================================
