@@ -171,7 +171,83 @@ selectEight.classList.replace("radio-buton-selected","radio-buton-unselected")
 
 
 
-//START - GOSTARIA DE RECEBER NOSSAS OFERTAS?===============================================================================
+
+
+
+
+
+//Check box QUAL A SUA CARNE FAVORITA?====================================================================================
+const catFavMeat = document.querySelectorAll(".check-box");
+const favMeatSelected =  document.querySelectorAll(".check-box-selected");
+
+const allSelected = document.querySelectorAll(".check-box-reject-all-select-all");
+
+console.log(allSelected);
+
+
+// const exoticMeat = favMeatSelected.children[0];
+// const nobreMeat = favMeatSelected.children[1];
+// const traditionalMeat = favMeatSelected.children[2];
+// const suinaMeat = favMeatSelected.children[3];
+// const meatRes = favMeatSelected.children[4];
+// const corderMeat = favMeatSelected.children[5];
+
+const equalValidator = "check-box-selected";
+
+// let allSelector =[];
+
+//  favMeatSelected.forEach(itemSelected =>{
+    
+
+//   return  allSelector.concat(itemSelected.classList.values);
+  
+// });
+// console.log(allSelector.push(favMeatSelected.classList.values()))
+
+// const totalSelection = allSelector.forEach(itemIteration=>{ itemIteration === equalValidator;})
+// console.log(allSelector)
+
+catFavMeat[0].addEventListener("click", ()=>{
+
+    if(favMeatSelected[0].classList.contains("check-box-selected"))
+    {
+        favMeatSelected[0].classList.replace("check-box-selected","unselected");
+    }
+    else
+    {
+        favMeatSelected[0].classList.replace("unselected","check-box-selected");
+
+        // if(allSelector)
+        // {
+        //     allSelected.classList.replace("unselected","check-box-selected-reject-all-select-all")
+        // }
+    }
+
+});
+
+
+
+//END Check box QUAL A SUA CARNE FAVORITA?====================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//START - GOSTARIA DE RECEBER NOSSAS OFERTAS?===========RADIO BUTTON-----SIM NÃO====================================================================
 
 const wouldYouLikeOffer = document.getElementsByClassName("radio-offer");
 
@@ -209,7 +285,7 @@ offerNo.classList.replace("radio-offer-selected", "radio-offer-unselected");
             }
         })
     
-//END - GOSTARIA DE RECEBER NOSSAS OFERTAS?===============================================================================
+//END - GOSTARIA DE RECEBER NOSSAS OFERTAS?===========RADIO BUTTON-----SIM NÃO================================================================================
 
 
 // START CHECK button how to Send==========COMO GOSTARIA DE RECEBER AS OFERTAS===========================================================================================
