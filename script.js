@@ -181,31 +181,41 @@ const catFavMeat = document.querySelectorAll(".check-box");
 const favMeatSelected =  document.querySelectorAll(".check-box-selected");
 
 const allSelected = document.querySelectorAll(".check-box-reject-all-select-all");
+const checkIcons = [document.querySelector(".check-icon"),document.querySelector(".semiselection-favorite-meats")]
 
-console.log(allSelected);
 
-
-// const exoticMeat = favMeatSelected.children[0];
-// const nobreMeat = favMeatSelected.children[1];
-// const traditionalMeat = favMeatSelected.children[2];
-// const suinaMeat = favMeatSelected.children[3];
-// const meatRes = favMeatSelected.children[4];
-// const corderMeat = favMeatSelected.children[5];
+///////////// Fiquei aqui neste bloco (Abaixo) Logica de Semiseleção de checkbox===================================================
 
 const equalValidator = "check-box-selected";
 
-// let allSelector =[];
+let allSelector =[];
 
-//  favMeatSelected.forEach(itemSelected =>{
+ favMeatSelected.forEach(itemSelected =>{
     
+    allSelector = allSelector.concat(itemSelected.classList.value === equalValidator);
+    
+});
 
-//   return  allSelector.concat(itemSelected.classList.values);
-  
-// });
-// console.log(allSelector.push(favMeatSelected.classList.values()))
+const validate = true;
+let totalSelection;
+let semiselectionTrue;
 
-// const totalSelection = allSelector.forEach(itemIteration=>{ itemIteration === equalValidator;})
-// console.log(allSelector)
+allSelector.forEach(verifyItem =>{
+   totalSelection = verifyItem === validate
+if (verifyItem === "false")
+{
+semiselectionTrue = true;
+}else if(totalSelection === true)
+{
+    semiselectionTrue =true;
+} else if(totalSelection === false)
+{
+    semiselectionTrue = false
+}
+
+});
+
+console.log(totalSelection);
 
 catFavMeat[0].addEventListener("click", ()=>{
 
@@ -217,15 +227,28 @@ catFavMeat[0].addEventListener("click", ()=>{
     {
         favMeatSelected[0].classList.replace("unselected","check-box-selected");
 
-        // if(allSelector)
-        // {
-        //     allSelected.classList.replace("unselected","check-box-selected-reject-all-select-all")
-        // }
+        if(totalSelection)
+        {
+            allSelected[0].classList.replace("unselected","check-box-selected-reject-all-select-all");
+            checkIcons[0].style.display = "flex";
+            checkIcons[1].style.display = "none";
+           
+        }
+        else if(semiselectionTrue === true)
+        {
+            allSelected[0].classList.replace("unselected","check-box-selected-reject-all-select-all");
+            checkIcons[0].style.display = "none";
+            checkIcons[1].style.display = "flex";
+
+        } else if (semiselectionTrue === false)
+        {
+            allSelected[0].classList.replace("check-box-selected-reject-all-select-all","unselected");
+
+        }
     }
 
 });
-
-
+///////////// Fiquei aqui neste bloco (Acima) Logica de Semiseleção de checkbox===================================================
 
 //END Check box QUAL A SUA CARNE FAVORITA?====================================================================================
 
