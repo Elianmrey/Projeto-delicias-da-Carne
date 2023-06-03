@@ -174,7 +174,7 @@ selectEight.classList.replace("radio-buton-selected","radio-buton-unselected")
 
 
 
-// ///////================================Fiquei aqopp
+// ///////================================Fiquei aqui***********************------------------------*****************************************
 
 //Check box QUAL A SUA CARNE FAVORITA?====================================================================================
 const catFavMeat = document.querySelectorAll(".check-box");
