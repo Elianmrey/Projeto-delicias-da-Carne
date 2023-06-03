@@ -174,34 +174,38 @@ selectEight.classList.replace("radio-buton-selected","radio-buton-unselected")
 
 
 
-
+// ///////================================Fiquei aqopp
 
 //Check box QUAL A SUA CARNE FAVORITA?====================================================================================
 const catFavMeat = document.querySelectorAll(".check-box");
 const favMeatSelected =  document.querySelectorAll(".check-box-selected");
 
 const allSelected = document.querySelectorAll(".check-box-reject-all-select-all");
-const checkIcons = [document.querySelector(".check-icon"),document.querySelector(".semiselection-favorite-meats")]
+const checkIcons = document.querySelectorAll(".check-icon-fav")
+const semiSelectedIcons = document.querySelectorAll(".semiselection-favorite-meats");
 
+favMeatSelected.forEach(itemMarked =>{
+    itemMarked.classList.replace("check-box-selected","unselected");
+});
 
-///////////// Fiquei aqui neste bloco (Abaixo) Logica de Semiseleção de checkbox===================================================
 
 const equalValidator = "check-box-selected";
-
 let allSelector =[];
-
  favMeatSelected.forEach(itemSelected =>{
-    
+
     allSelector = allSelector.concat(itemSelected.classList.value === equalValidator);
-    
 });
+
+
+
+
 
 const validate = true;
 let totalSelection;
 let semiselectionTrue;
 
 allSelector.forEach(verifyItem =>{
-   totalSelection = verifyItem === validate
+   totalSelection = verifyItem === validate;
 if (verifyItem === "false")
 {
 semiselectionTrue = true;
@@ -212,42 +216,193 @@ semiselectionTrue = true;
 {
     semiselectionTrue = false
 }
-
 });
 
-console.log(totalSelection);
-
+console.log(semiSelectedIcons);
 catFavMeat[0].addEventListener("click", ()=>{
 
     if(favMeatSelected[0].classList.contains("check-box-selected"))
     {
         favMeatSelected[0].classList.replace("check-box-selected","unselected");
+        if(totalSelection === true)
+        {
+            allSelected[0].classList.replace("unselected","check-box-selected-reject-all-select-all");
+            checkIcons[0].style.display = "flex";
+            semiSelectedIcons[0].style.display = "none";
+
+            
+            console.log(`Seleção incompleta ${semiselectionTrue}`);
+        }
+        else if(semiselectionTrue === true)
+        {
+            allSelected[0].classList.replace("unselected","check-box-selected-reject-all-select-all");
+            checkIcons[0].style.display = "none";
+            semiSelectedIcons[0].style.display = "flex";
+            console.log(`Seleção total ${totalSelection}`);
+            console.log(`Seleção incompleta ${semiselectionTrue}`);
+
+        } else if (semiselectionTrue  === false)
+        {
+            allSelected[0].classList.replace("unselected","check-box-selected-reject-all-select-all");
+            checkIcons[0].style.display = "none";
+            semiSelectedIcons[0].style.display = "flex";
+                    console.log(`Seleção incompleta$$$: ${semiselectionTrue} em else`); 
+        }
+
     }
     else
     {
         favMeatSelected[0].classList.replace("unselected","check-box-selected");
-
-        if(totalSelection)
+        if(totalSelection === true)
         {
             allSelected[0].classList.replace("unselected","check-box-selected-reject-all-select-all");
             checkIcons[0].style.display = "flex";
             checkIcons[1].style.display = "none";
-           
+
+            
+            console.log(`Seleção incompleta ${semiselectionTrue}`);
+        }
+        else if(semiselectionTrue === true)
+        {
+            allSelected[0].classList.replace("unselected","check-box-selected-reject-all-select-all");
+            checkIcons[0].style.display = "none";
+            checkIcons[0].style.display = "flex";
+            console.log(`Seleção total ${totalSelection}`);
+            console.log(`Seleção incompleta ${semiselectionTrue}`);
+            
+        } else if (semiselectionTrue  === false)
+        {
+            allSelected[0].classList.replace("unselected","check-box-selected-reject-all-select-all");
+            checkIcons[0].style.display = "none";
+            checkIcons[0].style.display = "flex";
+            console.log(`Seleção total ${totalSelection}`);
+            console.log(`Seleção incompleta ${semiselectionTrue}`);
+           console.log(`Seleção incompleta@@ ${semiselectionTrue} em else`); 
+        }
+
+    }
+});
+
+catFavMeat[1].addEventListener("click", ()=>{
+
+    if(favMeatSelected[1].classList.contains("check-box-selected"))
+    {
+        favMeatSelected[1].classList.replace("check-box-selected","unselected");
+        if(totalSelection === true)
+        {
+            allSelected[0].classList.replace("unselected","check-box-selected-reject-all-select-all");
+            checkIcons[0].style.display = "flex";
+            checkIcons[1].style.display = "none";
+
+            
+            console.log(`Seleção incompleta ${semiselectionTrue}`);
         }
         else if(semiselectionTrue === true)
         {
             allSelected[0].classList.replace("unselected","check-box-selected-reject-all-select-all");
             checkIcons[0].style.display = "none";
             checkIcons[1].style.display = "flex";
+            console.log(`Seleção total ${totalSelection}`);
+            console.log(`Seleção incompleta ${semiselectionTrue}`);
 
-        } else if (semiselectionTrue === false)
+        } else if (semiselectionTrue  === false)
         {
             allSelected[0].classList.replace("check-box-selected-reject-all-select-all","unselected");
-
+           console.log(`Seleção incompleta ${semiselectionTrue} em else`); 
         }
-    }
 
+    }
+    else
+    {
+        favMeatSelected[1].classList.replace("unselected","check-box-selected");
+        if(totalSelection === true)
+        {
+            allSelected[0].classList.replace("unselected","check-box-selected-reject-all-select-all");
+            checkIcons[0].style.display = "flex";
+            checkIcons[1].style.display = "none";
+
+            
+            console.log(`Seleção incompleta ${semiselectionTrue}`);
+        }
+        else if(semiselectionTrue === true)
+        {
+            allSelected[0].classList.replace("unselected","check-box-selected-reject-all-select-all");
+            checkIcons[0].style.display = "none";
+            checkIcons[1].style.display = "flex";
+            console.log(`Seleção total ${totalSelection}`);
+            console.log(`Seleção incompleta ${semiselectionTrue}`);
+        } else if (semiselectionTrue  === false)
+        {
+            allSelected[0].classList.replace("check-box-selected-reject-all-select-all","unselected");
+           console.log(`Seleção incompleta ${semiselectionTrue} em else`); 
+        }
+
+    }
 });
+
+catFavMeat[2].addEventListener("click", ()=>{
+
+    if(favMeatSelected[2].classList.contains("check-box-selected"))
+    {
+        favMeatSelected[2].classList.replace("check-box-selected","unselected");
+        if(totalSelection === true)
+        {
+            favMeatSelected[3].classList.replace("unselected","check-box-selected-reject-all-select-all");
+            checkIcons[0].style.display = "flex";
+            checkIcons[1].style.display = "none";
+
+            
+            console.log(`Seleção incompleta ${semiselectionTrue}`);
+        }
+        else if(semiselectionTrue === true)
+        {
+            favMeatSelected[3].classList.replace("unselected","check-box-selected-reject-all-select-all");
+            checkIcons[0].style.display = "none";
+            checkIcons[1].style.display = "flex";
+            console.log(`Seleção total ${totalSelection}`);
+            console.log(`Seleção incompleta ${semiselectionTrue}`);
+        } else if (semiselectionTrue  === false)
+        {
+            favMeatSelected[3].classList.replace("check-box-selected-reject-all-select-all","unselected");
+           console.log(`Seleção incompleta ${semiselectionTrue} em else`); 
+        }
+
+    }
+    else
+    {
+        favMeatSelected[2].classList.replace("unselected","check-box-selected");
+        if(totalSelection === true)
+        {
+            favMeatSelected[3].classList.replace("unselected","check-box-selected-reject-all-select-all");
+            checkIcons[0].style.display = "flex";
+            checkIcons[1].style.display = "none";
+
+            
+            console.log(`Seleção incompleta ${semiselectionTrue}`);
+        }
+        else if(semiselectionTrue === true)
+        {
+            favMeatSelected[3].classList.replace("unselected","check-box-selected-reject-all-select-all");
+            checkIcons[0].style.display = "none";
+            checkIcons[1].style.display = "flex";
+            console.log(`Seleção total ${totalSelection}`);
+            console.log(`Seleção incompleta ${semiselectionTrue}`);
+        } else if (semiselectionTrue  === false)
+        {
+            favMeatSelected[3].classList.replace("check-box-selected-reject-all-select-all","unselected");
+           console.log(`Seleção incompleta ${semiselectionTrue} em else`); 
+        }
+
+    }
+});
+
+
+
+
+
+
+
+
 // Hasta aqui Logica de semiseleccion 
 ///////////// Fiquei aqui neste bloco (Acima) Logica de Semiseleção de checkbox===================================================
 

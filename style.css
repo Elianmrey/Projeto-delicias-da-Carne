@@ -664,6 +664,14 @@ div.check-box
     height: 10px;
     fill: white;
 }
+
+.check-icon-fav
+{
+    width: 10px;
+    height: 10px;
+    fill: white;
+}
+
 .semiselection-favorite-meats
 {
     display: none;
