@@ -706,7 +706,7 @@ div.container-check-and-span
  }
 
 /*contenedor de ultimo Check box todas as anteriores Carne favorita */
-div.checkbox-category-reject
+.checkbox-category-reject-container
 {   
 height: 35px;
 width: 30px;
@@ -714,11 +714,11 @@ display: flex;
 flex-direction: column;
 gap: 10px;
 align-items: center;
+
 }
 
-div.check-box-reject-all-select-all
+.check-box-reject-all-select-all
 {
-    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -730,10 +730,13 @@ div.check-box-reject-all-select-all
     position: relative;
     top: 5px;
     left: 10%;
+    /* border:3px solid orange; */
+ 
 }
 
-div.check-box-selected-reject-all-select-all
+.check-box-selected-reject-all-select-all
 {
+     
     display: flex;
     position: static;
     border-radius: 2px;

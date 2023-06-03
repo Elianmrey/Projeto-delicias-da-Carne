@@ -180,231 +180,333 @@ selectEight.classList.replace("radio-buton-selected","radio-buton-unselected")
 const catFavMeat = document.querySelectorAll(".check-box");
 const favMeatSelected =  document.querySelectorAll(".check-box-selected");
 
-const allSelected = document.querySelectorAll(".check-box-reject-all-select-all");
+// const allSelectedContainer = document.querySelectorAll(".check-box-reject-all-select-all");
+const isAllSelected = document.querySelectorAll(".check-box-selected-reject-all-select-all");
 const checkIcons = document.querySelectorAll(".check-icon-fav")
 const semiSelectedIcons = document.querySelectorAll(".semiselection-favorite-meats");
+
+isAllSelected[0].classList.replace("check-box-selected-reject-all-select-all","unselected");
+isAllSelected[1].classList.replace("check-box-selected-reject-all-select-all","unselected");  
 
 favMeatSelected.forEach(itemMarked =>{
     itemMarked.classList.replace("check-box-selected","unselected");
 });
 
 
-const equalValidator = "check-box-selected";
-let allSelector =[];
- favMeatSelected.forEach(itemSelected =>{
 
-    allSelector = allSelector.concat(itemSelected.classList.value === equalValidator);
-});
-
-
-
-
-
-const validate = true;
-let totalSelection;
-let semiselectionTrue;
-
-allSelector.forEach(verifyItem =>{
-   totalSelection = verifyItem === validate;
-if (verifyItem === "false")
-{
-semiselectionTrue = true;
-}else if(totalSelection === true)
-{
-    semiselectionTrue =true;
-} else if(totalSelection === false)
-{
-    semiselectionTrue = false
-}
-});
-
-console.log(semiSelectedIcons);
-catFavMeat[0].addEventListener("click", ()=>{
+favMeatSelected[0].addEventListener("click", ()=>{
 
     if(favMeatSelected[0].classList.contains("check-box-selected"))
     {
-        favMeatSelected[0].classList.replace("check-box-selected","unselected");
-        if(totalSelection === true)
+        favMeatSelected[0].classList.replace("check-box-selected","unselected"); 
+        
+        if( favMeatSelected[0].classList.contains("check-box-selected") && favMeatSelected[1].classList.contains("check-box-selected") && favMeatSelected[2].classList.contains("check-box-selected") && favMeatSelected[3].classList.contains("check-box-selected") && favMeatSelected[4].classList.contains("check-box-selected")&& favMeatSelected[5].classList.contains("check-box-selected"))
         {
-            allSelected[0].classList.replace("unselected","check-box-selected-reject-all-select-all");
-            checkIcons[0].style.display = "flex";
-            semiSelectedIcons[0].style.display = "none";
-
-            
-            console.log(`Seleção incompleta ${semiselectionTrue}`);
-        }
-        else if(semiselectionTrue === true)
-        {
-            allSelected[0].classList.replace("unselected","check-box-selected-reject-all-select-all");
-            checkIcons[0].style.display = "none";
-            semiSelectedIcons[0].style.display = "flex";
-            console.log(`Seleção total ${totalSelection}`);
-            console.log(`Seleção incompleta ${semiselectionTrue}`);
-
-        } else if (semiselectionTrue  === false)
-        {
-            allSelected[0].classList.replace("unselected","check-box-selected-reject-all-select-all");
-            checkIcons[0].style.display = "none";
-            semiSelectedIcons[0].style.display = "flex";
-                    console.log(`Seleção incompleta$$$: ${semiselectionTrue} em else`); 
-        }
-
+          isAllSelected[0].classList.replace("unselected","check-box-selected");
+        checkIcons[0].style.display = "flex";
+        semiSelectedIcons[0].style.display = "none";
+      } else if ( favMeatSelected[0].classList.contains("check-box-selected") || favMeatSelected[1].classList.contains("check-box-selected") || favMeatSelected[2].classList.contains("check-box-selected") || favMeatSelected[3].classList.contains("check-box-selected") || favMeatSelected[4].classList.contains("check-box-selected") || favMeatSelected[5].classList.contains("check-box-selected"))
+  {
+      isAllSelected[0].classList.replace("unselected","check-box-selected");
+      checkIcons[0].style.display = "none";
+      semiSelectedIcons[0].style.display = "flex";
+      
+  }   else if(favMeatSelected[0].classList.contains("unselected") && favMeatSelected[1].classList.contains("unselected") && favMeatSelected[2].classList.contains("unselected") && favMeatSelected[3].classList.contains("unselected") && favMeatSelected[4].classList.contains("unselected") && favMeatSelected[5].classList.contains("unselected"))
+  {
+      isAllSelected[0].classList.replace("check-box-selected","unselected");
+      isAllSelected[1].classList.replace("unselected","check-box-selected");    //========================
+     
+  } 
     }
     else
     {
         favMeatSelected[0].classList.replace("unselected","check-box-selected");
-        if(totalSelection === true)
-        {
-            allSelected[0].classList.replace("unselected","check-box-selected-reject-all-select-all");
-            checkIcons[0].style.display = "flex";
-            checkIcons[1].style.display = "none";
 
-            
-            console.log(`Seleção incompleta ${semiselectionTrue}`);
-        }
-        else if(semiselectionTrue === true)
+        if( favMeatSelected[0].classList.contains("check-box-selected") && favMeatSelected[1].classList.contains("check-box-selected") && favMeatSelected[2].classList.contains("check-box-selected") && favMeatSelected[3].classList.contains("check-box-selected") && favMeatSelected[4].classList.contains("check-box-selected")&& favMeatSelected[5].classList.contains("check-box-selected"))
         {
-            allSelected[0].classList.replace("unselected","check-box-selected-reject-all-select-all");
-            checkIcons[0].style.display = "none";
-            checkIcons[0].style.display = "flex";
-            console.log(`Seleção total ${totalSelection}`);
-            console.log(`Seleção incompleta ${semiselectionTrue}`);
-            
-        } else if (semiselectionTrue  === false)
-        {
-            allSelected[0].classList.replace("unselected","check-box-selected-reject-all-select-all");
-            checkIcons[0].style.display = "none";
-            checkIcons[0].style.display = "flex";
-            console.log(`Seleção total ${totalSelection}`);
-            console.log(`Seleção incompleta ${semiselectionTrue}`);
-           console.log(`Seleção incompleta@@ ${semiselectionTrue} em else`); 
-        }
-
+          isAllSelected[0].classList.replace("unselected","check-box-selected");
+        checkIcons[0].style.display = "flex";
+        semiSelectedIcons[0].style.display = "none";
+      } else if (favMeatSelected[0].classList.contains("check-box-selected") || favMeatSelected[1].classList.contains("check-box-selected") || favMeatSelected[2].classList.contains("check-box-selected") || favMeatSelected[3].classList.contains("check-box-selected") || favMeatSelected[4].classList.contains("check-box-selected") || favMeatSelected[5].classList.contains("check-box-selected"))
+  {
+      isAllSelected[0].classList.replace("unselected","check-box-selected");
+      checkIcons[0].style.display = "none";
+      semiSelectedIcons[0].style.display = "flex";
+      
+  }   else if( favMeatSelected[0].classList.contains("unselected") && favMeatSelected[1].classList.contains("unselected") && favMeatSelected[2].classList.contains("unselected") && favMeatSelected[3].classList.contains("unselected") && favMeatSelected[4].classList.contains("unselected") && favMeatSelected[5].classList.contains("unselected"))
+  {
+      isAllSelected[0].classList.replace("check-box-selected","unselected");
+      isAllSelected[1].classList.replace("unselected","check-box-selected");    //========================
+     
+  } 
     }
 });
 
-catFavMeat[1].addEventListener("click", ()=>{
+favMeatSelected[1].addEventListener("click", ()=>{
 
     if(favMeatSelected[1].classList.contains("check-box-selected"))
     {
         favMeatSelected[1].classList.replace("check-box-selected","unselected");
-        if(totalSelection === true)
-        {
-            allSelected[0].classList.replace("unselected","check-box-selected-reject-all-select-all");
-            checkIcons[0].style.display = "flex";
-            checkIcons[1].style.display = "none";
 
-            
-            console.log(`Seleção incompleta ${semiselectionTrue}`);
-        }
-        else if(semiselectionTrue === true)
+        if( favMeatSelected[0].classList.contains("check-box-selected") && favMeatSelected[1].classList.contains("check-box-selected") && favMeatSelected[2].classList.contains("check-box-selected") && favMeatSelected[3].classList.contains("check-box-selected") && favMeatSelected[4].classList.contains("check-box-selected")&& favMeatSelected[5].classList.contains("check-box-selected"))
         {
-            allSelected[0].classList.replace("unselected","check-box-selected-reject-all-select-all");
-            checkIcons[0].style.display = "none";
-            checkIcons[1].style.display = "flex";
-            console.log(`Seleção total ${totalSelection}`);
-            console.log(`Seleção incompleta ${semiselectionTrue}`);
-
-        } else if (semiselectionTrue  === false)
-        {
-            allSelected[0].classList.replace("check-box-selected-reject-all-select-all","unselected");
-           console.log(`Seleção incompleta ${semiselectionTrue} em else`); 
-        }
-
+          isAllSelected[0].classList.replace("unselected","check-box-selected");
+        checkIcons[0].style.display = "flex";
+        semiSelectedIcons[0].style.display = "none";
+      } else if( favMeatSelected[0].classList.contains("check-box-selected") || favMeatSelected[1].classList.contains("check-box-selected") || favMeatSelected[2].classList.contains("check-box-selected") || favMeatSelected[3].classList.contains("check-box-selected") || favMeatSelected[4].classList.contains("check-box-selected") || favMeatSelected[5].classList.contains("check-box-selected"))
+  {
+      isAllSelected[0].classList.replace("unselected","check-box-selected");
+      checkIcons[0].style.display = "none";
+      semiSelectedIcons[0].style.display = "flex";
+      
+  }   else if( favMeatSelected[0].classList.contains("unselected") && favMeatSelected[1].classList.contains("unselected") && favMeatSelected[2].classList.contains("unselected") && favMeatSelected[3].classList.contains("unselected") && favMeatSelected[4].classList.contains("unselected") && favMeatSelected[5].classList.contains("unselected"))
+  {
+      isAllSelected[0].classList.replace("check-box-selected","unselected");
+      isAllSelected[1].classList.replace("unselected","check-box-selected");   
+     
+  } 
+      
     }
     else
     {
         favMeatSelected[1].classList.replace("unselected","check-box-selected");
-        if(totalSelection === true)
-        {
-            allSelected[0].classList.replace("unselected","check-box-selected-reject-all-select-all");
-            checkIcons[0].style.display = "flex";
-            checkIcons[1].style.display = "none";
 
-            
-            console.log(`Seleção incompleta ${semiselectionTrue}`);
-        }
-        else if(semiselectionTrue === true)
-        {
-            allSelected[0].classList.replace("unselected","check-box-selected-reject-all-select-all");
-            checkIcons[0].style.display = "none";
-            checkIcons[1].style.display = "flex";
-            console.log(`Seleção total ${totalSelection}`);
-            console.log(`Seleção incompleta ${semiselectionTrue}`);
-        } else if (semiselectionTrue  === false)
-        {
-            allSelected[0].classList.replace("check-box-selected-reject-all-select-all","unselected");
-           console.log(`Seleção incompleta ${semiselectionTrue} em else`); 
-        }
 
+        if( favMeatSelected[0].classList.contains("check-box-selected") && favMeatSelected[1].classList.contains("check-box-selected") && favMeatSelected[2].classList.contains("check-box-selected") && favMeatSelected[3].classList.contains("check-box-selected") && favMeatSelected[4].classList.contains("check-box-selected")&& favMeatSelected[5].classList.contains("check-box-selected"))
+        {
+          isAllSelected[0].classList.replace("unselected","check-box-selected");
+        checkIcons[0].style.display = "flex";
+        semiSelectedIcons[0].style.display = "none";
+      } else if ( favMeatSelected[0].classList.contains("check-box-selected") || favMeatSelected[1].classList.contains("check-box-selected") || favMeatSelected[2].classList.contains("check-box-selected") || favMeatSelected[3].classList.contains("check-box-selected") || favMeatSelected[4].classList.contains("check-box-selected") || favMeatSelected[5].classList.contains("check-box-selected"))
+  {
+      isAllSelected[0].classList.replace("unselected","check-box-selected");
+      checkIcons[0].style.display = "none";
+      semiSelectedIcons[0].style.display = "flex";
+      
+  }   else if ( favMeatSelected[0].classList.contains("unselected") && favMeatSelected[1].classList.contains("unselected") && favMeatSelected[2].classList.contains("unselected") && favMeatSelected[3].classList.contains("unselected") && favMeatSelected[4].classList.contains("unselected") && favMeatSelected[5].classList.contains("unselected"))
+  {
+      isAllSelected[0].classList.replace("check-box-selected","unselected");
+      isAllSelected[1].classList.replace("unselected","check-box-selected");  
+     
+  } 
     }
 });
 
-catFavMeat[2].addEventListener("click", ()=>{
+
+favMeatSelected[2].addEventListener("click", ()=>{
 
     if(favMeatSelected[2].classList.contains("check-box-selected"))
     {
         favMeatSelected[2].classList.replace("check-box-selected","unselected");
-        if(totalSelection === true)
+        if( favMeatSelected[0].classList.contains("check-box-selected") && favMeatSelected[1].classList.contains("check-box-selected") && favMeatSelected[2].classList.contains("check-box-selected") && favMeatSelected[3].classList.contains("check-box-selected") && favMeatSelected[4].classList.contains("check-box-selected")&& favMeatSelected[5].classList.contains("check-box-selected"))
         {
-            favMeatSelected[3].classList.replace("unselected","check-box-selected-reject-all-select-all");
-            checkIcons[0].style.display = "flex";
-            checkIcons[1].style.display = "none";
-
-            
-            console.log(`Seleção incompleta ${semiselectionTrue}`);
-        }
-        else if(semiselectionTrue === true)
-        {
-            favMeatSelected[3].classList.replace("unselected","check-box-selected-reject-all-select-all");
-            checkIcons[0].style.display = "none";
-            checkIcons[1].style.display = "flex";
-            console.log(`Seleção total ${totalSelection}`);
-            console.log(`Seleção incompleta ${semiselectionTrue}`);
-        } else if (semiselectionTrue  === false)
-        {
-            favMeatSelected[3].classList.replace("check-box-selected-reject-all-select-all","unselected");
-           console.log(`Seleção incompleta ${semiselectionTrue} em else`); 
-        }
-
+          isAllSelected[0].classList.replace("unselected","check-box-selected");
+        checkIcons[0].style.display = "flex";
+        semiSelectedIcons[0].style.display = "none";
+      } else if( favMeatSelected[0].classList.contains("check-box-selected") || favMeatSelected[1].classList.contains("check-box-selected") || favMeatSelected[2].classList.contains("check-box-selected") || favMeatSelected[3].classList.contains("check-box-selected") || favMeatSelected[4].classList.contains("check-box-selected") || favMeatSelected[5].classList.contains("check-box-selected"))
+  {
+      isAllSelected[0].classList.replace("unselected","check-box-selected");
+      checkIcons[0].style.display = "none";
+      semiSelectedIcons[0].style.display = "flex";
+      
+  }   else if(favMeatSelected[0].classList.contains("unselected") && favMeatSelected[1].classList.contains("unselected") && favMeatSelected[2].classList.contains("unselected") && favMeatSelected[3].classList.contains("unselected") && favMeatSelected[4].classList.contains("unselected") && favMeatSelected[5].classList.contains("unselected"))
+  {
+      isAllSelected[0].classList.replace("check-box-selected","unselected");
+      isAllSelected[1].classList.replace("unselected","check-box-selected");    
+     
+  } 
     }
     else
     {
         favMeatSelected[2].classList.replace("unselected","check-box-selected");
-        if(totalSelection === true)
-        {
-            favMeatSelected[3].classList.replace("unselected","check-box-selected-reject-all-select-all");
-            checkIcons[0].style.display = "flex";
-            checkIcons[1].style.display = "none";
 
-            
-            console.log(`Seleção incompleta ${semiselectionTrue}`);
-        }
-        else if(semiselectionTrue === true)
+        if(favMeatSelected[0].classList.contains("check-box-selected") && favMeatSelected[1].classList.contains("check-box-selected") && favMeatSelected[2].classList.contains("check-box-selected") && favMeatSelected[3].classList.contains("check-box-selected") && favMeatSelected[4].classList.contains("check-box-selected")&& favMeatSelected[5].classList.contains("check-box-selected"))
         {
-            favMeatSelected[3].classList.replace("unselected","check-box-selected-reject-all-select-all");
-            checkIcons[0].style.display = "none";
-            checkIcons[1].style.display = "flex";
-            console.log(`Seleção total ${totalSelection}`);
-            console.log(`Seleção incompleta ${semiselectionTrue}`);
-        } else if (semiselectionTrue  === false)
-        {
-            favMeatSelected[3].classList.replace("check-box-selected-reject-all-select-all","unselected");
-           console.log(`Seleção incompleta ${semiselectionTrue} em else`); 
-        }
-
+          isAllSelected[0].classList.replace("unselected","check-box-selected");
+        checkIcons[0].style.display = "flex";
+        semiSelectedIcons[0].style.display = "none";
+      } else if (favMeatSelected[0].classList.contains("check-box-selected") || favMeatSelected[1].classList.contains("check-box-selected") || favMeatSelected[2].classList.contains("check-box-selected") || favMeatSelected[3].classList.contains("check-box-selected") || favMeatSelected[4].classList.contains("check-box-selected") || favMeatSelected[5].classList.contains("check-box-selected"))
+  {
+      isAllSelected[0].classList.replace("unselected","check-box-selected");
+      checkIcons[0].style.display = "none";
+      semiSelectedIcons[0].style.display = "flex";
+      
+  }   else if (favMeatSelected[0].classList.contains("unselected") && favMeatSelected[1].classList.contains("unselected") && favMeatSelected[2].classList.contains("unselected") && favMeatSelected[3].classList.contains("unselected") && favMeatSelected[4].classList.contains("unselected") && favMeatSelected[5].classList.contains("unselected"))
+  {
+      isAllSelected[0].classList.replace("check-box-selected","unselected");
+      isAllSelected[1].classList.replace("unselected","check-box-selected");  
+     
+  } 
     }
 });
 
+favMeatSelected[3].addEventListener("click", ()=>{
+
+    if(favMeatSelected[3].classList.contains("check-box-selected"))
+    {
+        favMeatSelected[3].classList.replace("check-box-selected","unselected");
+
+        if( favMeatSelected[0].classList.contains("check-box-selected") && favMeatSelected[1].classList.contains("check-box-selected") && favMeatSelected[2].classList.contains("check-box-selected") && favMeatSelected[3].classList.contains("check-box-selected") && favMeatSelected[4].classList.contains("check-box-selected")&& favMeatSelected[5].classList.contains("check-box-selected"))
+        {
+          isAllSelected[0].classList.replace("unselected","check-box-selected");
+        checkIcons[0].style.display = "flex";
+        semiSelectedIcons[0].style.display = "none";
+      } else if( favMeatSelected[0].classList.contains("check-box-selected") || favMeatSelected[1].classList.contains("check-box-selected") || favMeatSelected[2].classList.contains("check-box-selected") || favMeatSelected[3].classList.contains("check-box-selected") || favMeatSelected[4].classList.contains("check-box-selected") || favMeatSelected[5].classList.contains("check-box-selected"))
+  {
+      isAllSelected[0].classList.replace("unselected","check-box-selected");
+      checkIcons[0].style.display = "none";
+      semiSelectedIcons[0].style.display = "flex";
+      
+  }   else if(favMeatSelected[0].classList.contains("unselected") && favMeatSelected[1].classList.contains("unselected") && favMeatSelected[2].classList.contains("unselected") && favMeatSelected[3].classList.contains("unselected") && favMeatSelected[4].classList.contains("unselected") && favMeatSelected[5].classList.contains("unselected"))
+  {
+      isAllSelected[0].classList.replace("check-box-selected","unselected");
+      isAllSelected[1].classList.replace("unselected","check-box-selected");    
+  } 
+    }
+    else
+    {
+        favMeatSelected[3].classList.replace("unselected","check-box-selected");
+
+        if( favMeatSelected[0].classList.contains("check-box-selected") && favMeatSelected[1].classList.contains("check-box-selected") && favMeatSelected[2].classList.contains("check-box-selected") && favMeatSelected[3].classList.contains("check-box-selected") && favMeatSelected[4].classList.contains("check-box-selected")&& favMeatSelected[5].classList.contains("check-box-selected"))
+        {
+          isAllSelected[0].classList.replace("unselected","check-box-selected");
+        checkIcons[0].style.display = "flex";
+        semiSelectedIcons[0].style.display = "none";
+      } else if(f( favMeatSelected[0].classList.contains("check-box-selected") || favMeatSelected[1].classList.contains("check-box-selected") || favMeatSelected[2].classList.contains("check-box-selected") || favMeatSelected[3].classList.contains("check-box-selected") || favMeatSelected[4].classList.contains("check-box-selected") || favMeatSelected[5].classList.contains("check-box-selected")))
+  {
+      isAllSelected[0].classList.replace("unselected","check-box-selected");
+      checkIcons[0].style.display = "none";
+      semiSelectedIcons[0].style.display = "flex";
+      
+  }   else if (favMeatSelected[0].classList.contains("unselected") && favMeatSelected[1].classList.contains("unselected") && favMeatSelected[2].classList.contains("unselected") && favMeatSelected[3].classList.contains("unselected") && favMeatSelected[4].classList.contains("unselected") && favMeatSelected[5].classList.contains("unselected"))
+  {
+      isAllSelected[0].classList.replace("check-box-selected","unselected");
+      isAllSelected[1].classList.replace("unselected","check-box-selected");  
+  } 
+    }
+});
+
+favMeatSelected[4].addEventListener("click", ()=>{
+
+    if(favMeatSelected[4].classList.contains("check-box-selected"))
+    {
+        favMeatSelected[4].classList.replace("check-box-selected","unselected");
+
+        if( favMeatSelected[0].classList.contains("check-box-selected") && favMeatSelected[1].classList.contains("check-box-selected") && favMeatSelected[2].classList.contains("check-box-selected") && favMeatSelected[3].classList.contains("check-box-selected") && favMeatSelected[4].classList.contains("check-box-selected")&& favMeatSelected[5].classList.contains("check-box-selected"))
+        {
+          isAllSelected[0].classList.replace("unselected","check-box-selected");
+        checkIcons[0].style.display = "flex";
+        semiSelectedIcons[0].style.display = "none";
+      } else if (favMeatSelected[0].classList.contains("check-box-selected") || favMeatSelected[1].classList.contains("check-box-selected") || favMeatSelected[2].classList.contains("check-box-selected") || favMeatSelected[3].classList.contains("check-box-selected") || favMeatSelected[4].classList.contains("check-box-selected") || favMeatSelected[5].classList.contains("check-box-selected"))
+  {
+      isAllSelected[0].classList.replace("unselected","check-box-selected");
+      checkIcons[0].style.display = "none";
+      semiSelectedIcons[0].style.display = "flex";
+      
+  }   else if( favMeatSelected[0].classList.contains("unselected") && favMeatSelected[1].classList.contains("unselected") && favMeatSelected[2].classList.contains("unselected") && favMeatSelected[3].classList.contains("unselected") && favMeatSelected[4].classList.contains("unselected") && favMeatSelected[5].classList.contains("unselected"))
+  {
+      isAllSelected[0].classList.replace("check-box-selected","unselected");
+      isAllSelected[1].classList.replace("unselected","check-box-selected");
+     } 
+
+    }
+    else
+    {
+        favMeatSelected[4].classList.replace("unselected","check-box-selected");
+
+        if( favMeatSelected[0].classList.contains("check-box-selected") && favMeatSelected[1].classList.contains("check-box-selected") && favMeatSelected[2].classList.contains("check-box-selected") && favMeatSelected[3].classList.contains("check-box-selected") && favMeatSelected[4].classList.contains("check-box-selected")&& favMeatSelected[5].classList.contains("check-box-selected"))
+        {
+          isAllSelected[0].classList.replace("unselected","check-box-selected");
+        checkIcons[0].style.display = "flex";
+        semiSelectedIcons[0].style.display = "none";
+      } else if( favMeatSelected[0].classList.contains("check-box-selected") || favMeatSelected[1].classList.contains("check-box-selected") || favMeatSelected[2].classList.contains("check-box-selected") || favMeatSelected[3].classList.contains("check-box-selected") || favMeatSelected[4].classList.contains("check-box-selected") || favMeatSelected[5].classList.contains("check-box-selected"))
+  {
+      isAllSelected[0].classList.replace("unselected","check-box-selected");
+      checkIcons[0].style.display = "none";
+      semiSelectedIcons[0].style.display = "flex";
+      
+  }   else if( favMeatSelected[0].classList.contains("unselected") && favMeatSelected[1].classList.contains("unselected") && favMeatSelected[2].classList.contains("unselected") && favMeatSelected[3].classList.contains("unselected") && favMeatSelected[4].classList.contains("unselected") && favMeatSelected[5].classList.contains("unselected"))
+  {
+      isAllSelected[0].classList.replace("check-box-selected","unselected");
+      isAllSelected[1].classList.replace("unselected","check-box-selected");
+  } 
+    }
+});
+
+favMeatSelected[5].addEventListener("click", ()=>{
+
+    if(favMeatSelected[5].classList.contains("check-box-selected"))
+    {
+        favMeatSelected[5].classList.replace("check-box-selected","unselected");
+
+        if( favMeatSelected[0].classList.contains("check-box-selected") && favMeatSelected[1].classList.contains("check-box-selected") && favMeatSelected[2].classList.contains("check-box-selected") && favMeatSelected[3].classList.contains("check-box-selected") && favMeatSelected[4].classList.contains("check-box-selected")&& favMeatSelected[5].classList.contains("check-box-selected"))
+        {
+          isAllSelected[0].classList.replace("unselected","check-box-selected");
+        checkIcons[0].style.display = "flex";
+        semiSelectedIcons[0].style.display = "none";
+      } else if( favMeatSelected[0].classList.contains("check-box-selected") || favMeatSelected[1].classList.contains("check-box-selected") || favMeatSelected[2].classList.contains("check-box-selected") || favMeatSelected[3].classList.contains("check-box-selected") || favMeatSelected[4].classList.contains("check-box-selected") || favMeatSelected[5].classList.contains("check-box-selected"))
+  {
+      isAllSelected[0].classList.replace("unselected","check-box-selected");
+      checkIcons[0].style.display = "none";
+      semiSelectedIcons[0].style.display = "flex";
+      
+  }   else if( favMeatSelected[0].classList.contains("unselected") && favMeatSelected[1].classList.contains("unselected") && favMeatSelected[2].classList.contains("unselected") && favMeatSelected[3].classList.contains("unselected") && favMeatSelected[4].classList.contains("unselected") && favMeatSelected[5].classList.contains("unselected"))
+  {
+      isAllSelected[0].classList.replace("check-box-selected","unselected");
+      isAllSelected[1].classList.replace("unselected","check-box-selected");
+ } 
+    }
+    else
+    {
+        favMeatSelected[5].classList.replace("unselected","check-box-selected");
+
+        if( favMeatSelected[0].classList.contains("check-box-selected") && favMeatSelected[1].classList.contains("check-box-selected") && favMeatSelected[2].classList.contains("check-box-selected") && favMeatSelected[3].classList.contains("check-box-selected") && favMeatSelected[4].classList.contains("check-box-selected")&& favMeatSelected[5].classList.contains("check-box-selected"))
+      {
+        isAllSelected[0].classList.replace("unselected","check-box-selected");
+      checkIcons[0].style.display = "flex";
+      semiSelectedIcons[0].style.display = "none";
+    } else if( favMeatSelected[0].classList.contains("check-box-selected") || favMeatSelected[1].classList.contains("check-box-selected") || favMeatSelected[2].classList.contains("check-box-selected") || favMeatSelected[3].classList.contains("check-box-selected") || favMeatSelected[4].classList.contains("check-box-selected") || favMeatSelected[5].classList.contains("check-box-selected"))
+{
+    isAllSelected[0].classList.replace("unselected","check-box-selected");
+    checkIcons[0].style.display = "none";
+    semiSelectedIcons[0].style.display = "flex";
+    
+}   else if( favMeatSelected[0].classList.contains("unselected") && favMeatSelected[1].classList.contains("unselected") && favMeatSelected[2].classList.contains("unselected") && favMeatSelected[3].classList.contains("unselected") && favMeatSelected[4].classList.contains("unselected") && favMeatSelected[5].classList.contains("unselected"))
+{
+    isAllSelected[0].classList.replace("check-box-selected","unselected");
+    isAllSelected[1].classList.replace("unselected","check-box-selected");
+}   
+}
+});
 
 
+isAllSelected[0].addEventListener("click", ()=>{
+if( favMeatSelected[0].classList.contains("unselected") || favMeatSelected[1].classList.contains("unselected") || favMeatSelected[2].classList.contains("unselected") | favMeatSelected[3].classList.contains("unselected") || favMeatSelected[4].classList.contains("unselected") || favMeatSelected[5].classList.contains("unselected"))
+{
+    isAllSelected[0].classList.replace("unselected","check-box-selected");
+    checkIcons[0].style.display = "flex";
+    semiSelectedIcons[0].style.display = "none";
+favMeatSelected.forEach(box => box.classList.replace("unselected","check-box-selected"));
+isAllSelected[1].classList.replace("check-box-selected","unselected");
+}else{
+    favMeatSelected.forEach(box => box.classList.replace("check-box-selected","unselected"));  
+    isAllSelected[1].classList.replace("unselected","check-box-selected");
+}
+});
 
+//  FALTANDO DESELECIONAR TODAS
 
-
-
-
-// Hasta aqui Logica de semiseleccion 
 ///////////// Fiquei aqui neste bloco (Acima) Logica de Semiseleção de checkbox===================================================
+
+
+
+
+
+
+
+
+
+
 
 //END Check box QUAL A SUA CARNE FAVORITA?====================================================================================
 
