@@ -490,11 +490,13 @@ favMeatSelected.forEach(box => box.classList.replace("unselected","check-box-sel
 isAllSelected[1].classList.replace("check-box-selected","unselected");
 }else{
     favMeatSelected.forEach(box => box.classList.replace("check-box-selected","unselected"));  
+    isAllSelected[0].classList.replace("check-box-selected","unselected");
     isAllSelected[1].classList.replace("unselected","check-box-selected");
 }
 });
 
-//  FALTANDO DESELECIONAR TODAS
+//  FALTANDO DESELECIONAR TODAS  
+// CARNE SUINA NO SELECIONA O TODOS
 
 ///////////// Fiquei aqui neste bloco (Acima) Logica de Semiseleção de checkbox===================================================
 
