@@ -1,4 +1,4 @@
-const enviar = document.querySelector(".submit-formulary")
+const enviar = document.querySelector(".submit-formulary");
 
 function verifyEmail (){
 
@@ -9,7 +9,7 @@ const inputs = document.querySelectorAll(".contact");
 console.log(inputs);
 
 const email = inputs[1].textContent;
-const validator = email.includes("@",".com",".br")
+const validator = email.includes("@",".com",".br");
 
 if (validator === true)
 {
@@ -24,12 +24,12 @@ return alert("Digite um email valido");
 }
 
 }
-enviar.addEventListener("click",verifyEmail)
+enviar.addEventListener("click",verifyEmail);
 
 
 
 // START Radio butons ==============COMO CONHECEU NOSSO SITE=========================================================
-const radButton = document.querySelectorAll(".radio-buton")
+const radButton = document.querySelectorAll(".radio-buton");
 const  selectOne = radButton[0].children[0];
 const selectTwo = radButton[1].children[0];
 const selectThree = radButton[2].children[0];
@@ -199,7 +199,8 @@ favMeatSelected[0].addEventListener("click", ()=>{
     if(favMeatSelected[0].classList.contains("check-box-selected"))
     {
         favMeatSelected[0].classList.replace("check-box-selected","unselected"); 
-        
+        isAllSelected[1].classList.replace("check-box-selected","unselected");
+
         if( favMeatSelected[0].classList.contains("check-box-selected") && favMeatSelected[1].classList.contains("check-box-selected") && favMeatSelected[2].classList.contains("check-box-selected") && favMeatSelected[3].classList.contains("check-box-selected") && favMeatSelected[4].classList.contains("check-box-selected")&& favMeatSelected[5].classList.contains("check-box-selected"))
         {
           isAllSelected[0].classList.replace("unselected","check-box-selected");
@@ -214,13 +215,14 @@ favMeatSelected[0].addEventListener("click", ()=>{
   }   else if(favMeatSelected[0].classList.contains("unselected") && favMeatSelected[1].classList.contains("unselected") && favMeatSelected[2].classList.contains("unselected") && favMeatSelected[3].classList.contains("unselected") && favMeatSelected[4].classList.contains("unselected") && favMeatSelected[5].classList.contains("unselected"))
   {
       isAllSelected[0].classList.replace("check-box-selected","unselected");
-      isAllSelected[1].classList.replace("unselected","check-box-selected");    //========================
+      isAllSelected[1].classList.replace("unselected","check-box-selected");    
      
   } 
     }
     else
     {
         favMeatSelected[0].classList.replace("unselected","check-box-selected");
+        isAllSelected[1].classList.replace("check-box-selected","unselected");
 
         if( favMeatSelected[0].classList.contains("check-box-selected") && favMeatSelected[1].classList.contains("check-box-selected") && favMeatSelected[2].classList.contains("check-box-selected") && favMeatSelected[3].classList.contains("check-box-selected") && favMeatSelected[4].classList.contains("check-box-selected")&& favMeatSelected[5].classList.contains("check-box-selected"))
         {
@@ -236,7 +238,7 @@ favMeatSelected[0].addEventListener("click", ()=>{
   }   else if( favMeatSelected[0].classList.contains("unselected") && favMeatSelected[1].classList.contains("unselected") && favMeatSelected[2].classList.contains("unselected") && favMeatSelected[3].classList.contains("unselected") && favMeatSelected[4].classList.contains("unselected") && favMeatSelected[5].classList.contains("unselected"))
   {
       isAllSelected[0].classList.replace("check-box-selected","unselected");
-      isAllSelected[1].classList.replace("unselected","check-box-selected");    //========================
+      isAllSelected[1].classList.replace("unselected","check-box-selected");    
      
   } 
     }
@@ -247,6 +249,7 @@ favMeatSelected[1].addEventListener("click", ()=>{
     if(favMeatSelected[1].classList.contains("check-box-selected"))
     {
         favMeatSelected[1].classList.replace("check-box-selected","unselected");
+        isAllSelected[1].classList.replace("check-box-selected","unselected");
 
         if( favMeatSelected[0].classList.contains("check-box-selected") && favMeatSelected[1].classList.contains("check-box-selected") && favMeatSelected[2].classList.contains("check-box-selected") && favMeatSelected[3].classList.contains("check-box-selected") && favMeatSelected[4].classList.contains("check-box-selected")&& favMeatSelected[5].classList.contains("check-box-selected"))
         {
@@ -270,7 +273,7 @@ favMeatSelected[1].addEventListener("click", ()=>{
     else
     {
         favMeatSelected[1].classList.replace("unselected","check-box-selected");
-
+        isAllSelected[1].classList.replace("check-box-selected","unselected");
 
         if( favMeatSelected[0].classList.contains("check-box-selected") && favMeatSelected[1].classList.contains("check-box-selected") && favMeatSelected[2].classList.contains("check-box-selected") && favMeatSelected[3].classList.contains("check-box-selected") && favMeatSelected[4].classList.contains("check-box-selected")&& favMeatSelected[5].classList.contains("check-box-selected"))
         {
@@ -298,6 +301,8 @@ favMeatSelected[2].addEventListener("click", ()=>{
     if(favMeatSelected[2].classList.contains("check-box-selected"))
     {
         favMeatSelected[2].classList.replace("check-box-selected","unselected");
+        isAllSelected[1].classList.replace("check-box-selected","unselected");
+
         if( favMeatSelected[0].classList.contains("check-box-selected") && favMeatSelected[1].classList.contains("check-box-selected") && favMeatSelected[2].classList.contains("check-box-selected") && favMeatSelected[3].classList.contains("check-box-selected") && favMeatSelected[4].classList.contains("check-box-selected")&& favMeatSelected[5].classList.contains("check-box-selected"))
         {
           isAllSelected[0].classList.replace("unselected","check-box-selected");
@@ -319,6 +324,7 @@ favMeatSelected[2].addEventListener("click", ()=>{
     else
     {
         favMeatSelected[2].classList.replace("unselected","check-box-selected");
+        isAllSelected[1].classList.replace("check-box-selected","unselected");
 
         if(favMeatSelected[0].classList.contains("check-box-selected") && favMeatSelected[1].classList.contains("check-box-selected") && favMeatSelected[2].classList.contains("check-box-selected") && favMeatSelected[3].classList.contains("check-box-selected") && favMeatSelected[4].classList.contains("check-box-selected")&& favMeatSelected[5].classList.contains("check-box-selected"))
         {
@@ -340,7 +346,8 @@ favMeatSelected[2].addEventListener("click", ()=>{
     }
 });
 
-favMeatSelected[3].addEventListener("click", ()=>{
+    favMeatSelected[3].addEventListener("click", ()=>{
+    isAllSelected[1].classList.replace("check-box-selected","unselected");
 
     if(favMeatSelected[3].classList.contains("check-box-selected"))
     {
@@ -366,13 +373,14 @@ favMeatSelected[3].addEventListener("click", ()=>{
     else
     {
         favMeatSelected[3].classList.replace("unselected","check-box-selected");
+        isAllSelected[1].classList.replace("check-box-selected","unselected");
 
         if( favMeatSelected[0].classList.contains("check-box-selected") && favMeatSelected[1].classList.contains("check-box-selected") && favMeatSelected[2].classList.contains("check-box-selected") && favMeatSelected[3].classList.contains("check-box-selected") && favMeatSelected[4].classList.contains("check-box-selected")&& favMeatSelected[5].classList.contains("check-box-selected"))
         {
           isAllSelected[0].classList.replace("unselected","check-box-selected");
         checkIcons[0].style.display = "flex";
         semiSelectedIcons[0].style.display = "none";
-      } else if(f( favMeatSelected[0].classList.contains("check-box-selected") || favMeatSelected[1].classList.contains("check-box-selected") || favMeatSelected[2].classList.contains("check-box-selected") || favMeatSelected[3].classList.contains("check-box-selected") || favMeatSelected[4].classList.contains("check-box-selected") || favMeatSelected[5].classList.contains("check-box-selected")))
+      } else if( favMeatSelected[0].classList.contains("check-box-selected") || favMeatSelected[1].classList.contains("check-box-selected") || favMeatSelected[2].classList.contains("check-box-selected") || favMeatSelected[3].classList.contains("check-box-selected") || favMeatSelected[4].classList.contains("check-box-selected") || favMeatSelected[5].classList.contains("check-box-selected"))
   {
       isAllSelected[0].classList.replace("unselected","check-box-selected");
       checkIcons[0].style.display = "none";
@@ -391,6 +399,7 @@ favMeatSelected[4].addEventListener("click", ()=>{
     if(favMeatSelected[4].classList.contains("check-box-selected"))
     {
         favMeatSelected[4].classList.replace("check-box-selected","unselected");
+        isAllSelected[1].classList.replace("check-box-selected","unselected"); 
 
         if( favMeatSelected[0].classList.contains("check-box-selected") && favMeatSelected[1].classList.contains("check-box-selected") && favMeatSelected[2].classList.contains("check-box-selected") && favMeatSelected[3].classList.contains("check-box-selected") && favMeatSelected[4].classList.contains("check-box-selected")&& favMeatSelected[5].classList.contains("check-box-selected"))
         {
@@ -413,6 +422,7 @@ favMeatSelected[4].addEventListener("click", ()=>{
     else
     {
         favMeatSelected[4].classList.replace("unselected","check-box-selected");
+        isAllSelected[1].classList.replace("check-box-selected","unselected");
 
         if( favMeatSelected[0].classList.contains("check-box-selected") && favMeatSelected[1].classList.contains("check-box-selected") && favMeatSelected[2].classList.contains("check-box-selected") && favMeatSelected[3].classList.contains("check-box-selected") && favMeatSelected[4].classList.contains("check-box-selected")&& favMeatSelected[5].classList.contains("check-box-selected"))
         {
@@ -438,6 +448,7 @@ favMeatSelected[5].addEventListener("click", ()=>{
     if(favMeatSelected[5].classList.contains("check-box-selected"))
     {
         favMeatSelected[5].classList.replace("check-box-selected","unselected");
+        isAllSelected[1].classList.replace("check-box-selected","unselected");
 
         if( favMeatSelected[0].classList.contains("check-box-selected") && favMeatSelected[1].classList.contains("check-box-selected") && favMeatSelected[2].classList.contains("check-box-selected") && favMeatSelected[3].classList.contains("check-box-selected") && favMeatSelected[4].classList.contains("check-box-selected")&& favMeatSelected[5].classList.contains("check-box-selected"))
         {
@@ -459,6 +470,7 @@ favMeatSelected[5].addEventListener("click", ()=>{
     else
     {
         favMeatSelected[5].classList.replace("unselected","check-box-selected");
+        isAllSelected[1].classList.replace("check-box-selected","unselected");
 
         if( favMeatSelected[0].classList.contains("check-box-selected") && favMeatSelected[1].classList.contains("check-box-selected") && favMeatSelected[2].classList.contains("check-box-selected") && favMeatSelected[3].classList.contains("check-box-selected") && favMeatSelected[4].classList.contains("check-box-selected")&& favMeatSelected[5].classList.contains("check-box-selected"))
       {
@@ -479,7 +491,6 @@ favMeatSelected[5].addEventListener("click", ()=>{
 }
 });
 
-
 isAllSelected[0].addEventListener("click", ()=>{
 if( favMeatSelected[0].classList.contains("unselected") || favMeatSelected[1].classList.contains("unselected") || favMeatSelected[2].classList.contains("unselected") | favMeatSelected[3].classList.contains("unselected") || favMeatSelected[4].classList.contains("unselected") || favMeatSelected[5].classList.contains("unselected"))
 {
@@ -494,6 +505,22 @@ isAllSelected[1].classList.replace("check-box-selected","unselected");
     isAllSelected[1].classList.replace("unselected","check-box-selected");
 }
 });
+
+
+isAllSelected[1].addEventListener("click", ()=>{
+    if( favMeatSelected[0].classList.contains("check-box-selected") || favMeatSelected[1].classList.contains("check-box-selected") || favMeatSelected[2].classList.contains("check-box-selected") | favMeatSelected[3].classList.contains("check-box-selected") || favMeatSelected[4].classList.contains("check-box-selected") || favMeatSelected[5].classList.contains("check-box-selected"))
+    {
+        favMeatSelected.forEach(box => box.classList.replace("check-box-selected","unselected"));  
+        isAllSelected[0].classList.replace("check-box-selected","unselected");
+        isAllSelected[1].classList.replace("unselected","check-box-selected");
+    }else if(isAllSelected[1].classList.contains("check-box-selected"))
+    {
+       isAllSelected[1].classList.replace("check-box-selected","unselected");
+    } else
+    {
+        isAllSelected[1].classList.replace("unselected","check-box-selected");
+    }
+    });
 
 //  FALTANDO DESELECIONAR TODAS  
 // CARNE SUINA NO SELECIONA O TODOS
