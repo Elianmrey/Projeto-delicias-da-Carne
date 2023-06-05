@@ -214,11 +214,13 @@ favMeatSelected[0].addEventListener("click", ()=>{
       checkIcons[0].style.display = "none";
       semiSelectedIcons[0].style.display = "flex";
       
-  }   else if(favMeatSelected[0].classList.contains("unselected") && favMeatSelected[1].classList.contains("unselected") && favMeatSelected[2].classList.contains("unselected") && favMeatSelected[3].classList.contains("unselected") && favMeatSelected[4].classList.contains("unselected") && favMeatSelected[5].classList.contains("unselected"))
+  }  
+   else if(favMeatSelected[0].classList.contains("unselected") && favMeatSelected[1].classList.contains("unselected") && favMeatSelected[2].classList.contains("unselected") && favMeatSelected[3].classList.contains("unselected") && favMeatSelected[4].classList.contains("unselected") && favMeatSelected[5].classList.contains("unselected"))
   {
       isAllSelected[0].classList.replace("check-box-selected","unselected");
-      isAllSelected[1].classList.replace("unselected","check-box-selected");    
-     
+            isAllSelected[1].classList.replace("unselected", "check-box-selected");    
+            
+     console.log("Agora estou em TODAS DESELECIONADAS EM ELSE")
   } 
     }
     else
@@ -313,6 +315,7 @@ favMeatSelected[2].addEventListener("click", ()=>{
     {
         favMeatSelected[2].classList.replace("check-box-selected","unselected");
         isAllSelected[1].classList.replace("check-box-selected","unselected");
+        
 
         console.log("Deselecionou em carnes favoritas CARNES TRADICIONAIS")
 
@@ -511,10 +514,10 @@ favMeatSelected[5].addEventListener("click", ()=>{
 });
 // ANALISANDO PORQUE NÃO MARCA CUANDO LO CLICO =========================================
 
-//FIQUEI AQUI==============================
+//FIQUEI AQUI O ERRO ESTÁ EM QUE FALTA UM ELSE PREVENDO O COMPORTAMENTO EXTRANHO DE FALTA DE SELEÇÃO APÓS DESELECIONAR==============================
 
 isAllSelected[0].addEventListener("click", ()=>{
-if( favMeatSelected[0].classList.contains("unselected") || favMeatSelected[1].classList.contains("unselected") || favMeatSelected[2].classList.contains("unselected") | favMeatSelected[3].classList.contains("unselected") || favMeatSelected[4].classList.contains("unselected") || favMeatSelected[5].classList.contains("unselected"))
+    if (isAllSelected[0].classList.contains("unselected"))
 {
     isAllSelected[0].classList.replace("unselected","check-box-selected");
     checkIcons[0].style.display = "flex";
@@ -524,14 +527,22 @@ isAllSelected[1].classList.replace("check-box-selected","unselected");
 
 console.log("Selecionou em carnes favoritas TODAS AS CARNES ANTERIORES com check-box Marcar/Desmarcar todas")
 
-}else 
-{
-    favMeatSelected.forEach(box => box.classList.replace("check-box-selected","unselected"));  
-    isAllSelected[0].classList.replace("check-box-selected","unselected");
-    isAllSelected[1].classList.replace("unselected","check-box-selected");
+    } else if (isAllSelected[0].classList.contains("check-box-selected"))
+    {
+      
+        isAllSelected[0].classList.replace("check-box-selected", "unselected");
+        favMeatSelected.forEach(box => box.classList.replace("check-box-selected", "unselected"));
 
-    console.log("Deselecionou em carnes favoritas TODAS AS CARNES ANTERIORES com check-box Marcar/Desmarcar todas")
+    console.log("DeSelecionou em carnes favoritas TODAS AS");
 }
+    else if (favMeatSelected.classList.contains("unselected"))
+ {
+        favMeatSelected.forEach(box => box.classList.replace("unselected","check-box-selected"));  
+        isAllSelected[0].classList.replace("unselected","check-box-selected");
+        isAllSelected[1].classList.replace("check-box-selected", "unselected");
+
+     console.log("Selecionou em carnes favoritas TODAS AS CARNES ANTERIORES com check-box Marcar/Desmarcar todas em ultimo else (Ultima situação)")
+ }
 });
 // ANALISANDO PORQUE NÃO MARCA CUANDO LO CLICO =========================================
 
