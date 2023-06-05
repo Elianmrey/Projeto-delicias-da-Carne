@@ -689,8 +689,6 @@ div.check-box
     border-left: 1px solid white;
     border-right: 1px solid white;
     border-bottom: 1px solid white;
-    
- 
 }
 
 div.container-check-and-span
@@ -756,9 +754,9 @@ div.span-check-box-container-reject-all-select-all
     display: flex;
     flex-direction: column;
     justify-content: left;
-    color: #fccccc;   
-     
+    color: #fccccc;     
 }
+
 /* ===================================////Check box */
 
 /* =================================================Gostaria de receber nossas ofertas? (Radio Buttons) ================================= */
