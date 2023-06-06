@@ -1,3 +1,4 @@
+
 const enviar = document.querySelector(".submit-formulary");
 
 function verifyEmail (){
