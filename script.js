@@ -504,7 +504,7 @@ else if(askOffer[0].classList.value !== "check-howtosend-buton-selected" && askO
                 askOffer[1].classList.remove("check-howtosend-buton-selected");
                 askOffer[3].classList.add("check-howtosend-buton-selected");
                 semiSelected.style.display = "flex";
-                checked[3].style.display = "none"
+                checked[3].style.display = "none";
 
                 console.log("NÃO Selecionou Via TELEFONE");
 // Quando os 3 primeiros estão selecionados 
