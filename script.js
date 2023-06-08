@@ -182,11 +182,9 @@ function preventDefault() {
 
 }
 preventDefault();
-
-//Fiquei aqui Função para tomar o status do checkbox======================================================================================================================
-
+//  Reconhece quando estão todas selecionadas.
 function getStatus() {
-    let statusGroup = false;
+    let statusGroup = true;
     let classValue = "check-box-selected";
     let counterElements = 0;
     const totalFavitemSelection = [];
@@ -210,16 +208,19 @@ function getStatus() {
         statusGroup = false;
     }
 
-    if (statusGroup === true) {
+    if (counterElements >= 5 ) {
         isAllSelected[0].classList.add("check-box-selected-reject-all-select-all");
-    } else if (statusGroup === false) {
+        checkIcons[0].style.display = "flex";
+    } else if (counterElements <= 1) {
         isAllSelected[0].classList.remove("check-box-selected-reject-all-select-all");
+        console.log(statusGroup);
     }
-    else {
-        isAllSelected[0].classList.remove("check-box-selected-reject-all-select-all");
-        checkIcons[0].style.display = "none";
-        semiSelectedIcons[0].style.display = "flex";
-    }
+    else if (statusGroup === true)
+    {
+        isAllSelected[0].classList.add("check-box-selected-reject-all-select-all");
+        checkIcons[0].style.display = "flex";
+        
+        }
     // console.log(totalFavitemSelection);
     // console.log("Total Selection "+statusGroup);
     // console.log("Partial Selection " + partialSelection);
@@ -237,6 +238,13 @@ function getPartialSelectionStatus() {
         favMeatSelected[4].classList.contains("check-box-selected") ||
         favMeatSelected[5].classList.contains("check-box-selected")) {
 
+        
+
+        isAllSelected[0].classList.add("check-box-selected-reject-all-select-all")
+        checkIcons[0].style.display = "none"
+        semiSelectedIcons[0].style.display = "flex";
+        
+        
         if (favMeatSelected[0].classList.contains("check-box-selected") &&
             favMeatSelected[1].classList.contains("check-box-selected") &&
             favMeatSelected[2].classList.contains("check-box-selected") &&
@@ -247,132 +255,119 @@ function getPartialSelectionStatus() {
 
             checkIcons[0].style.display = "flex"
             semiSelectedIcons[0].style.display = "none";
-        } else {
-
-            isAllSelected[0].classList.add("check-box-selected-reject-all-select-all")
-            checkIcons[0].style.display = "none"
-            semiSelectedIcons[0].style.display = "flex";
         }
-
-        if (favMeatSelected[0].classList.value !== "check-box-selected" &&
-            favMeatSelected[1].classList.value !== "check-box-selected" &&
-            favMeatSelected[2].classList.value !== "check-box-selected" &&
-            favMeatSelected[3].classList.value !== "check-box-selected" &&
-            favMeatSelected[4].classList.value !== "check-box-selected" &&
-            favMeatSelected[5].classList.value !== "check-box-selected") {
-            isAllSelected[0].classList.remove("check-box-selected-reject-all-select-all")
-        }
-
-    }
-
-
+}
 }
 
 
-
-//Analisando //^^^^^^^^^^======================================
-
-
-
-
-
-
+//Seleciona 1ra categoria Checkbox  Carnes Exoticas=====================
 
 favMeatSelected[0].addEventListener("click", () => {
 
     if (favMeatSelected[0].classList.contains("check-box-selected")) {
-        favMeatSelected[0].classList.replace("check-box-selected", "unselected");
-        isAllSelected[1].classList.replace("check-box-selected", "unselected");
+        favMeatSelected[0].classList.remove("check-box-selected");
+        isAllSelected[1].classList.remove("check-box-selected-reject-all-select-all");
         getStatus();
         getPartialSelectionStatus();
         console.log("Deselecionou em carnes favoritas CARNES EXÓTICAS");
     }
     else {
-        favMeatSelected[0].classList.replace("unselected", "check-box-selected");
-        isAllSelected[1].classList.replace("check-box-selected-reject-all-select-all", "unselected");
+        favMeatSelected[0].classList.add("check-box-selected");
+       isAllSelected[1].classList.remove("check-box-selected-reject-all-select-all");
         getStatus();
         getPartialSelectionStatus();
         console.log("Selecionou em carnes favoritas CARNES EXÓTICAS");
     }
 });
 
+//Seleciona 2da categoria  Checkbox  Carnes Nobres=====================
+
 favMeatSelected[1].addEventListener("click", () => {
 
     if (favMeatSelected[1].classList.contains("check-box-selected")) {
-        favMeatSelected[1].classList.replace("check-box-selected", "unselected");
-        isAllSelected[1].classList.replace("check-box-selected-reject-all-select-all", "unselected");
+        favMeatSelected[1].classList.remove("check-box-selected");
+        isAllSelected[1].classList.remove("check-box-selected-reject-all-select-all");
         getStatus();
         getPartialSelectionStatus();
         console.log("Deselecionou em carnes favoritas CARNES NOBRES");
     }
     else {
-        favMeatSelected[1].classList.replace("unselected", "check-box-selected");
-        isAllSelected[1].classList.replace("check-box-selected-reject-all-select-all", "unselected");
+        favMeatSelected[1].classList.add("check-box-selected");
+        isAllSelected[1].classList.remove("check-box-selected-reject-all-select-all");
         getStatus();
         getPartialSelectionStatus();
         console.log("Selecionou em carnes favoritas CARNES NOBRES");
     }
 });
 
+//Seleciona 3ra categoria  Checkbox  Carnes Tradicionais=====================
+
 favMeatSelected[2].addEventListener("click", () => {
 
     if (favMeatSelected[2].classList.contains("check-box-selected")) {
-        favMeatSelected[2].classList.replace("check-box-selected", "unselected");
-        isAllSelected[1].classList.replace("check-box-selected", "unselected");
+        favMeatSelected[2].classList.remove("check-box-selected");
+        isAllSelected[1].classList.remove("check-box-selected-reject-all-select-al");
         getStatus();
         getPartialSelectionStatus();
         console.log("Deselecionou em carnes favoritas CARNES TRADICIONAIS");
     }
     else {
-        favMeatSelected[2].classList.replace("unselected", "check-box-selected");
-        isAllSelected[1].classList.replace("check-box-selected-reject-all-select-all", "unselected");
+        favMeatSelected[2].classList.add("check-box-selected");
+        isAllSelected[1].classList.remove("check-box-selected-reject-all-select-al");
         getStatus();
         getPartialSelectionStatus();
         console.log("Selecionou em carnes favoritas CARNES TRADICIONAIS");
     }
 });
 
+//Seleciona 4ta categoria  Checkbox  Carne Ovinna===============================
+
 favMeatSelected[3].addEventListener("click", () => {
 
     if (favMeatSelected[3].classList.contains("check-box-selected")) {
-        favMeatSelected[3].classList.replace("check-box-selected", "unselected");
-        isAllSelected[1].classList.replace("check-box-selected-reject-all-select-all", "unselected");
+        favMeatSelected[3].classList.remove("check-box-selected");
+        isAllSelected[1].classList.remove("check-box-selected-reject-all-select-al");
         getStatus();
         getPartialSelectionStatus();
         console.log("Deselecionou em carnes favoritas CARNE SUINA");
     }
     else {
-        favMeatSelected[3].classList.replace("unselected", "check-box-selected");
-        isAllSelected[1].classList.replace("check-box-selected-reject-all-select-all", "unselected");
+        favMeatSelected[3].classList.add("check-box-selected");
+        isAllSelected[1].classList.remove("check-box-selected-reject-all-select-al");
         getStatus();
         getPartialSelectionStatus();
         console.log("Selecionou em carnes favoritas CARNE SUINA");
     }
 });
 
+
+//Seleciona 5ta categoria Checkbox  Carne Bovina===============================
+
 favMeatSelected[4].addEventListener("click", () => {
 
     if (favMeatSelected[4].classList.contains("check-box-selected")) {
-        favMeatSelected[4].classList.replace("check-box-selected", "unselected");
-        isAllSelected[1].classList.replace("check-box-selected-reject-all-select-all", "unselected");
+        favMeatSelected[4].classList.remove("check-box-selected");
+        isAllSelected[1].classList.remove("check-box-selected-reject-all-select-al");
         getStatus();
         getPartialSelectionStatus();
         console.log("Deselecionou em carnes favoritas CARNE BOVINA");
 
     }
     else {
-        favMeatSelected[4].classList.replace("unselected", "check-box-selected");
-        isAllSelected[1].classList.replace("check-box-selected-reject-all-select-all", "unselected");
+        favMeatSelected[4].classList.add("check-box-selected");
+        isAllSelected[1].classList.remove("check-box-selected-reject-all-select-al");
         getStatus();
         getPartialSelectionStatus();
         console.log("Selecionou em carnes favoritas CARNE BOVINA");
     }
 });
 
+//Seleciona 6ta categoria  =============================
+
 favMeatSelected[5].addEventListener("click", () => {
 
     if (favMeatSelected[5].classList.contains("check-box-selected")) {
-        favMeatSelected[5].classList.replace("check-box-selected", "unselected");
+        favMeatSelected[5].classList.remove("check-box-selected");
         isAllSelected[1].classList.replace("check-box-selected-reject-all-select-all", "unselected");
         getStatus();
         getPartialSelectionStatus();
@@ -380,15 +375,15 @@ favMeatSelected[5].addEventListener("click", () => {
 
     }
     else {
-        favMeatSelected[5].classList.replace("unselected", "check-box-selected");
-        isAllSelected[1].classList.replace("check-box-selected-reject-all-select-all", "unselected");
+        favMeatSelected[5].classList.add("check-box-selected");
+        isAllSelected[1].classList.remove("check-box-selected-reject-all-select-al");
         getStatus();
         getPartialSelectionStatus();
         console.log("Selecionou em carnes favoritas CARNE OVINA");
     }
 });
-// ANALISANDO PORQUE NÃO MARCA CUANDO LO CLICO =========================================
-console.log(isAllSelected[0].classList);
+// Selecionar todos os produtos
+
 isAllSelected[0].addEventListener("click", () => {
 
     if (isAllSelected[0].classList.value === "") {
@@ -406,7 +401,7 @@ isAllSelected[0].addEventListener("click", () => {
         checkIcons[0].style.display = "flex"
         semiSelectedIcons[0].style.display = "none"
         favMeatSelected.forEach(box => box.classList.add("check-box-selected"));
-        isAllSelected[1].classList.add("check-box-selected-reject-all-select-all");
+        isAllSelected[1].classList.remove("check-box-selected-reject-all-select-al");
         console.log("DeSelecionou em carnes favoritas TODAS AS");
 
 
@@ -434,14 +429,14 @@ isAllSelected[0].addEventListener("click", () => {
             favMeatSelected.forEach(box => box.classList.add("check-box-selected"));
             isAllSelected[1].classList.remove("check-box-selected-reject-all-select-all");
 
-        }
+ }
     }
 });
 // ANALISANDO PORQUE NÃO MARCA CUANDO LO CLICO =========================================
 
 isAllSelected[1].addEventListener("click", () => {
     if (favMeatSelected[0].classList.contains("check-box-selected") || favMeatSelected[1].classList.contains("check-box-selected") || favMeatSelected[2].classList.contains("check-box-selected") | favMeatSelected[3].classList.contains("check-box-selected") || favMeatSelected[4].classList.contains("check-box-selected") || favMeatSelected[5].classList.contains("check-box-selected")) {
-        favMeatSelected.forEach(box => box.classList.replace("check-box-selected", "unselected"));
+        favMeatSelected.forEach(box => box.classList.remove("check-box-selected"));
         isAllSelected[0].classList.remove("check-box-selected-reject-all-select-all");
         isAllSelected[1].classList.add("check-box-selected-reject-all-select-all");
 
@@ -451,20 +446,11 @@ isAllSelected[1].addEventListener("click", () => {
         isAllSelected[1].classList.remove("check-box-selected-reject-all-select-all");
         console.log("Deselecionou em carnes favoritas NENHUMA DAS CARNES ANTERIORES com check-box Nenhuma das anteriores")
 
+    } else if(isAllSelected[1].classList.contains("")){ 
+        isAllSelected[1].classList.add("check-box-selected-reject-all");
     }
-    // else if (checkIcons[0].style.display === "flex" && isAllSelected[0].classList.contains("check-box-selected-reject-all-select-all")) {
-
-    //     isAllSelected[0].classList.remove("check-box-selected-reject-all-select-all")
-    //     checkIcons[0].style.display === "none"
-    // }
-    // else
-    // {
-    //     isAllSelected[1].classList.add("check-box-selected-reject-all-select-all");
-    //     console.log("Selecionou em carnes favoritas NENHUMA DAS CARNES ANTERIORES com check-box Nenhuma das anteriores")
-    // }
+   
 });
-
-
 
 //END Check box QUAL A SUA CARNE FAVORITA?====================================================================================
 
