@@ -417,10 +417,11 @@ isAllSelected[0].addEventListener("click", () => {
         isAllSelected[0].classList.remove("check-box-selected-reject-all-select-all");
         isAllSelected[1].classList.add("check-box-selected-reject-all-select-all");
 
+
         console.log("DESELECIONOU em carnes favoritas TODAS AS CARNES ANTERIORES com check-box Marcar/Desmarcar todas em ultimo else (Ultima situação)")
     }
 
-    if (isAllSelected[0].classList.contains("check-box-selected-reject-all-select-all")) {
+   else if (isAllSelected[0].classList.contains("check-box-selected-reject-all-select-all")) {
         if (favMeatSelected[0].classList.contains("check-box-selected") ||
             favMeatSelected[1].classList.contains("check-box-selected") ||
             favMeatSelected[2].classList.contains("check-box-selected") ||
@@ -431,16 +432,8 @@ isAllSelected[0].addEventListener("click", () => {
             checkIcons[0].style.display = "flex"
             semiSelectedIcons[0].style.display = "none"
             favMeatSelected.forEach(box => box.classList.add("check-box-selected"));
-            isAllSelected[1].classList.add("check-box-selected-reject-all-select-all");
+            isAllSelected[1].classList.remove("check-box-selected-reject-all-select-all");
 
-        } else if (favMeatSelected[0].classList.contains("check-box-selected") &&
-            favMeatSelected[1].classList.contains("check-box-selected") &&
-            favMeatSelected[2].classList.contains("check-box-selected") &&
-            favMeatSelected[3].classList.contains("check-box-selected") &&
-            favMeatSelected[4].classList.contains("check-box-selected") &&
-            favMeatSelected[5].classList.contains("check-box-selected")) {
-
-            isAllSelected[0].classList.remove("check-box-selected-reject-all-select-all")
         }
     }
 });
