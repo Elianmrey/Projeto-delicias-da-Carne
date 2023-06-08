@@ -181,8 +181,12 @@ function preventDefault() {
     });
 
 }
+
 preventDefault();
+
+
 //  Reconhece quando estão todas selecionadas.
+
 function getStatus() {
     let statusGroup = true;
     let classValue = "check-box-selected";
@@ -227,7 +231,7 @@ function getStatus() {
     return totalFavitemSelection;
 
 }
-
+// ANALIZANDO GETSTATUS ~^^^^^^^^^^====================================================
 
 function getPartialSelectionStatus() {
 
@@ -382,7 +386,8 @@ favMeatSelected[5].addEventListener("click", () => {
         console.log("Selecionou em carnes favoritas CARNE OVINA");
     }
 });
-// Selecionar todos os produtos
+
+// Selecionar todos os produtos====================================================================
 
 isAllSelected[0].addEventListener("click", () => {
 
