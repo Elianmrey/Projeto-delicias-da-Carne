@@ -164,7 +164,6 @@ radButton[7].addEventListener("click", () => {
 
 
 
-// ///////================================Fiquei aqui***********************------------------------*****************************************
 
 //Check box QUAL A SUA CARNE FAVORITA?====================================================================================
 const favMeatSelected = document.querySelectorAll(".check-box-selected");
