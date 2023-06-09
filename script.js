@@ -1,32 +1,52 @@
 
 const enviar = document.querySelector(".submit-formulary");
 
+
 function verifyEmail() {
+    const name = document.getElementsByName("name");
 
-    /*Verificando o email*/
+    const email = document.getElementsByName("email");
+    const validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+      
+        if (email.value.match(validRegex)) {
+      
+          alert("Email Valido");
+      
+          document.form1.text1.focus();
+      
+          return true;
+      
+        } else {
+      
+          alert("Email Invalido");
+      
+          document.form1.text1.focus();
+      
+          return false;
+      
+        }
 
-    const inputs = document.querySelectorAll(".contact");
+      }
 
-    console.log(inputs);
-
-    const email = inputs[1].textContent;
-    const validator = email.includes("@", ".com", ".br");
-
-    if (validator === true) {
-        console.log("Email válido");
-        return alert("Email Valido");
-
-    } else {
-        console.log("Email invalido");
-        return alert("Digite um email valido");
-
-    }
-
-}
 enviar.addEventListener("click", verifyEmail);
 
 
 
+
+
+// TRABALHANDO AQUI=====================================================================
+const paragrafoUm = document.querySelector(".curiosityOne");
+const paragrafoDois = document.querySelector(".curiosityTwo");
+
+setInterval(()=>{paragrafoUm.style.display = "flex";
+
+}, 5000);
+
+
+
+
+
+/*====================================================FORMULARIO======================================================================*/
 // START Radio butons ==============COMO CONHECEU NOSSO SITE=========================================================
 const radButton = document.querySelectorAll(".radio-buton");
 const selectOne = radButton[0].children[0];
@@ -37,10 +57,16 @@ const selectFive = radButton[4].children[0];
 const selectSix = radButton[5].children[0];
 const selectSeven = radButton[6].children[0];
 const selectEight = radButton[7].children[0];
+let value = "";
 
+selectOne.classList.value = "radio-buton-selected";
 
 radButton[0].addEventListener("click", () => {
+
     if (selectOne.classList.contains("radio-buton-unselected")) {
+        
+        value = "Sou cliente frequente de Delicias da Carne";
+
         selectOne.classList.replace("radio-buton-unselected", "radio-buton-selected")
         selectTwo.classList.replace("radio-buton-selected", "radio-buton-unselected")
         selectThree.classList.replace("radio-buton-selected", "radio-buton-unselected")
@@ -49,12 +75,14 @@ radButton[0].addEventListener("click", () => {
         selectSix.classList.replace("radio-buton-selected", "radio-buton-unselected")
         selectSeven.classList.replace("radio-buton-selected", "radio-buton-unselected")
         selectEight.classList.replace("radio-buton-selected", "radio-buton-unselected")
-    } else {
-        selectOne.classList.replace("radio-buton-selected", "radio-buton-unselected")
-    }
+    } 
 });
 radButton[1].addEventListener("click", () => {
+
     if (selectTwo.classList.contains("radio-buton-unselected")) {
+
+        value = "Um amigo que é cliente o recomendou";
+
         selectTwo.classList.replace("radio-buton-unselected", "radio-buton-selected")
         selectOne.classList.replace("radio-buton-selected", "radio-buton-unselected")
         selectThree.classList.replace("radio-buton-selected", "radio-buton-unselected")
@@ -63,12 +91,14 @@ radButton[1].addEventListener("click", () => {
         selectSix.classList.replace("radio-buton-selected", "radio-buton-unselected")
         selectSeven.classList.replace("radio-buton-selected", "radio-buton-unselected")
         selectEight.classList.replace("radio-buton-selected", "radio-buton-unselected")
-    } else {
-        selectTwo.classList.replace("radio-buton-selected", "radio-buton-unselected")
-    }
+    } 
 });
 radButton[2].addEventListener("click", () => {
+
     if (selectThree.classList.contains("radio-buton-unselected")) {
+
+        value = "Vi os anúncios em redes sociais";
+        
         selectThree.classList.replace("radio-buton-unselected", "radio-buton-selected")
         selectOne.classList.replace("radio-buton-selected", "radio-buton-unselected")
         selectTwo.classList.replace("radio-buton-selected", "radio-buton-unselected")
@@ -77,12 +107,14 @@ radButton[2].addEventListener("click", () => {
         selectSix.classList.replace("radio-buton-selected", "radio-buton-unselected")
         selectSeven.classList.replace("radio-buton-selected", "radio-buton-unselected")
         selectEight.classList.replace("radio-buton-selected", "radio-buton-unselected")
-    } else {
-        selectThree.classList.replace("radio-buton-selected", "radio-buton-unselected")
-    }
+    } 
 });
 radButton[3].addEventListener("click", () => {
+
     if (selectFour.classList.contains("radio-buton-unselected")) {
+
+        value = "Soube do site na loja física";
+
         selectFour.classList.replace("radio-buton-unselected", "radio-buton-selected")
         selectOne.classList.replace("radio-buton-selected", "radio-buton-unselected")
         selectTwo.classList.replace("radio-buton-selected", "radio-buton-unselected")
@@ -91,14 +123,16 @@ radButton[3].addEventListener("click", () => {
         selectSix.classList.replace("radio-buton-selected", "radio-buton-unselected")
         selectSeven.classList.replace("radio-buton-selected", "radio-buton-unselected")
         selectEight.classList.replace("radio-buton-selected", "radio-buton-unselected")
-    } else {
-        selectFour.classList.replace("radio-buton-selected", "radio-buton-unselected")
-    }
+    } 
 });
 
 
 radButton[4].addEventListener("click", () => {
+
     if (selectFive.classList.contains("radio-buton-unselected")) {
+
+        value = "Cai aqui por ventura";
+        
         selectFive.classList.replace("radio-buton-unselected", "radio-buton-selected")
         selectOne.classList.replace("radio-buton-selected", "radio-buton-unselected")
         selectTwo.classList.replace("radio-buton-selected", "radio-buton-unselected")
@@ -107,13 +141,15 @@ radButton[4].addEventListener("click", () => {
         selectSix.classList.replace("radio-buton-selected", "radio-buton-unselected")
         selectSeven.classList.replace("radio-buton-selected", "radio-buton-unselected")
         selectEight.classList.replace("radio-buton-selected", "radio-buton-unselected")
-    } else {
-        selectFive.classList.replace("radio-buton-selected", "radio-buton-unselected")
-    }
+    } 
 });
 
 radButton[5].addEventListener("click", () => {
+
     if (selectSix.classList.contains("radio-buton-unselected")) {
+
+        value = "Já sabia que existia mas ainda não comprei";
+
         selectSix.classList.replace("radio-buton-unselected", "radio-buton-selected")
         selectOne.classList.replace("radio-buton-selected", "radio-buton-unselected")
         selectTwo.classList.replace("radio-buton-selected", "radio-buton-unselected")
@@ -122,13 +158,14 @@ radButton[5].addEventListener("click", () => {
         selectFive.classList.replace("radio-buton-selected", "radio-buton-unselected")
         selectSeven.classList.replace("radio-buton-selected", "radio-buton-unselected")
         selectEight.classList.replace("radio-buton-selected", "radio-buton-unselected")
-    } else {
-        selectSix.classList.replace("radio-buton-selected", "radio-buton-unselected")
-    }
+    } 
 });
 
 radButton[6].addEventListener("click", () => {
+
     if (selectSeven.classList.contains("radio-buton-unselected")) {
+
+        value = "Todas as anteriores";
         selectSeven.classList.replace("radio-buton-unselected", "radio-buton-selected")
         selectOne.classList.replace("radio-buton-selected", "radio-buton-unselected")
         selectTwo.classList.replace("radio-buton-selected", "radio-buton-unselected")
@@ -137,13 +174,12 @@ radButton[6].addEventListener("click", () => {
         selectFive.classList.replace("radio-buton-selected", "radio-buton-unselected")
         selectSix.classList.replace("radio-buton-selected", "radio-buton-unselected")
         selectEight.classList.replace("radio-buton-selected", "radio-buton-unselected")
-    } else {
-        selectSeven.classList.replace("radio-buton-selected", "radio-buton-unselected")
     }
 });
 
 radButton[7].addEventListener("click", () => {
     if (selectEight.classList.contains("radio-buton-unselected")) {
+        value = "Todas as anteriores"
         selectEight.classList.replace("radio-buton-unselected", "radio-buton-selected")
         selectOne.classList.replace("radio-buton-selected", "radio-buton-unselected")
         selectTwo.classList.replace("radio-buton-selected", "radio-buton-unselected")
@@ -152,11 +188,9 @@ radButton[7].addEventListener("click", () => {
         selectFive.classList.replace("radio-buton-selected", "radio-buton-unselected")
         selectSix.classList.replace("radio-buton-selected", "radio-buton-unselected")
         selectSeven.classList.replace("radio-buton-selected", "radio-buton-unselected")
-    } else {
-        selectEight.classList.replace("radio-buton-selected", "radio-buton-unselected")
-    }
+    } 
 });
-
+console.log(value);
 // END Radio butons ==============COMO CONHECEU NOSSO SITE=========================================================
 
 
@@ -170,6 +204,8 @@ const favMeatSelected = document.querySelectorAll(".check-box-selected");
 const isAllSelected = document.querySelectorAll(".check-box-selected-reject-all-select-all");
 const checkIcons = document.querySelectorAll(".check-icon-fav")
 const semiSelectedIcons = document.querySelectorAll(".semiselection-favorite-meats");
+const checkBox_Select_All_items =document.querySelector(".check-box-reject-all-select-all");
+
 
 function preventDefault() {
     isAllSelected[0].classList.remove("check-box-selected-reject-all-select-all");
@@ -187,15 +223,15 @@ preventDefault();
 //  Reconhece quando estão todas selecionadas.
 
 function getStatus() {
-      let classValue = "check-box-selected";
+    let classValue = "check-box-selected";
     let counterElements = 0;
-    const totalFavitemSelection = [];
+    const favitemSelectionStatus = [];
 
     favMeatSelected.forEach(itemMarked => {
-        totalFavitemSelection.push(itemMarked.classList.value);
+        favitemSelectionStatus.push(itemMarked.classList.value);
     });
 
-    totalFavitemSelection.forEach(attributeValue => {
+    favitemSelectionStatus.forEach(attributeValue => {
         if (attributeValue === classValue) {
             counterElements++;
         }
@@ -213,20 +249,20 @@ const selectionStatus = getStatus()
         isAllSelected[0].classList.add("check-box-selected-reject-all-select-all");
         semiSelectedIcons[0].style.display = "flex";
         checkIcons[0].style.display = "none"
-console.log(selectionStatus)
+        console.log(selectionStatus)
 
     } else if (selectionStatus === 6 ) {
-        // isAllSelected[0].classList.add("check-box-selected-reject-all-select-all");
+       
         semiSelectedIcons[0].style.display = "none";
         checkIcons[0].style.display = "flex";
-        console.log()
+        
     } else
     {
         isAllSelected[0].classList.remove("check-box-selected-reject-all-select-all");
         checkIcons[0].style.display = "none";
         semiSelectedIcons[0].style.display = "none";
     }
-    
+    return selectionStatus;
 }
 
 function SelectBox (itemCheckBox, indexOfCheckbox, status){
@@ -239,6 +275,8 @@ function SelectBox (itemCheckBox, indexOfCheckbox, status){
         this.checkBox.classList.remove(status);
     }
 }
+
+
 //Objeto Funcionando
 
 const firstBox = new SelectBox(favMeatSelected, 0,"check-box-selected");
@@ -247,19 +285,23 @@ const thrdBox =new SelectBox(favMeatSelected, 2,"check-box-selected");
 const fourthBox = new SelectBox(favMeatSelected, 3,"check-box-selected");
 const fiveBox = new SelectBox(favMeatSelected, 4,"check-box-selected");
 const sixBox = new SelectBox(favMeatSelected, 5,"check-box-selected");
+const  nothingSelected = new SelectBox(isAllSelected,1,"check-box-selected-reject-all-select-all")
+const allSelected = new SelectBox(isAllSelected, 0,"check-box-selected-reject-all-select-all")
+
+
 //Seleciona 1ra categoria Checkbox  Carnes Exoticas=====================
 
 favMeatSelected[0].addEventListener("click", () => {
 
     if (favMeatSelected[0].classList.contains("check-box-selected")) {
         firstBox.boxUnchecked();
-        isAllSelected[1].classList.remove("check-box-selected-reject-all-select-all");
+        nothingSelected.boxUnchecked();
         getPartialAndTotalSelectionStatus();
         console.log("Deselecionou em carnes favoritas CARNES EXÓTICAS");
     }
     else {
         firstBox.boxChecked();
-        isAllSelected[1].classList.remove("check-box-selected-reject-all-select-all");
+        nothingSelected.boxUnchecked();
         getPartialAndTotalSelectionStatus();
         console.log("Selecionou em carnes favoritas CARNES EXÓTICAS");
     }
@@ -271,13 +313,13 @@ favMeatSelected[1].addEventListener("click", () => {
 
     if (favMeatSelected[1].classList.contains("check-box-selected")) {
         scndBox.boxUnchecked();
-        isAllSelected[1].classList.remove("check-box-selected-reject-all-select-all");
+        nothingSelected.boxUnchecked();
         getPartialAndTotalSelectionStatus();
         console.log("Deselecionou em carnes favoritas CARNES NOBRES");
     }
     else {
         scndBox.boxChecked();
-        isAllSelected[1].classList.remove("check-box-selected-reject-all-select-all");
+        nothingSelected.boxUnchecked();
         getPartialAndTotalSelectionStatus();
         console.log("Selecionou em carnes favoritas CARNES NOBRES");
     }
@@ -290,14 +332,16 @@ favMeatSelected[2].addEventListener("click", () => {
     if (favMeatSelected[2].classList.contains("check-box-selected")) {
         
         thrdBox.boxUnchecked();
-        isAllSelected[1].classList.remove("check-box-selected-reject-all-select-all");
-        getPartialAndTotalSelectionStatus();
+        nothingSelected.boxUnchecked();
+        const actualStatus = getPartialAndTotalSelectionStatus();
+
         console.log("Deselecionou em carnes favoritas CARNES TRADICIONAIS");
     }
     else {
         thrdBox.boxChecked();
-        isAllSelected[1].classList.remove("check-box-selected-reject-all-select-all");
+        nothingSelected.boxUnchecked();
         getPartialAndTotalSelectionStatus();
+
         console.log("Selecionou em carnes favoritas CARNES TRADICIONAIS");
     }
 });
@@ -308,13 +352,13 @@ favMeatSelected[3].addEventListener("click", () => {
 
     if (favMeatSelected[3].classList.contains("check-box-selected")) {
         fourthBox.boxUnchecked();
-        isAllSelected[1].classList.remove("check-box-selected-reject-all-select-all");
+        nothingSelected.boxUnchecked();
         getPartialAndTotalSelectionStatus();
         console.log("Deselecionou em carnes favoritas CARNE SUINA");
     }
     else {
         fourthBox.boxChecked();
-        isAllSelected[1].classList.remove("check-box-selected-reject-all-select-all");
+        nothingSelected.boxUnchecked();
         getPartialAndTotalSelectionStatus();
         console.log("Selecionou em carnes favoritas CARNE SUINA");
     }
@@ -327,14 +371,14 @@ favMeatSelected[4].addEventListener("click", () => {
 
     if (favMeatSelected[4].classList.contains("check-box-selected")) {
         fiveBox.boxUnchecked();
-        isAllSelected[1].classList.remove("check-box-selected-reject-all-select-all");
+        nothingSelected.boxUnchecked();
         getPartialAndTotalSelectionStatus();
         console.log("Deselecionou em carnes favoritas CARNE BOVINA");
 
     }
     else {
         fiveBox.boxChecked();
-        isAllSelected[1].classList.remove("check-box-selected-reject-all-select-all");
+        nothingSelected.boxUnchecked();
         getPartialAndTotalSelectionStatus();
         console.log("Selecionou em carnes favoritas CARNE BOVINA");
     }
@@ -346,60 +390,66 @@ favMeatSelected[5].addEventListener("click", () => {
 
     if (favMeatSelected[5].classList.contains("check-box-selected")) {
         sixBox.boxUnchecked();
-        isAllSelected[1].classList.remove("check-box-selected-reject-all-select-all");
+        nothingSelected.boxUnchecked();
         getPartialAndTotalSelectionStatus();
         console.log("Deselecionou em carnes favoritas CARNE OVINA");
 
     }
     else {
         sixBox.boxChecked();
-        isAllSelected[1].classList.remove("check-box-selected-reject-all-select-all");
+        nothingSelected.boxUnchecked();
         getPartialAndTotalSelectionStatus();
         console.log("Selecionou em carnes favoritas CARNE OVINA");
     }
+    
 });
 
 // Selecionar todos os produtos====================================================================
+function logicSelectAll()
+{
+    let conteoElemento = 0;
+    const objectSelected = [];
 
-    
-isAllSelected[0].addEventListener("click", () => {
+    favMeatSelected.forEach(itemMarked => {
+        objectSelected.push(itemMarked.classList.value);
+    });
+
+objectSelected.forEach(item =>{
+    if(item === "check-box-selected")
+    {
+        conteoElemento++;
+    }
   
-       isAllSelected[0].classList.toggle("check-box-selected-reject-all-select-all");
-       isAllSelected[1].classList.remove("check-box-selected-reject-all-select-all");
-       favMeatSelected.forEach(elementSelected => elementSelected.classList.toggle("check-box-selected"));
+    if(conteoElemento === 0 || conteoElemento < 6)
+    {
+        allSelected.boxChecked();
+        nothingSelected.boxUnchecked();
+        checkIcons[0].style.display = "flex"
+        semiSelectedIcons[0].style.display = "none"
+        firstBox.boxChecked();
+        scndBox.boxChecked();
+        thrdBox.boxChecked();
+        fourthBox.boxChecked();
+        fiveBox.boxChecked();
+        sixBox.boxChecked();
+    }
+    else if(conteoElemento === 6)
+    {
+        allSelected.boxUnchecked();
+        nothingSelected.boxChecked();
+        firstBox.boxUnchecked();
+        scndBox.boxUnchecked();
+        thrdBox.boxUnchecked();
+        fourthBox.boxUnchecked();
+        fiveBox.boxUnchecked();
+        sixBox.boxUnchecked();
+    }
+})
 
-//     if(isAllSelected[0].classList.value === "")
-// {
-//     // const activation = getStatus();
+}
+ 
 
-    // if (activation === 0 || (activation > 0 && activation <= 5)) {
-    //     isAllSelected[0].classList.add("check-box-selected-reject-all-select-all");
-    //     isAllSelected[1].classList.remove("check-box-selected-reject-all-select-all");
-    //     favMeatSelected.forEach(elementSelected => elementSelected.classList.add("check-box-selected"));
-    //     checkIcons[0].style.display = "flex";
-    //     semiSelectedIcons[0].style.display = "none";
-
-    // } else if (activation === 6){
-        
-    //     isAllSelected[0].classList.remove("check-box-selected-reject-all-select-all");
-    //     isAllSelected[1].classList.add("check-box-selected-reject-all-select-all");
-    //     favMeatSelected.forEach(elementSelected => elementSelected.classList.remove("check-box-selected"));
-    //     semiSelectedIcons[0].style.display = "none";
-    //     checkIcons[0].style.display = "none";
-        
-    // } 
-    
-    // else 
-    // {
-    //     isAllSelected[0].classList.add("check-box-selected-reject-all-select-all");
-    //     favMeatSelected.forEach(elementSelected => elementSelected.classList.add("check-box-selected"));
-    //     checkIcons[0].style.display = "flex";
-    //     semiSelectedIcons[0].style.display = "none";
-    // }
-// }
-    // Fiquei aqui ^^^^^^^^^^^^^^^^^^^^^^^^^^===============================
-});
-
+checkBox_Select_All_items.addEventListener("click", logicSelectAll);
 
 
 isAllSelected[1].addEventListener("click", () => {
@@ -442,10 +492,7 @@ offerNo.classList.replace("radio-offer-selected", "radio-offer-unselected");
 
 wouldYouLikeOffer[0].addEventListener("click", () => {
 
-    if (offerDesitionSelected[0].classList.contains("radio-offer-selected")) {
-        offerYes.classList.replace("radio-offer-selected", "radio-offer-unselected");
-    }
-    else {
+    if (offerDesitionSelected[0].classList.contains("radio-offer-unselected")) {
         offerYes.classList.replace("radio-offer-unselected", "radio-offer-selected");
         offerNo.classList.replace("radio-offer-selected", "radio-offer-unselected");
         console.log("Selecionou SIM")
@@ -453,12 +500,11 @@ wouldYouLikeOffer[0].addEventListener("click", () => {
 })
 
 
+
 wouldYouLikeOffer[1].addEventListener("click", () => {
 
-    if (offerDesitionSelected[1].classList.contains("radio-offer-selected")) {
-        offerNo.classList.replace("radio-offer-selected", "radio-offer-unselected");
-    }
-    else {
+    if (offerDesitionSelected[1].classList.contains("radio-offer-unselected")) {
+        
         offerNo.classList.replace("radio-offer-unselected", "radio-offer-selected");
         offerYes.classList.replace("radio-offer-selected", "radio-offer-unselected");
         console.log("Selecionou NÃO")

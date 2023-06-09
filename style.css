@@ -385,7 +385,7 @@ div.did-you-know
     margin-bottom: 100px;
     
 }
-div#left-panel
+#left-panel
 {
     display: flex;
     justify-content: center;
@@ -395,12 +395,12 @@ div#left-panel
     background-color: rgba(165, 17, 17, 0.705);
     
 }
-span#facts-about-meat
+#facts-about-meat
 {
     font-size: 50px;
     color: white;
 }
-span#curiosities
+#curiosities
 {
    font-family: MrsSaintDelafield-Regular;
    font-size: 25px;
@@ -409,7 +409,7 @@ span#curiosities
    right: 150px;
    color: white; 
 }
-div#right-panel
+#right-panel
 {
     position: relative;
     display: flex;
@@ -420,14 +420,44 @@ div#right-panel
     height: 100%;
     background-color: transparent;
 }
-
-div.paragraph-container
+.paragraph-title
+{
+    color: brown;
+}
+.paragraph-container
 {
 display: flex;
+flex-direction: column;
 justify-content: center;
 align-items: center;
 height: 420px;
 width: 500px;
+}
+.curiosityOne
+{
+    display:none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 1s;
+}
+.curiosityTwo
+{
+display: none;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+transition: 1s;
+
+}
+.curiosityThree
+{
+display: none;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+transition: 1s;
+
 }
 
 p.paragraph
@@ -446,7 +476,7 @@ p.paragraph
     height: 2000px;
 }
 
-div.title-form-container
+.title-form-container
 {
     height: 100px;
     width: 80%;
@@ -456,6 +486,7 @@ div.title-form-container
     justify-content: center;
     align-items: center;
     color: white;
+    /* border: 1px solid white; */
     
 }
 
