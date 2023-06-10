@@ -48,7 +48,7 @@ setInterval(()=>{paragrafoUm.style.display = "flex";
 /*====================================================FORMULARIO======================================================================*/
 
 //TRABALHANDO AQUI========================================================================
-//Objeto Principal do Formulario
+//Objeto Radio do Formulario
 function SelectRadio(itemSelectRadio, indexOfRadioButton, status, inputRadioButtonSelected, indexOfinputRadioButton, classInputRadio, inputRadioValue) {
 
     this.radioButton = itemSelectRadio[indexOfRadioButton];
@@ -70,7 +70,7 @@ function SelectRadio(itemSelectRadio, indexOfRadioButton, status, inputRadioButt
     }
 
 }
-// END====Objeto Principal do Formulario
+// END====Objeto Radio do Formulario
 
 
 // START Radio butons ==============COMO CONHECEU NOSSO SITE=========================================================
@@ -114,7 +114,7 @@ radButton[0].addEventListener("click", () => {
 });
 radButton[1].addEventListener("click", () => {
 
-    if (childrenOfRadButton[1].value !== "radio-buton-selected") {
+    if (childrenOfRadButton[1].value !=="radio-buton-selected") {
 
         selectOne.radioUnselected();
         selectTwo.radioSelected();
@@ -128,7 +128,7 @@ radButton[1].addEventListener("click", () => {
 });
 radButton[2].addEventListener("click", () => {
 
-    if (childrenOfRadButton[0].classList.value !== "radio-buton-selected") {
+    if (childrenOfRadButton[0].classList.value !=="radio-buton-selected") {
 
         selectOne.radioUnselected();
         selectTwo.radioUnselected();
@@ -142,7 +142,7 @@ radButton[2].addEventListener("click", () => {
 });
 radButton[3].addEventListener("click", () => {
 
-    if (childrenOfRadButton[3].classList.value !== "radio-buton-selected") {
+    if (childrenOfRadButton[3].classList.value !=="radio-buton-selected") {
 
         selectOne.radioUnselected();
         selectTwo.radioUnselected();
@@ -158,7 +158,7 @@ radButton[3].addEventListener("click", () => {
 
 radButton[4].addEventListener("click", () => {
 
-    if (childrenOfRadButton[4].classList.value !== "radio-buton-selected") {
+    if (childrenOfRadButton[4].classList.value !=="radio-buton-selected") {
 
         selectOne.radioUnselected();
         selectTwo.radioUnselected();
@@ -173,7 +173,7 @@ radButton[4].addEventListener("click", () => {
 
 radButton[5].addEventListener("click", () => {
 
-    if (childrenOfRadButton[5].classList.value !== "radio-buton-selected") {
+    if (childrenOfRadButton[5].classList.value !=="radio-buton-selected") {
 
         selectOne.radioUnselected();
         selectTwo.radioUnselected();
@@ -189,7 +189,7 @@ radButton[5].addEventListener("click", () => {
 
 radButton[6].addEventListener("click", () => {
 
-    if (childrenOfRadButton[6].classList.value !== "radio-buton-selected") {
+    if (childrenOfRadButton[6].classList.value !=="radio-buton-selected") {
 
         selectOne.radioUnselected();
         selectTwo.radioUnselected();
@@ -203,7 +203,7 @@ radButton[6].addEventListener("click", () => {
 });
 
 radButton[7].addEventListener("click", () => {
-    if (childrenOfRadButton[7].classList.value !== "radio-buton-selected") {
+    if (childrenOfRadButton[7].classList.value !=="radio-buton-selected") {
       
         selectOne.radioUnselected();
         selectTwo.radioUnselected();
