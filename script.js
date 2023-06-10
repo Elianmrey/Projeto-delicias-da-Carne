@@ -1,18 +1,17 @@
 
 const enviar = document.querySelector(".submit-formulary");
 
-
+const contacts = document.querySelectorAll(".contact");
+console.log(contacts)
 function verifyEmail() {
-    const name = document.getElementsByName("name");
-
-    const email = document.getElementsByName("email");
-    const validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+   
+  const validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
       
-        if (email.value.match(validRegex)) {
+    if (contacts[1].value.match(validRegex)) {
       
           alert("Email Valido");
       
-          document.form1.text1.focus();
+        contacts[1].focus();
       
           return true;
       
@@ -20,7 +19,7 @@ function verifyEmail() {
       
           alert("Email Invalido");
       
-          document.form1.text1.focus();
+        contacts[1].focus();
       
           return false;
       
@@ -47,151 +46,178 @@ setInterval(()=>{paragrafoUm.style.display = "flex";
 
 
 /*====================================================FORMULARIO======================================================================*/
+
+
+//Objeto Principal do Formulario
+function SelectRadio(itemSelectRadio, indexOfRadioButton, status, inputRadioButtonSelected, indexOfinputRadioButton, classInputRadio, inputRadioValue) {
+
+    this.radioButton = itemSelectRadio[indexOfRadioButton];
+    this.radioButtonToggle = inputRadioButtonSelected[indexOfinputRadioButton];
+    this.classOfInputRadio = classInputRadio;
+    this.valueInputRadio = inputRadioValue;
+    this.valueInputRadioClean = "";
+
+
+    this.radioSelected = function () {
+        this.radioButton.classList.value = status;
+        this.radioButtonToggle.classList.add(this.classOfInputRadio);
+        this.radioButtonToggle.value = this.valueInputRadio;
+    }
+    this.radioUnselected = function () {
+        this.radioButton.classList.remove(status);
+        this.radioButtonToggle.classList.remove(this.classOfInputRadio);
+        this.radioButtonToggle.value = this.valueInputRadioClean;
+    }
+
+}
+// END====Objeto Principal do Formulario
+
+
 // START Radio butons ==============COMO CONHECEU NOSSO SITE=========================================================
 const radButton = document.querySelectorAll(".radio-buton");
-const selectOne = radButton[0].children[0];
-const selectTwo = radButton[1].children[0];
-const selectThree = radButton[2].children[0];
-const selectFour = radButton[3].children[0];
-const selectFive = radButton[4].children[0];
-const selectSix = radButton[5].children[0];
-const selectSeven = radButton[6].children[0];
-const selectEight = radButton[7].children[0];
-let value = "";
+const childrenOfRadButton = document.querySelectorAll(".radio-buton-selected");
+const hidden_Radio_Button = document.querySelectorAll(".radioButon-value");
+console.log(childrenOfRadButton)
 
-selectOne.classList.value = "radio-buton-selected";
+const selectOne = new SelectRadio(childrenOfRadButton, 0, "radio-buton-selected", hidden_Radio_Button, 0, "radioButon-value", "Sou cliente frequente de Delicias da Carne") ;
+const selectTwo = new SelectRadio(childrenOfRadButton, 1, "radio-buton-selected", hidden_Radio_Button, 1, "radioButon-value", "Um amigo que é cliente o recomendou")
+const selectThree = new SelectRadio(childrenOfRadButton, 2, "radio-buton-selected", hidden_Radio_Button, 2, "radioButon-value", "Vi os anúncios em redes sociais");
+const selectFour = new SelectRadio(childrenOfRadButton, 3, "radio-buton-selected", hidden_Radio_Button, 3, "radioButon-value", "Soube do site na loja física");
+const selectFive = new SelectRadio(childrenOfRadButton, 4, "radio-buton-selected", hidden_Radio_Button, 4, "radioButon-value", "Foi a primeira opção que vi no navegador");
+const selectSix = new SelectRadio(childrenOfRadButton, 5, "radio-buton-selected", hidden_Radio_Button, 5, "radioButon-value", "Já sabia que existia mas não havia comprado");
+const selectSeven = new SelectRadio(childrenOfRadButton, 6, "radio-buton-selected", hidden_Radio_Button, 6, "radioButon-value", "Todas as anteriores");
+const selectEight = new SelectRadio(childrenOfRadButton, 7, "radio-buton-selected", hidden_Radio_Button, 7, "radioButon-value", "Nenhuma das anteriores");
+
+
+selectOne.radioSelected();
+selectTwo.radioUnselected();
+selectThree.radioUnselected();
+selectFour.radioUnselected();
+selectFive.radioUnselected();
+selectSix.radioUnselected();
+selectSeven.radioUnselected();
+selectEight.radioUnselected();
 
 radButton[0].addEventListener("click", () => {
 
-    if (selectOne.classList.contains("radio-buton-unselected")) {
-        
-        value = "Sou cliente frequente de Delicias da Carne";
+    if (childrenOfRadButton[0].classList.value !=="radio-buton-selected") {
 
-        selectOne.classList.replace("radio-buton-unselected", "radio-buton-selected")
-        selectTwo.classList.replace("radio-buton-selected", "radio-buton-unselected")
-        selectThree.classList.replace("radio-buton-selected", "radio-buton-unselected")
-        selectFour.classList.replace("radio-buton-selected", "radio-buton-unselected")
-        selectFive.classList.replace("radio-buton-selected", "radio-buton-unselected")
-        selectSix.classList.replace("radio-buton-selected", "radio-buton-unselected")
-        selectSeven.classList.replace("radio-buton-selected", "radio-buton-unselected")
-        selectEight.classList.replace("radio-buton-selected", "radio-buton-unselected")
+        selectOne.radioSelected();
+        selectTwo.radioUnselected();
+        selectThree.radioUnselected();
+        selectFour.radioUnselected();
+        selectFive.radioUnselected();
+        selectSix.radioUnselected();
+        selectSeven.radioUnselected();
+        selectEight.radioUnselected();
     } 
 });
 radButton[1].addEventListener("click", () => {
 
-    if (selectTwo.classList.contains("radio-buton-unselected")) {
+    if (childrenOfRadButton[1].value !== "radio-buton-selected") {
 
-        value = "Um amigo que é cliente o recomendou";
-
-        selectTwo.classList.replace("radio-buton-unselected", "radio-buton-selected")
-        selectOne.classList.replace("radio-buton-selected", "radio-buton-unselected")
-        selectThree.classList.replace("radio-buton-selected", "radio-buton-unselected")
-        selectFour.classList.replace("radio-buton-selected", "radio-buton-unselected")
-        selectFive.classList.replace("radio-buton-selected", "radio-buton-unselected")
-        selectSix.classList.replace("radio-buton-selected", "radio-buton-unselected")
-        selectSeven.classList.replace("radio-buton-selected", "radio-buton-unselected")
-        selectEight.classList.replace("radio-buton-selected", "radio-buton-unselected")
+        selectOne.radioUnselected();
+        selectTwo.radioSelected();
+        selectThree.radioUnselected();
+        selectFour.radioUnselected();
+        selectFive.radioUnselected();
+        selectSix.radioUnselected();
+        selectSeven.radioUnselected();
+        selectEight.radioUnselected();
     } 
 });
 radButton[2].addEventListener("click", () => {
 
-    if (selectThree.classList.contains("radio-buton-unselected")) {
+    if (childrenOfRadButton[0].classList.value !== "radio-buton-selected") {
 
-        value = "Vi os anúncios em redes sociais";
-        
-        selectThree.classList.replace("radio-buton-unselected", "radio-buton-selected")
-        selectOne.classList.replace("radio-buton-selected", "radio-buton-unselected")
-        selectTwo.classList.replace("radio-buton-selected", "radio-buton-unselected")
-        selectFour.classList.replace("radio-buton-selected", "radio-buton-unselected")
-        selectFive.classList.replace("radio-buton-selected", "radio-buton-unselected")
-        selectSix.classList.replace("radio-buton-selected", "radio-buton-unselected")
-        selectSeven.classList.replace("radio-buton-selected", "radio-buton-unselected")
-        selectEight.classList.replace("radio-buton-selected", "radio-buton-unselected")
+        selectOne.radioUnselected();
+        selectTwo.radioUnselected();
+        selectThree.radioSelected();
+        selectFour.radioUnselected();
+        selectFive.radioUnselected();
+        selectSix.radioUnselected();
+        selectSeven.radioUnselected();
+        selectEight.radioUnselected();
     } 
 });
 radButton[3].addEventListener("click", () => {
 
-    if (selectFour.classList.contains("radio-buton-unselected")) {
+    if (childrenOfRadButton[3].classList.value !== "radio-buton-selected") {
 
-        value = "Soube do site na loja física";
-
-        selectFour.classList.replace("radio-buton-unselected", "radio-buton-selected")
-        selectOne.classList.replace("radio-buton-selected", "radio-buton-unselected")
-        selectTwo.classList.replace("radio-buton-selected", "radio-buton-unselected")
-        selectThree.classList.replace("radio-buton-selected", "radio-buton-unselected")
-        selectFive.classList.replace("radio-buton-selected", "radio-buton-unselected")
-        selectSix.classList.replace("radio-buton-selected", "radio-buton-unselected")
-        selectSeven.classList.replace("radio-buton-selected", "radio-buton-unselected")
-        selectEight.classList.replace("radio-buton-selected", "radio-buton-unselected")
+        selectOne.radioUnselected();
+        selectTwo.radioUnselected();
+        selectThree.radioUnselected();
+        selectFour.radioSelected();
+        selectFive.radioUnselected();
+        selectSix.radioUnselected();
+        selectSeven.radioUnselected();
+        selectEight.radioUnselected();
     } 
 });
 
 
 radButton[4].addEventListener("click", () => {
 
-    if (selectFive.classList.contains("radio-buton-unselected")) {
+    if (childrenOfRadButton[4].classList.value !== "radio-buton-selected") {
 
-        value = "Cai aqui por ventura";
-        
-        selectFive.classList.replace("radio-buton-unselected", "radio-buton-selected")
-        selectOne.classList.replace("radio-buton-selected", "radio-buton-unselected")
-        selectTwo.classList.replace("radio-buton-selected", "radio-buton-unselected")
-        selectThree.classList.replace("radio-buton-selected", "radio-buton-unselected")
-        selectFour.classList.replace("radio-buton-selected", "radio-buton-unselected")
-        selectSix.classList.replace("radio-buton-selected", "radio-buton-unselected")
-        selectSeven.classList.replace("radio-buton-selected", "radio-buton-unselected")
-        selectEight.classList.replace("radio-buton-selected", "radio-buton-unselected")
+        selectOne.radioUnselected();
+        selectTwo.radioUnselected();
+        selectThree.radioUnselected();
+        selectFour.radioUnselected();
+        selectFive.radioSelected();
+        selectSix.radioUnselected();
+        selectSeven.radioUnselected();
+        selectEight.radioUnselected();
     } 
 });
 
 radButton[5].addEventListener("click", () => {
 
-    if (selectSix.classList.contains("radio-buton-unselected")) {
+    if (childrenOfRadButton[5].classList.value !== "radio-buton-selected") {
 
-        value = "Já sabia que existia mas ainda não comprei";
-
-        selectSix.classList.replace("radio-buton-unselected", "radio-buton-selected")
-        selectOne.classList.replace("radio-buton-selected", "radio-buton-unselected")
-        selectTwo.classList.replace("radio-buton-selected", "radio-buton-unselected")
-        selectThree.classList.replace("radio-buton-selected", "radio-buton-unselected")
-        selectFour.classList.replace("radio-buton-selected", "radio-buton-unselected")
-        selectFive.classList.replace("radio-buton-selected", "radio-buton-unselected")
-        selectSeven.classList.replace("radio-buton-selected", "radio-buton-unselected")
-        selectEight.classList.replace("radio-buton-selected", "radio-buton-unselected")
+        selectOne.radioUnselected();
+        selectTwo.radioUnselected();
+        selectThree.radioUnselected();
+        selectFour.radioUnselected();
+        selectFive.radioUnselected();
+        selectSix.radioSelected();
+        selectSeven.radioUnselected();
+        selectEight.radioUnselected();
+    
     } 
 });
 
 radButton[6].addEventListener("click", () => {
 
-    if (selectSeven.classList.contains("radio-buton-unselected")) {
+    if (childrenOfRadButton[6].classList.value !== "radio-buton-selected") {
 
-        value = "Todas as anteriores";
-        selectSeven.classList.replace("radio-buton-unselected", "radio-buton-selected")
-        selectOne.classList.replace("radio-buton-selected", "radio-buton-unselected")
-        selectTwo.classList.replace("radio-buton-selected", "radio-buton-unselected")
-        selectThree.classList.replace("radio-buton-selected", "radio-buton-unselected")
-        selectFour.classList.replace("radio-buton-selected", "radio-buton-unselected")
-        selectFive.classList.replace("radio-buton-selected", "radio-buton-unselected")
-        selectSix.classList.replace("radio-buton-selected", "radio-buton-unselected")
-        selectEight.classList.replace("radio-buton-selected", "radio-buton-unselected")
+        selectOne.radioUnselected();
+        selectTwo.radioUnselected();
+        selectThree.radioUnselected();
+        selectFour.radioUnselected();
+        selectFive.radioUnselected();
+        selectSix.radioUnselected();
+        selectSeven.radioSelected();
+        selectEight.radioUnselected();
     }
 });
 
 radButton[7].addEventListener("click", () => {
-    if (selectEight.classList.contains("radio-buton-unselected")) {
-        value = "Todas as anteriores"
-        selectEight.classList.replace("radio-buton-unselected", "radio-buton-selected")
-        selectOne.classList.replace("radio-buton-selected", "radio-buton-unselected")
-        selectTwo.classList.replace("radio-buton-selected", "radio-buton-unselected")
-        selectThree.classList.replace("radio-buton-selected", "radio-buton-unselected")
-        selectFour.classList.replace("radio-buton-selected", "radio-buton-unselected")
-        selectFive.classList.replace("radio-buton-selected", "radio-buton-unselected")
-        selectSix.classList.replace("radio-buton-selected", "radio-buton-unselected")
-        selectSeven.classList.replace("radio-buton-selected", "radio-buton-unselected")
+    if (childrenOfRadButton[7].classList.value !== "radio-buton-selected") {
+      
+        selectOne.radioUnselected();
+        selectTwo.radioUnselected();
+        selectThree.radioUnselected();
+        selectFour.radioUnselected();
+        selectFive.radioUnselected();
+        selectSix.radioUnselected();
+        selectSeven.radioUnselected();
+        selectEight.radioSelected();
     } 
 });
-console.log(value);
+
 // END Radio butons ==============COMO CONHECEU NOSSO SITE=========================================================
+
 
 
 
@@ -205,6 +231,31 @@ const isAllSelected = document.querySelectorAll(".check-box-selected-reject-all-
 const checkIcons = document.querySelectorAll(".check-icon-fav")
 const semiSelectedIcons = document.querySelectorAll(".semiselection-favorite-meats");
 const checkBox_Select_All_items =document.querySelector(".check-box-reject-all-select-all");
+const checkBoxValue = document.querySelectorAll(".checkbox-value");
+
+//Objeto Principal do Formulario
+function SelectBox(itemCheckBox, indexOfCheckbox, status, inputcheckBoxSelected, indexOfinputChkBox, classInput, inputValue) {
+
+    this.checkBox = itemCheckBox[indexOfCheckbox];
+    this.checkBoxToggle = inputcheckBoxSelected[indexOfinputChkBox];
+    this.classOfInput = classInput;
+    this.valueInput = inputValue;
+    this.valueInputClean = "";
+
+
+    this.boxChecked = function () {
+        this.checkBox.classList.value = status;
+        this.checkBoxToggle.classList.add(this.classOfInput);
+        this.checkBoxToggle.value = this.valueInput;
+    }
+    this.boxUnchecked = function () {
+        this.checkBox.classList.remove(status);
+        this.checkBoxToggle.classList.remove(this.classOfInput);
+        this.checkBoxToggle.value = this.valueInputClean;
+    }
+
+}
+// END====Objeto Principal do Formulario
 
 
 function preventDefault() {
@@ -265,28 +316,16 @@ const selectionStatus = getStatus()
     return selectionStatus;
 }
 
-function SelectBox (itemCheckBox, indexOfCheckbox, status){
 
-    this.checkBox = itemCheckBox[indexOfCheckbox];
-    this.boxChecked = function (){
-        this.checkBox.classList.value = status;
-    }
-    this.boxUnchecked = function (){
-        this.checkBox.classList.remove(status);
-    }
-}
+const firstBox = new SelectBox(favMeatSelected, 0, "check-box-selected", checkBoxValue, 0, "checkbox-value", "Carnes exóticas");
+const scndBox = new SelectBox(favMeatSelected, 1, "check-box-selected", checkBoxValue, 1, "checkbox-value",  "Carnes nobres" );
+const thrdBox = new SelectBox(favMeatSelected, 2, "check-box-selected", checkBoxValue, 2, "checkbox-value", "Carnes tradicionais");
+const fourthBox = new SelectBox(favMeatSelected, 3, "check-box-selected", checkBoxValue, 3, "checkbox-value",  "Carne Suina");
+const fiveBox = new SelectBox(favMeatSelected, 4, "check-box-selected", checkBoxValue, 4, "checkbox-value", "Carnes Bovina");
+const sixBox = new SelectBox(favMeatSelected, 5, "check-box-selected", checkBoxValue, 5, "checkbox-value", "Carnes Ovina");
+const allSelected = new SelectBox(isAllSelected, 0, "check-box-selected-reject-all-select-all", checkBoxValue, 6, "checkbox-value",  "Carnes Exóticas, Carnes Nobres, Carnes Tradicionais, Carne Suina, Carne Bovina, Carne Ovina")
+const nothingSelected = new SelectBox(isAllSelected, 1, "check-box-selected-reject-all-select-all", checkBoxValue, 7, "checkbox-value", "Nenhuma Selecionada")
 
-
-//Objeto Funcionando
-
-const firstBox = new SelectBox(favMeatSelected, 0,"check-box-selected");
-const scndBox = new SelectBox(favMeatSelected, 1,"check-box-selected");
-const thrdBox =new SelectBox(favMeatSelected, 2,"check-box-selected");
-const fourthBox = new SelectBox(favMeatSelected, 3,"check-box-selected");
-const fiveBox = new SelectBox(favMeatSelected, 4,"check-box-selected");
-const sixBox = new SelectBox(favMeatSelected, 5,"check-box-selected");
-const  nothingSelected = new SelectBox(isAllSelected,1,"check-box-selected-reject-all-select-all")
-const allSelected = new SelectBox(isAllSelected, 0,"check-box-selected-reject-all-select-all")
 
 
 //Seleciona 1ra categoria Checkbox  Carnes Exoticas=====================
