@@ -47,7 +47,7 @@ setInterval(()=>{paragrafoUm.style.display = "flex";
 
 /*====================================================FORMULARIO======================================================================*/
 
-
+//TRABALHANDO AQUI========================================================================
 //Objeto Principal do Formulario
 function SelectRadio(itemSelectRadio, indexOfRadioButton, status, inputRadioButtonSelected, indexOfinputRadioButton, classInputRadio, inputRadioValue) {
 
