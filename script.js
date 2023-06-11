@@ -540,7 +540,9 @@ const wouldYouLikeOffer = document.getElementsByClassName("radio-offer");
 const offerDesitionSelected = document.querySelectorAll(".radio-offer-selected");
 const offerYes = offerDesitionSelected[0];
 const offerNo = offerDesitionSelected[1];
-
+const geInTouchAsk = document.querySelectorAll(".input-yes-no");
+console.log(geInTouchAsk)
+//Trabajando Aqui ============^^^^^^^^^^^^^^^^
 
 offerYes.classList.replace("radio-offer-selected", "radio-offer-unselected");
 offerNo.classList.replace("radio-offer-selected", "radio-offer-unselected");
@@ -578,12 +580,9 @@ const howToSend = document.querySelectorAll(".check-howtosend-buton");
 const askOffer = document.querySelectorAll(".check-howtosend-buton-selected");
 const semiSelected = document.querySelector(".semiselected")
 const checked = document.querySelectorAll(".check-howtosend-icon")
-// console.log(askOffer)
+
 const getInTouchBy = document.querySelectorAll(".howGetInTouch");
-// const emailCheck = askOffer[0];
-// const whatsappCheck = askOffer[1];
-// const phoneCheck = askOffer[2];
-// const allCheck = askOffer[3];
+
 
 const contactByEmail = new SelectBox(askOffer, 0, "check-howtosend-buton-selected", getInTouchBy, 0, "howGetInTouch", "Contatar por Email");
 const contactByWhatsapp = new SelectBox(askOffer, 1, "check-howtosend-buton-selected", getInTouchBy, 1, "howGetInTouch", "Contatar por Whatsapp")
