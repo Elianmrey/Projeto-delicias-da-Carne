@@ -35,7 +35,7 @@ html, body {
 
 }
 
-div.banner
+.banner
 {
     
     height: 400px;
@@ -45,14 +45,14 @@ div.banner
     overflow: hidden;
     font-family: Kalam;
 }
-span.site-title
+.site-title
 {
     font-family: Kalam;
     color: #fff;
     font-size: 70px;
     z-index: 1;
 }
-span#delicias
+#delicias
 {
     position: absolute;
     top: 90px;
@@ -60,7 +60,7 @@ span#delicias
     
 }
 
-span#da
+#da
 {
     position: absolute;
     top: 160px;
@@ -68,14 +68,14 @@ span#da
     
 }
 
-span#carne
+#carne
 {
     position: absolute;
     top:  230px;
     left: 640px;
     
 }
-span#slogan
+#slogan
 {
     color: white;
     position:absolute;
@@ -84,7 +84,7 @@ span#slogan
     z-index: 1;
     font-style: italic;
 }
-video#video-banner
+#video-banner
 {
     width: 100%;
     opacity: 0.35;
@@ -138,7 +138,7 @@ a.menu-item:hover
     color: brown;
 }
 
-div.image-container
+.image-container
 {
     
     width:100%;
@@ -146,7 +146,7 @@ div.image-container
     margin: auto;
     text-align: center;
     margin-bottom: 100px;
-      /* background-color: #E1E1E1; */
+    
 }
 
 h2#exotic-meats
@@ -156,7 +156,7 @@ h2#exotic-meats
     margin-bottom: 30px;
 }
 
-div#inicial-offer-container
+#inicial-offer-container
 {
     display: flex;
     justify-content: center;
@@ -170,7 +170,7 @@ div#inicial-offer-container
     
 }
 
-div#offer-container
+#offer-container
 {
     display: flex;
     gap: 5px;
@@ -220,7 +220,7 @@ img#offer-fourth
 
 /* ===========================================cards Stylization=============================== */
 
-div.card-title-container
+.card-title-container
 {
     display: flex;
     align-items: center;
@@ -230,7 +230,7 @@ div.card-title-container
     margin: 100px auto 40px auto ;
 }
 
-span.shoping-call
+.shoping-call
 {
     font-family: Poppins;
     font-size: 35px;
@@ -239,7 +239,7 @@ span.shoping-call
     color: brown;
 }
 
-div.centralizer-column
+.centralizer-column
 {
     display: flex;
     flex-direction: column;
@@ -247,7 +247,7 @@ div.centralizer-column
     align-items: center;
 }
 
-span.title-meat-cards
+.title-meat-cards
 {
     position: relative;
     top: 15px;
@@ -258,7 +258,7 @@ span.title-meat-cards
     font-weight: 500;
 }
 
-div.cards-container
+.cards-container
 {
     margin: auto;
     width: 80%;
@@ -271,7 +271,7 @@ div.cards-container
 
 }
 
-div.border-card
+.border-card
 {
     width: 230px;
     height: 300px;
@@ -279,11 +279,11 @@ div.border-card
     transition: 1s;
 }
 
-div.border-card:hover
+.border-card:hover
 {
     box-shadow: 0px 10px 20px 5px #9a9999;
 }
-div.card
+.card
 {
    cursor:pointer;
    display:flex;
@@ -297,7 +297,7 @@ div.card
    box-shadow: inset 0 0 50px 0 #a8a7a7;
    transition: 1s; 
 }
-div.card:hover
+.card:hover
 {
 box-shadow: inset 0px 0px 80px 0px rgb(241, 159, 159);
 
@@ -312,7 +312,7 @@ img.card-image
     
 }
 
-div.icons-container
+.icons-container
 {
     position: relative;
     top: -15px;
@@ -331,7 +331,7 @@ div.icons-container
     transition: 1s;
 }
 
-div.icons-container:hover
+.icons-container:hover
 {
     box-shadow: inset 0 0 15px 0 rgba(255, 4, 4, 0.329);
     
@@ -347,20 +347,20 @@ svg.card-icons:hover
  width: 25px;
 }
 
-div.card-info
+.card-info
 {
     display:block;
     text-align: center;
 }
-span.title-card
+.title-card
 {
  font-weight: bold;
 }
-span.price
+.price
 {
     color: brown;
 }
-span.kg
+.kg
 {
     position: relative;
     top: 2px;
@@ -373,7 +373,7 @@ span.kg
 /* ===============================================/////Cards Stylization ============================================= */
 
 /* ====================================Facts Section======================================================= */
-div.did-you-know
+.did-you-know
 {
 
     display: flex;
@@ -460,7 +460,7 @@ transition: 1s;
 
 }
 
-p.paragraph
+.paragraph
 {
     padding: 40px;
     text-align: center;
@@ -473,7 +473,7 @@ p.paragraph
 {
     margin: 70px auto;
     background-color: brown;
-    height: 2000px;
+    height: 1900px;
 }
 
 .title-form-container
@@ -490,7 +490,7 @@ p.paragraph
     
 }
 
-span.how-you-know
+.how-you-know
 {
     color: rgb(255, 255, 255);
     font-weight: bold;
@@ -508,7 +508,7 @@ span.how-you-know
    color: #fccccc;
 }
 
-div.info-capture-contact
+.info-capture-contact
 {
    height: 250px; 
    width: 50%;
@@ -519,7 +519,7 @@ div.info-capture-contact
    align-items: center;
    justify-content: center;
 }
-span.contact-title
+.contact-title
 {
     margin-top: 15px;
 }
@@ -532,7 +532,7 @@ input.contact
 
 /* ===========================================//////Contact Area============================================= */
 /* ===========================================radio buttons======================================== */
-div.radio-buton-container
+.radio-buton-container
 {
 height: 200px;    
 width: 80%;
@@ -544,7 +544,7 @@ border: 1px solid white;
 
 }
 
-div.structure-container
+.structure-container
 {
 display: flex;
 justify-content: center;
@@ -552,7 +552,7 @@ width: 500px;
 height: 200px;
 }
 
-div.radio-left-container
+.radio-left-container
 { 
 height: 200px;
 width: 30px;
@@ -561,9 +561,9 @@ flex-direction: column;
 gap: 10px;
 }
 
-div.span-left-container
+.span-left-container
 {
-    height: 100px;
+    height: 120px;
     width: 400px;
     position: relative;
     top: 35px;
@@ -575,7 +575,7 @@ div.span-left-container
     color: #fccccc;   
 }
 
-div.radio-buton
+.radio-buton
 {
     display: flex;
     align-items: center;
@@ -589,11 +589,11 @@ div.radio-buton
     top: 40px;
     left: 10%;
 }
-div.radio-buton-unselected
+.radio-buton-unselected
 {
     display: none;
 }
-div.radio-buton-selected
+.radio-buton-selected
 {
     display: flex;
     position: static;
@@ -607,7 +607,7 @@ div.radio-buton-selected
 /* ===================================///// radio buttons ===========================================*/
 
 /* ===================================Check box===================================================== */
-div.check-box-container
+.check-box-container
 {
 height: 150px;    
 width: 80%;
@@ -620,27 +620,26 @@ border-left: 1px solid white;
 border-right: 1px solid white;
 }
 
-div.structure-check-box-container
+.structure-check-box-container
 {
 display: flex;
 justify-content: center;
 width: 500px;
 height: 150px;
-
 }
 
-div.checkbox-category-title
+.checkbox-category-title
 {
     display: flex;
     height: 50px;
     justify-content: space-evenly;
 }
-span.checkbox-category
+.checkbox-category
 {
     color: #FFF;
 }
 
-div.check-left-container
+.check-left-container
 { 
 width: 30px;
 display: flex;
@@ -650,7 +649,7 @@ gap: 10px;
 
 }
 
-div.span-check-box-left-container
+.span-check-box-left-container
 {
     height: 100px;
     width: 400px;
@@ -664,7 +663,7 @@ div.span-check-box-left-container
     color: #fccccc;  
 }
 
-div.check-box
+.check-box
 {
     display: flex;
     align-items: center;
@@ -722,16 +721,14 @@ div.check-box
     border-bottom: 1px solid white;
 }
 
-div.container-check-and-span
+.container-check-and-span
 { 
-    
     display:flex;
     justify-content: center;
     width: 800px;
     height: 100px;
     gap: 10px;
     flex-direction: row;
-   
  }
 
 /*contenedor de ultimo Check box todas as anteriores Carne favorita */
@@ -743,7 +740,6 @@ display: flex;
 flex-direction: column;
 gap: 10px;
 align-items: center;
-
 }
 
 .check-box-reject-all-select-all
@@ -775,7 +771,7 @@ align-items: center;
 }
 
 /* contenedor de Span de ultimo Check box todas as anteriores Carne favorita  */
-div.span-check-box-container-reject-all-select-all
+.span-check-box-container-reject-all-select-all
 {
     height: 60px;
     width: 400px;
@@ -791,14 +787,14 @@ div.span-check-box-container-reject-all-select-all
 /* ===================================////Check box */
 
 /* =================================================Gostaria de receber nossas ofertas? (Radio Buttons) ================================= */
-span.do-you-like
+.do-you-like
 {
     color: rgb(255, 255, 255);
     font-weight: bold;
     font-size: 35px;
 }
 
-div.radio-buton-offer-container
+.radio-buton-offer-container
 {
 height: 80px;    
 width: 100px;
@@ -807,7 +803,7 @@ gap:5px;
 margin: auto;
 }
 
-div.radio-offer-container
+.radio-offer-container
 { 
 position: relative;
 top: 4px;
@@ -820,7 +816,7 @@ gap: 10px;
 
 }
 
-div.span-offer-container
+.span-offer-container
 {
     height: 70px;
     width: 50px;
@@ -834,7 +830,7 @@ div.span-offer-container
     color: #fccccc;   
 }
 
-div.radio-offer
+.radio-offer
 {
     display: flex;
     align-items: center;
@@ -850,7 +846,7 @@ div.radio-offer
     
 }
 
-div.radio-offer-selected
+.radio-offer-selected
 {
     display: flex;
     position: static;
@@ -862,24 +858,22 @@ div.radio-offer-selected
 /* ==========================================Como gostaria de receber as informações =================================== */
 
 
-span.how-to-contact
+.how-to-contact
 {
     color: rgb(255, 255, 255);
     font-size: 20px;
 }
 
-div.structure-howtosend-container
+.structure-howtosend-container
 {
-
 margin: -30px auto;
 display: flex;
 justify-content: center;
 width: 400px;
 height: 200px;
-
 }
 
-div.check-howtosend-container
+.check-howtosend-container
 { 
 height: 200px;
 width: 30px;
@@ -888,7 +882,7 @@ flex-direction: column;
 gap: 10px;
 }
 
-div.span-howtosend-container
+.span-howtosend-container
 {
     /* border: 2px solid white; */
     height: 160px;
@@ -900,12 +894,10 @@ div.span-howtosend-container
     flex-direction: column;
     gap: 6px;
     justify-content: left;
-    color: #fccccc;   
-  
-    
+    color: #fccccc;  
 }
 
-div.check-howtosend-buton
+.check-howtosend-buton
 {
         display: flex;
         align-items: center;
@@ -974,7 +966,6 @@ height: 10px;
     top: 50px;
     
 }
-
 
 .placeholder-container
 {
@@ -1085,14 +1076,13 @@ height: 10px;
 {
     display: flex;
     flex-direction: column;
-    margin: 30px auto;
+    margin: 80px auto 20px auto;
     width: 80%;
-    height: 300px;
+    height: 200px;
     justify-content: center;
     align-items: center;
     color: white;
-    
-
+  
 }
 #message-textarea
 {
@@ -1100,13 +1090,11 @@ height: 10px;
     width: 300px;
     height: 150px;
     resize: none;
+    font-family: cursive, sans-serif;
+    text-align: center;
 }
 
-
-
-
 /* ///////Text area to send message======================================= */
-
 
 /* Boatão de validação========================================== */
 .validation-button
@@ -1116,10 +1104,7 @@ height: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    /* border: 2px solid #fccccc; */
-    position: relative;
-    top: 15px;
-}
+    }
 
 .submit-formulary
 {
