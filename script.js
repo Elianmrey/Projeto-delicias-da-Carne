@@ -36,18 +36,45 @@ enviar.addEventListener("click", verifyEmail);
 // TRABALHANDO AQUI=====================================================================
 const paragrafoUm = document.querySelector(".curiosityOne");
 const paragrafoDois = document.querySelector(".curiosityTwo");
+const paragrafoTres = document.querySelector(".curiosityThree")
 
-setInterval(()=>{paragrafoUm.style.display = "flex";
+setInterval(()=>{
+  
+    setTimeout(()=>{
+paragrafoUm.style.display = "flex";
+paragrafoDois.style.display = "none";
+paragrafoTres.style.display = "none";
+
+}, 0);
+
+setTimeout(()=>{
+paragrafoDois.style.display = "flex";
+paragrafoUm.style.display = "none";
+paragrafoTres.style.display = "none";
 
 }, 5000);
+setTimeout(()=>{paragrafoTres.style.display = "flex";
+paragrafoUm.style.display = "none";
+paragrafoDois.style.display = "none";
+
+}, 10000);
+}, 15000)
 
 
+// paragrafoDois.style.display = "none";
+//                     //keyframes de animação
+//                     paragrafoUm.animate([{opacity: 0},
+//                         {opacity: 1},
+//                         //opções de tempo 
+//                         {duration: 500,
+//                          iterations: infinity}])
+//TRABALHANDO AQUI======^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^==================================================================
 
 
 
 /*====================================================FORMULARIO======================================================================*/
 
-//TRABALHANDO AQUI========================================================================
+
 //Objeto Radio do Formulario
 function SelectRadio(itemSelectRadio, indexOfRadioButton, status, inputRadioButtonSelected, indexOfinputRadioButton, classInputRadio, inputRadioValue) {
 

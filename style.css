@@ -423,6 +423,7 @@ svg.card-icons:hover
 .paragraph-title
 {
     color: brown;
+    text-align: center;
 }
 .paragraph-container
 {
