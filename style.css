@@ -366,7 +366,7 @@ svg.card-icons:hover
     top: 2px;
     left: 2px;
     font-size: 11px;
-    color:rgb(165, 42, 42);
+    color:#a52a2a;
 }
 
 
@@ -471,7 +471,7 @@ transition: 1s;
 /* =====================================formulario======================================================= */
 .formulary
 {
-    margin: 70px auto;
+    margin: 70px auto 0px auto;
     background-color: brown;
     height: 1900px;
 }
@@ -1164,11 +1164,88 @@ height: 10px;
 
 /* Google maps */
 
+#destiny-instructions
+{
+    margin: 10px auto 0px auto;
+}
+
 #google-maps
 {
     width: 100%;
     height: 300px;
     outline: 2px solid brown;
-    margin-top: 30px;
+    margin-top: 20px;
     padding: 0px;
+}
+
+/* ====================================================FOOTER=============================================================== */
+footer
+{
+height: 250px;
+background-color: brown;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.left-footer-info
+{
+    display: flex;
+    /* border: 1px solid white; */
+    height: 120px;
+    width: 370px;
+    position: absolute;
+    left: 50px;
+    gap: 15px
+}
+.insdir
+{
+    width: 120px;
+}
+
+.attribcopyright
+{
+    font-size: small;
+    
+}
+.container-copyright
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    
+}
+.social-midia-item
+{
+    width: 30px;
+    fill: white;
+}
+.direct-contact
+{
+    position: relative;
+    bottom: 8%;
+    left: 290px;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: center;
+    /* border: 1px solid white; */
+    width: 500px;
+    color: white;
+}
+#call-influence
+{
+    color: #fccccc;
+    font-style: italic;
+}
+.social-midia-container
+{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    left: 790px;
+    bottom: -80px;
 }
