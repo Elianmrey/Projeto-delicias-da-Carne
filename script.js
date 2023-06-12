@@ -255,6 +255,8 @@ const semiSelectedIcons = document.querySelectorAll(".semiselection-favorite-mea
 const checkBox_Select_All_items =document.querySelector(".check-box-reject-all-select-all");
 const checkBoxValue = document.querySelectorAll(".checkbox-value");
 
+
+
 function preventDefault() {
     isAllSelected[0].classList.remove("check-box-selected-reject-all-select-all");
     isAllSelected[1].classList.remove("check-box-selected-reject-all-select-all");
@@ -262,7 +264,6 @@ function preventDefault() {
     favMeatSelected.forEach(itemMarked => {
         itemMarked.classList.remove("check-box-selected");
     });
-
 }
 
 preventDefault();
@@ -369,7 +370,7 @@ favMeatSelected[2].addEventListener("click", () => {
         
         thrdBox.boxUnchecked();
         nothingSelected.boxUnchecked();
-        const actualStatus = getPartialAndTotalSelectionStatus();
+        getPartialAndTotalSelectionStatus();
 
         console.log("Deselecionou em carnes favoritas CARNES TRADICIONAIS");
     }
