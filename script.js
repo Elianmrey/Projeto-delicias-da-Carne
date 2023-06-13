@@ -238,7 +238,8 @@ radButton[7].addEventListener("click", () => {
 
 
 
-//Objeto Principal do Formulario
+//Objeto Principal do Formulario para CHECKBOX
+
 function SelectBox(itemCheckBox, indexOfCheckbox, status, inputcheckBoxSelected, indexOfinputChkBox, classInput, inputValue) {
 
     this.checkBox = itemCheckBox[indexOfCheckbox];
@@ -260,7 +261,7 @@ function SelectBox(itemCheckBox, indexOfCheckbox, status, inputcheckBoxSelected,
     }
 
 }
-// END====Objeto Principal do Formulario
+// END====Objeto Principal do Formulario para CHECKBOX
 
 
 
@@ -333,7 +334,7 @@ function getPartialAndTotalSelectionStatus() {
 const firstBox = new SelectBox(favMeatSelected, 0, "check-box-selected", checkBoxValue, 0, "checkbox-value", "Carnes exóticas");
 const scndBox = new SelectBox(favMeatSelected, 1, "check-box-selected", checkBoxValue, 1, "checkbox-value",  "Carnes nobres" );
 const thrdBox = new SelectBox(favMeatSelected, 2, "check-box-selected", checkBoxValue, 2, "checkbox-value", "Carnes tradicionais");
-const fourthBox = new SelectBox(favMeatSelected, 3, "check-box-selected", checkBoxValue, 3, "checkbox-value",  "Carne Suina");
+const fourthBox = new SelectBox(favMeatSelected, 3, "check-box-selected", checkBoxValue, 3, "checkbox-value", "Carne Suina");
 const fiveBox = new SelectBox(favMeatSelected, 4, "check-box-selected", checkBoxValue, 4, "checkbox-value", "Carnes Bovina");
 const sixBox = new SelectBox(favMeatSelected, 5, "check-box-selected", checkBoxValue, 5, "checkbox-value", "Carnes Ovina");
 const allSelected = new SelectBox(isAllSelected, 0, "check-box-selected-reject-all-select-all", checkBoxValue, 6, "checkbox-value", "Carnes Exóticas, Carnes Nobres, Carnes Tradicionais, Carne Suina, Carne Bovina, Carne Ovina");
@@ -558,7 +559,7 @@ const hideAskHowToReceive = document.querySelectorAll(".title-form-container");
 const hideHowToSend = document.querySelector(".structure-howtosend-container");
 const hideSelectList = document.querySelector(".select-list");
 const formulary = document.querySelector(".formulary");
-console.log(formulary);
+// console.log(formulary);
 
 const yesAnswer = new SelectRadio(offerDesitionSelected, 0, "radio-offer-selected", geInTouchAsk, 0, "input-yes-no", "Sim");
 const noAnswer = new SelectRadio(offerDesitionSelected, 1, "radio-offer-selected", geInTouchAsk, 1, "input-yes-no", "Não");
