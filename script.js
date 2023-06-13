@@ -552,29 +552,50 @@ const offerDesitionSelected = document.querySelectorAll(".radio-offer-selected")
 const offerYes = offerDesitionSelected[0];
 const offerNo = offerDesitionSelected[1];
 const geInTouchAsk = document.querySelectorAll(".input-yes-no");
-console.log(geInTouchAsk);
 
+const hideTitle = document.querySelector(".title-form-container");
+const hideAskHowToReceive = document.querySelectorAll(".title-form-container");
+const hideHowToSend = document.querySelector(".structure-howtosend-container");
+const hideSelectList = document.querySelector(".select-list");
+const formulary = document.querySelector(".formulary");
+console.log(formulary);
+
+const yesAnswer = new SelectRadio(offerDesitionSelected, 0, "radio-offer-selected", geInTouchAsk, 0, "input-yes-no", "Sim");
+const noAnswer = new SelectRadio(offerDesitionSelected, 1, "radio-offer-selected", geInTouchAsk, 1, "input-yes-no", "Não");
 
 offerYes.classList.replace("radio-offer-selected", "radio-offer-unselected");
 offerNo.classList.replace("radio-offer-selected", "radio-offer-unselected");
 
 wouldYouLikeOffer[0].addEventListener("click", () => {
 
-    if (offerDesitionSelected[0].classList.contains("radio-offer-unselected")) {
-        offerYes.classList.replace("radio-offer-unselected", "radio-offer-selected");
-        offerNo.classList.replace("radio-offer-selected", "radio-offer-unselected");
+    if (offerDesitionSelected[0].classList.value !== "radio-offer-selected") {
+       
+        yesAnswer.radioSelected();
+        noAnswer.radioUnselected();
+        
+        hideTitle.style.display = "flex";
+        hideHowToSend.style.display = "flex";
+        hideSelectList.style.display = "flex";
+        hideAskHowToReceive[4].style.display = "flex";
+        formulary.style.height = "1900px";
+
         console.log("Selecionou SIM");
     }
 })
 
-
-
 wouldYouLikeOffer[1].addEventListener("click", () => {
 
-    if (offerDesitionSelected[1].classList.contains("radio-offer-unselected")) {
+    if (offerDesitionSelected[1].classList.value !== "radio-offer-selected") {
         
-        offerNo.classList.replace("radio-offer-unselected", "radio-offer-selected");
-        offerYes.classList.replace("radio-offer-selected", "radio-offer-unselected");
+        yesAnswer.radioUnselected();
+        noAnswer.radioSelected();
+
+        hideTitle.style.display = "none";
+        hideHowToSend.style.display = "none";
+        hideSelectList.style.display = "none";
+        hideAskHowToReceive[4].style.display = "none";
+        formulary.style.height = "1550px";
+
         console.log("Selecionou NÃO");
     }
 })
@@ -806,11 +827,8 @@ askOffer[4].addEventListener("click", () => {
 
     if (askOffer[4].classList.value === "check-howtosend-buton-selected")
     {
-        
         dontContact.boxUnchecked();
-
         console.log("HÁ FORMAS DE COMUNICAÇÃO selecionada(s)");
-
     }
     else {
         dontContact.boxChecked();
