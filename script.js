@@ -1,8 +1,7 @@
 
 const enviar = document.querySelector(".submit-formulary");
-
 const contacts = document.querySelectorAll(".contact");
-console.log(contacts)
+// console.log(contacts)
 function verifyEmail() {
    
   const validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
@@ -29,36 +28,33 @@ function verifyEmail() {
 
 enviar.addEventListener("click", verifyEmail);
 
-
-
-
-
 // TRABALHANDO AQUI=====================================================================
 const paragrafoUm = document.querySelector(".curiosityOne");
 const paragrafoDois = document.querySelector(".curiosityTwo");
-const paragrafoTres = document.querySelector(".curiosityThree")
+const paragrafoTres = document.querySelector(".curiosityThree");
 
-setInterval(()=>{
+setInterval(() => {
   
-    setTimeout(()=>{
-paragrafoUm.style.display = "flex";
-paragrafoDois.style.display = "none";
-paragrafoTres.style.display = "none";
+    setTimeout(() => {
+        paragrafoUm.style.display = "flex";
+        paragrafoDois.style.display = "none";
+        paragrafoTres.style.display = "none";
 
-}, 0);
+    }, 0);
 
-setTimeout(()=>{
-paragrafoDois.style.display = "flex";
-paragrafoUm.style.display = "none";
-paragrafoTres.style.display = "none";
+    setTimeout(() => {
+        paragrafoDois.style.display = "flex";
+        paragrafoUm.style.display = "none";
+        paragrafoTres.style.display = "none";
 
-}, 5000);
-setTimeout(()=>{paragrafoTres.style.display = "flex";
-paragrafoUm.style.display = "none";
-paragrafoDois.style.display = "none";
+    }, 5000);
+    setTimeout(() => {
+        paragrafoTres.style.display = "flex";
+        paragrafoUm.style.display = "none";
+        paragrafoDois.style.display = "none";
 
-}, 10000);
-}, 15000)
+    }, 10000);
+}, 15000);
 
 
 // paragrafoDois.style.display = "none";
@@ -88,7 +84,7 @@ function SelectRadio(itemSelectRadio, indexOfRadioButton, status, inputRadioButt
         this.radioButton.classList.value = status;
         this.radioButtonToggle.classList.value = this.classOfInputRadio;
         this.radioButtonToggle.value = this.valueInputRadio;
-        console.log(this.radioButtonToggle.value)
+        // console.log(this.radioButtonToggle.value);
     }
     this.radioUnselected = function () {
         this.radioButton.classList.remove(status);
@@ -107,7 +103,7 @@ const hidden_Radio_Button = document.querySelectorAll(".radioButon-value");
 
 
 const selectOne = new SelectRadio(childrenOfRadButton, 0, "radio-buton-selected", hidden_Radio_Button, 0, "radioButon-value", "Sou cliente frequente de Delicias da Carne") ;
-const selectTwo = new SelectRadio(childrenOfRadButton, 1, "radio-buton-selected", hidden_Radio_Button, 1, "radioButon-value", "Um amigo que é cliente o recomendou")
+const selectTwo = new SelectRadio(childrenOfRadButton, 1, "radio-buton-selected", hidden_Radio_Button, 1, "radioButon-value", "Um amigo que é cliente o recomendou");
 const selectThree = new SelectRadio(childrenOfRadButton, 2, "radio-buton-selected", hidden_Radio_Button, 2, "radioButon-value", "Vi os anúncios em redes sociais");
 const selectFour = new SelectRadio(childrenOfRadButton, 3, "radio-buton-selected", hidden_Radio_Button, 3, "radioButon-value", "Soube do site na loja física");
 const selectFive = new SelectRadio(childrenOfRadButton, 4, "radio-buton-selected", hidden_Radio_Button, 4, "radioButon-value", "Foi a primeira opção que vi no navegador");
@@ -115,7 +111,7 @@ const selectSix = new SelectRadio(childrenOfRadButton, 5, "radio-buton-selected"
 const selectSeven = new SelectRadio(childrenOfRadButton, 6, "radio-buton-selected", hidden_Radio_Button, 6, "radioButon-value", "Todas as anteriores");
 const selectEight = new SelectRadio(childrenOfRadButton, 7, "radio-buton-selected", hidden_Radio_Button, 7, "radioButon-value", "Nenhuma das anteriores");
 
-console.log(selectOne)
+// console.log(selectOne);
 
 selectOne.radioSelected();
 selectTwo.radioUnselected();
@@ -295,9 +291,7 @@ function preventDefault() {
 
 preventDefault();
 
-
 //  Reconhece quando estão todas selecionadas.
-
 function getStatus() {
     let classValue = "check-box-selected";
     let counterElements = 0;
@@ -319,13 +313,14 @@ function getStatus() {
 
 
 function getPartialAndTotalSelectionStatus() {
-const selectionStatus = getStatus()
+    
+    const selectionStatus = getStatus();
  
     if (selectionStatus > 0 && selectionStatus <= 5) {
         isAllSelected[0].classList.add("check-box-selected-reject-all-select-all");
         semiSelectedIcons[0].style.display = "flex";
-        checkIcons[0].style.display = "none"
-        console.log(selectionStatus)
+        checkIcons[0].style.display = "none";
+        console.log(selectionStatus);
 
     } else if (selectionStatus === 6 ) {
        
@@ -341,15 +336,14 @@ const selectionStatus = getStatus()
     return selectionStatus;
 }
 
-
 const firstBox = new SelectBox(favMeatSelected, 0, "check-box-selected", checkBoxValue, 0, "checkbox-value", "Carnes exóticas");
 const scndBox = new SelectBox(favMeatSelected, 1, "check-box-selected", checkBoxValue, 1, "checkbox-value",  "Carnes nobres" );
 const thrdBox = new SelectBox(favMeatSelected, 2, "check-box-selected", checkBoxValue, 2, "checkbox-value", "Carnes tradicionais");
 const fourthBox = new SelectBox(favMeatSelected, 3, "check-box-selected", checkBoxValue, 3, "checkbox-value",  "Carne Suina");
 const fiveBox = new SelectBox(favMeatSelected, 4, "check-box-selected", checkBoxValue, 4, "checkbox-value", "Carnes Bovina");
 const sixBox = new SelectBox(favMeatSelected, 5, "check-box-selected", checkBoxValue, 5, "checkbox-value", "Carnes Ovina");
-const allSelected = new SelectBox(isAllSelected, 0, "check-box-selected-reject-all-select-all", checkBoxValue, 6, "checkbox-value",  "Carnes Exóticas, Carnes Nobres, Carnes Tradicionais, Carne Suina, Carne Bovina, Carne Ovina")
-const nothingSelected = new SelectBox(isAllSelected, 1, "check-box-selected-reject-all-select-all", checkBoxValue, 7, "checkbox-value", "Nenhuma Selecionada")
+const allSelected = new SelectBox(isAllSelected, 0, "check-box-selected-reject-all-select-all", checkBoxValue, 6, "checkbox-value", "Carnes Exóticas, Carnes Nobres, Carnes Tradicionais, Carne Suina, Carne Bovina, Carne Ovina");
+const nothingSelected = new SelectBox(isAllSelected, 1, "check-box-selected-reject-all-select-all", checkBoxValue, 7, "checkbox-value", "Nenhuma Selecionada");
 
 
 
@@ -473,7 +467,6 @@ function logicSelectAll()
 {
     let conteoElemento = 0;
     const objectSelected = [];
-
     favMeatSelected.forEach(itemMarked => {
         objectSelected.push(itemMarked.classList.value);
     });
@@ -488,8 +481,8 @@ objectSelected.forEach(item =>{
     {
         allSelected.boxChecked();
         nothingSelected.boxUnchecked();
-        checkIcons[0].style.display = "flex"
-        semiSelectedIcons[0].style.display = "none"
+        checkIcons[0].style.display = "flex";
+        semiSelectedIcons[0].style.display = "none";
         firstBox.boxChecked();
         scndBox.boxChecked();
         thrdBox.boxChecked();
@@ -511,7 +504,6 @@ objectSelected.forEach(item =>{
 })
 
 }
- 
 
 checkBox_Select_All_items.addEventListener("click", logicSelectAll);
 
@@ -528,20 +520,12 @@ isAllSelected[1].addEventListener("click", () => {
         fourthBox.boxUnchecked();
         fiveBox.boxUnchecked();
         sixBox.boxUnchecked();
-      
-        // favMeatSelected.forEach(box => box.classList.remove("check-box-selected"));
-        // isAllSelected[0].classList.remove("check-box-selected-reject-all-select-all");
-        // isAllSelected[1].classList.add("check-box-selected-reject-all-select-all");
 
         console.log("Selecionou em carnes favoritas NENHUMA DAS CARNES ANTERIORES com check-box Nenhuma das anteriores")
 
     } else if (isAllSelected[1].classList.contains("check-box-selected-reject-all-select-all")) {
-        nothingSelected.boxUnchecked() 
-        // isAllSelected[1].classList.remove("check-box-selected-reject-all-select-all");
-        // console.log(isAllSelected[1].classList)
-
+        nothingSelected.boxUnchecked();
         console.log("Deselecionou em carnes favoritas NENHUMA DAS CARNES ANTERIORES com check-box Nenhuma das anteriores")
-
     }
     else if (isAllSelected[1].classList.value !== "check-box-selected-reject-all-select-all") {
         
