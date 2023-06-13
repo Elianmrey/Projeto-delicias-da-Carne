@@ -1,27 +1,21 @@
 
 const enviar = document.querySelector(".submit-formulary");
 const contacts = document.querySelectorAll(".contact");
-// console.log(contacts)
+// console.log(contacts);
 function verifyEmail() {
    
   const validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
       
     if (contacts[1].value.match(validRegex)) {
-      
           alert("Email Valido");
-      
         contacts[1].focus();
-      
           return true;
-      
-        } else {
-      
+    }
+    else
+    {
           alert("Email Invalido");
-      
         contacts[1].focus();
-      
           return false;
-      
         }
 
       }
@@ -510,7 +504,12 @@ checkBox_Select_All_items.addEventListener("click", logicSelectAll);
 
 isAllSelected[1].addEventListener("click", () => {
 
-    if (favMeatSelected[0].classList.contains("check-box-selected") || favMeatSelected[1].classList.contains("check-box-selected") || favMeatSelected[2].classList.contains("check-box-selected") | favMeatSelected[3].classList.contains("check-box-selected") || favMeatSelected[4].classList.contains("check-box-selected") || favMeatSelected[5].classList.contains("check-box-selected")) {
+    if (favMeatSelected[0].classList.contains("check-box-selected") ||
+        favMeatSelected[1].classList.contains("check-box-selected") ||
+        favMeatSelected[2].classList.contains("check-box-selected") ||
+        favMeatSelected[3].classList.contains("check-box-selected") ||
+        favMeatSelected[4].classList.contains("check-box-selected") ||
+        favMeatSelected[5].classList.contains("check-box-selected")) {
       
         nothingSelected.boxChecked();
         allSelected.boxUnchecked();
@@ -521,11 +520,11 @@ isAllSelected[1].addEventListener("click", () => {
         fiveBox.boxUnchecked();
         sixBox.boxUnchecked();
 
-        console.log("Selecionou em carnes favoritas NENHUMA DAS CARNES ANTERIORES com check-box Nenhuma das anteriores")
+        console.log("Selecionou em carnes favoritas NENHUMA DAS CARNES ANTERIORES com check-box Nenhuma das anteriores");
 
     } else if (isAllSelected[1].classList.contains("check-box-selected-reject-all-select-all")) {
         nothingSelected.boxUnchecked();
-        console.log("Deselecionou em carnes favoritas NENHUMA DAS CARNES ANTERIORES com check-box Nenhuma das anteriores")
+        console.log("Deselecionou em carnes favoritas NENHUMA DAS CARNES ANTERIORES com check-box Nenhuma das anteriores");
     }
     else if (isAllSelected[1].classList.value !== "check-box-selected-reject-all-select-all") {
         
@@ -553,20 +552,18 @@ const offerDesitionSelected = document.querySelectorAll(".radio-offer-selected")
 const offerYes = offerDesitionSelected[0];
 const offerNo = offerDesitionSelected[1];
 const geInTouchAsk = document.querySelectorAll(".input-yes-no");
-console.log(geInTouchAsk)
-//Trabajando Aqui ============^^^^^^^^^^^^^^^^
+console.log(geInTouchAsk);
+
 
 offerYes.classList.replace("radio-offer-selected", "radio-offer-unselected");
 offerNo.classList.replace("radio-offer-selected", "radio-offer-unselected");
-
-
 
 wouldYouLikeOffer[0].addEventListener("click", () => {
 
     if (offerDesitionSelected[0].classList.contains("radio-offer-unselected")) {
         offerYes.classList.replace("radio-offer-unselected", "radio-offer-selected");
         offerNo.classList.replace("radio-offer-selected", "radio-offer-unselected");
-        console.log("Selecionou SIM")
+        console.log("Selecionou SIM");
     }
 })
 
@@ -578,7 +575,7 @@ wouldYouLikeOffer[1].addEventListener("click", () => {
         
         offerNo.classList.replace("radio-offer-unselected", "radio-offer-selected");
         offerYes.classList.replace("radio-offer-selected", "radio-offer-unselected");
-        console.log("Selecionou NÃO")
+        console.log("Selecionou NÃO");
     }
 })
 
@@ -590,17 +587,17 @@ wouldYouLikeOffer[1].addEventListener("click", () => {
 
 const howToSend = document.querySelectorAll(".check-howtosend-buton");
 const askOffer = document.querySelectorAll(".check-howtosend-buton-selected");
-const semiSelected = document.querySelector(".semiselected")
-const checked = document.querySelectorAll(".check-howtosend-icon")
+const semiSelected = document.querySelector(".semiselected");
+const checked = document.querySelectorAll(".check-howtosend-icon");
 
 const getInTouchBy = document.querySelectorAll(".howGetInTouch");
 
 
 const contactByEmail = new SelectBox(askOffer, 0, "check-howtosend-buton-selected", getInTouchBy, 0, "howGetInTouch", "Contatar por Email");
-const contactByWhatsapp = new SelectBox(askOffer, 1, "check-howtosend-buton-selected", getInTouchBy, 1, "howGetInTouch", "Contatar por Whatsapp")
-const contactByPhone = new SelectBox(askOffer, 2, "check-howtosend-buton-selected", getInTouchBy, 2, "howGetInTouch", "Contatar por Telefone (Ligação)")
-const contactByAll = new SelectBox(askOffer, 3, "check-howtosend-buton-selected", getInTouchBy, 3, "howGetInTouch", "Usar todas as formas de contato")
-const dontContact = new SelectBox(askOffer, 4, "check-howtosend-buton-selected", getInTouchBy, 4, "howGetInTouch", "Não contatar por nenhuma via")
+const contactByWhatsapp = new SelectBox(askOffer, 1, "check-howtosend-buton-selected", getInTouchBy, 1, "howGetInTouch", "Contatar por Whatsapp");
+const contactByPhone = new SelectBox(askOffer, 2, "check-howtosend-buton-selected", getInTouchBy, 2, "howGetInTouch", "Contatar por Telefone (Ligação)");
+const contactByAll = new SelectBox(askOffer, 3, "check-howtosend-buton-selected", getInTouchBy, 3, "howGetInTouch", "Usar todas as formas de contato");
+const dontContact = new SelectBox(askOffer, 4, "check-howtosend-buton-selected", getInTouchBy, 4, "howGetInTouch", "Não contatar por nenhuma via");
 
 askOffer[2].classList.remove("check-howtosend-buton-selected");
 askOffer[1].classList.remove("check-howtosend-buton-selected");
@@ -615,7 +612,7 @@ askOffer[0].addEventListener("click", () => {
         
         contactByEmail.boxUnchecked();
         // contactByAll.boxChecked()
-        askOffer[3].classList.add("check-howtosend-buton-selected")
+        askOffer[3].classList.add("check-howtosend-buton-selected");
         semiSelected.style.display = "flex";
         checked[3].style.display = "none";
 
@@ -623,7 +620,9 @@ askOffer[0].addEventListener("click", () => {
 
         // Quando os 3 primeiros estão selecionados 
 
-        if (askOffer[0].classList.contains("check-howtosend-buton-selected") && askOffer[1].classList.contains("check-howtosend-buton-selected") && askOffer[2].classList.contains("check-howtosend-buton-selected")) {
+        if (askOffer[0].classList.contains("check-howtosend-buton-selected") &&
+            askOffer[1].classList.contains("check-howtosend-buton-selected") &&
+            askOffer[2].classList.contains("check-howtosend-buton-selected")) {
             
            
             askOffer[3].classList.add("check-howtosend-buton-selected");
@@ -631,17 +630,19 @@ askOffer[0].addEventListener("click", () => {
             checked[3].style.display = "flex";
             console.log("Selecionou AS TRÊS FORMAS DE COMUNICAÇÃO");
         }
-        else if (askOffer[0].classList.value !== "check-howtosend-buton-selected" && askOffer[1].classList.value !== "check-howtosend-buton-selected" && askOffer[2].classList.value !== "check-howtosend-buton-selected") {
+        else if (askOffer[0].classList.value !== "check-howtosend-buton-selected" &&
+                    askOffer[1].classList.value !== "check-howtosend-buton-selected" &&
+                    askOffer[2].classList.value !== "check-howtosend-buton-selected") {
             contactByAll.boxUnchecked();
               console.log("NENHUMA FORMA DE COMUNICAÇÃO selecionada");
         }
     } else {
         
         contactByEmail.boxChecked();
-        dontContact.boxUnchecked()
-        askOffer[3].classList.add("check-howtosend-buton-selected")
+        dontContact.boxUnchecked();
+        askOffer[3].classList.add("check-howtosend-buton-selected");
         semiSelected.style.display = "flex";
-        checked[3].style.display = "none"
+        checked[3].style.display = "none";
          console.log("Selecionou Via E-MAIL");
      
              // Quando os 3 primeiros estão selecionados
@@ -649,14 +650,13 @@ askOffer[0].addEventListener("click", () => {
         if (askOffer[0].classList.contains("check-howtosend-buton-selected") && askOffer[1].classList.contains("check-howtosend-buton-selected") && askOffer[2].classList.contains("check-howtosend-buton-selected")) {
            
    
-            askOffer[3].classList.add("check-howtosend-buton-selected")
+            askOffer[3].classList.add("check-howtosend-buton-selected");
             semiSelected.style.display = "none";
             checked[3].style.display = "flex";
             console.log("Selecionou AS TRÊS FORMAS DE COMUNICAÇÃO");
         }
         else if (askOffer[0].classList.value !== "check-howtosend-buton-selected" && askOffer[1].classList.value !== "check-howtosend-buton-selected" && askOffer[2].classList.value !== "check-howtosend-buton-selected") {
            
-            
             askOffer[3].classList.remove("check-howtosend-buton-selected");
             console.log("NENHUMA FORMA DE COMUNICAÇÃO selecionada");
         }
@@ -669,7 +669,7 @@ askOffer[1].addEventListener("click", () => {
     if (askOffer[1].classList.contains("check-howtosend-buton-selected")) {
 
         contactByWhatsapp.boxUnchecked();
-        askOffer[3].classList.add("check-howtosend-buton-selected")
+        askOffer[3].classList.add("check-howtosend-buton-selected");
          semiSelected.style.display = "flex";
         checked[3].style.display = "none";
 
@@ -678,7 +678,7 @@ askOffer[1].addEventListener("click", () => {
 
         if (askOffer[0].classList.contains("check-howtosend-buton-selected") && askOffer[1].classList.contains("check-howtosend-buton-selected") && askOffer[2].classList.contains("check-howtosend-buton-selected"))
         {
-            askOffer[3].classList.add("check-howtosend-buton-selected")
+            askOffer[3].classList.add("check-howtosend-buton-selected");
             console.log("Selecionou AS TRÊS FORMAS DE COMUNICAÇÃO");
         }
         else if (askOffer[0].classList.value !== "check-howtosend-buton-selected" && askOffer[1].classList.value !== "check-howtosend-buton-selected" && askOffer[2].classList.value !== "check-howtosend-buton-selected")
@@ -689,21 +689,25 @@ askOffer[1].addEventListener("click", () => {
 
     } else {
         contactByWhatsapp.boxChecked();
-        dontContact.boxUnchecked()
-        askOffer[3].classList.add("check-howtosend-buton-selected")
+        dontContact.boxUnchecked();
+        askOffer[3].classList.add("check-howtosend-buton-selected");
         semiSelected.style.display = "flex";
-        checked[3].style.display = "none"
+        checked[3].style.display = "none";
         console.log("Selecionou Via TELEFONE");
 
         // Quando os 3 primeiros estão selecionados 
-        if (askOffer[0].classList.contains("check-howtosend-buton-selected") && askOffer[1].classList.contains("check-howtosend-buton-selected") && askOffer[2].classList.contains("check-howtosend-buton-selected"))
+        if (askOffer[0].classList.contains("check-howtosend-buton-selected") &&
+            askOffer[1].classList.contains("check-howtosend-buton-selected") &&
+            askOffer[2].classList.contains("check-howtosend-buton-selected"))
         {
-            askOffer[3].classList.add("check-howtosend-buton-selected")
+            askOffer[3].classList.add("check-howtosend-buton-selected");
             semiSelected.style.display = "none";
             checked[3].style.display = "flex";
             console.log("Selecionou AS TRÊS FORMAS DE COMUNICAÇÃO");
         }
-        else if (askOffer[0].classList.value !== "check-howtosend-buton-selected" && askOffer[1].classList.value !== "check-howtosend-buton-selected" && askOffer[2].classList.value !== "check-howtosend-buton-selected")
+        else if (askOffer[0].classList.value !== "check-howtosend-buton-selected" &&
+                   askOffer[1].classList.value !== "check-howtosend-buton-selected" &&
+                   askOffer[2].classList.value !== "check-howtosend-buton-selected")
         {
             contactByAll.boxUnchecked();
             console.log("NENHUMA FORMA DE COMUNICAÇÃO selecionada");
@@ -718,40 +722,48 @@ askOffer[2].addEventListener("click", () => {
     if (askOffer[2].classList.contains("check-howtosend-buton-selected"))
     {
         contactByPhone.boxUnchecked();
-        askOffer[3].classList.add("check-howtosend-buton-selected")
+        askOffer[3].classList.add("check-howtosend-buton-selected");
         semiSelected.style.display = "flex";
         checked[3].style.display = "none";
         console.log("NÃO Selecionou Via SMS");
       
         // Quando os 3 primeiros estão selecionados
-        if (askOffer[0].classList.contains("check-howtosend-buton-selected") && askOffer[1].classList.contains("check-howtosend-buton-selected") && askOffer[2].classList.contains("check-howtosend-buton-selected"))
+        if (askOffer[0].classList.contains("check-howtosend-buton-selected") &&
+            askOffer[1].classList.contains("check-howtosend-buton-selected") &&
+            askOffer[2].classList.contains("check-howtosend-buton-selected"))
         {
-            askOffer[3].classList.add("check-howtosend-buton-selected")
-            console.log("Selecionou AS TRÊS FORMAS DE COMUNICAÇÃO")
+            askOffer[3].classList.add("check-howtosend-buton-selected");
+            console.log("Selecionou AS TRÊS FORMAS DE COMUNICAÇÃO");
         }
 
-        else if (askOffer[0].classList.value !== "check-howtosend-buton-selected" && askOffer[1].classList.value !== "check-howtosend-buton-selected" && askOffer[2].classList.value !== "check-howtosend-buton-selected")
+        else if (askOffer[0].classList.value !== "check-howtosend-buton-selected" &&
+                  askOffer[1].classList.value !== "check-howtosend-buton-selected" &&
+                  askOffer[2].classList.value !== "check-howtosend-buton-selected")
         {
             contactByAll.boxUnchecked();
             console.log("NENHUMA FORMA DE COMUNICAÇÃO selecionada");
         }
     } else {
-        askOffer[3].classList.add("check-howtosend-buton-selected")
+        askOffer[3].classList.add("check-howtosend-buton-selected");
         semiSelected.style.display = "flex";
-        checked[3].style.display = "none"
+        checked[3].style.display = "none";
         contactByPhone.boxChecked();
         dontContact.boxUnchecked();
         console.log("Selecionou Via Telefone");
 
         // Quando os 3 primeiros estão selecionados 
-        if (askOffer[0].classList.contains("check-howtosend-buton-selected") && askOffer[1].classList.contains("check-howtosend-buton-selected") && askOffer[2].classList.contains("check-howtosend-buton-selected"))
+        if (askOffer[0].classList.contains("check-howtosend-buton-selected") &&
+            askOffer[1].classList.contains("check-howtosend-buton-selected") &&
+            askOffer[2].classList.contains("check-howtosend-buton-selected"))
         {
-            askOffer[3].classList.add("check-howtosend-buton-selected")
+            askOffer[3].classList.add("check-howtosend-buton-selected");
             semiSelected.style.display = "none";
             checked[3].style.display = "flex";
             console.log("Selecionou AS TRÊS FORMAS DE COMUNICAÇÃO");
         }
-        else if (askOffer[0].classList.value !== "check-howtosend-buton-selected" && askOffer[1].classList.value !== "check-howtosend-buton-selected" && askOffer[2].classList.value !== "check-howtosend-buton-selected")
+        else if (askOffer[0].classList.value !== "check-howtosend-buton-selected" &&
+                   askOffer[1].classList.value !== "check-howtosend-buton-selected" &&
+                   askOffer[2].classList.value !== "check-howtosend-buton-selected")
         {
             contactByAll.boxUnchecked();
             console.log("NENHUMA FORMA DE COMUNICAÇÃO selecionada");
@@ -797,7 +809,7 @@ askOffer[4].addEventListener("click", () => {
         
         dontContact.boxUnchecked();
 
-        console.log("HÁ FORMAS DE COMUNICAÇÃO selecionada(s)")
+        console.log("HÁ FORMAS DE COMUNICAÇÃO selecionada(s)");
 
     }
     else {
@@ -819,14 +831,14 @@ askOffer[4].addEventListener("click", () => {
 
 
 /* Lista funcional =====================================================================================================================*/
-const listDropDown = document.querySelector(".listdown")
+const listDropDown = document.querySelector(".listdown");
 
 
 const listBox = document.querySelector(".list-container");
 const liElement = document.querySelectorAll(".elements");
 const selectedElement = document.querySelector(".placeholder");
-const inputSelectList = document.querySelectorAll(".contact-frequency")
-const arraySelectList = ["Diariamente", "Semanalmente", "Mensalmente", "Ocasionalmente", "Frequentemente"]
+const inputSelectList = document.querySelectorAll(".contact-frequency");
+const arraySelectList = ["Diariamente", "Semanalmente", "Mensalmente", "Ocasionalmente", "Frequentemente"];
 // const listAreaBody = document.querySelector(".placeholder-container");
 
 listDropDown.addEventListener("click", () => {
