@@ -1,25 +1,30 @@
 
+
 const enviar = document.querySelector(".submit-formulary");
 const contacts = document.querySelectorAll(".contact");
+const form = document.querySelector(".form");
 // console.log(contacts);
 function verifyEmail() {
    
   const validRegex = /^[\w-_.]+@[\w-_.]+\.[\w]{2,}/gi;
       
-    if (contacts[1].value.match(validRegex.test(contacts[1].value))) {
+    if (validRegex.test(contacts[1].value)) {
           alert("Email Valido");
         contacts[1].focus();
           return true;
     }
     else
     {
-          alert("Email Invalido");
+       form.onsubmit = (e)=> e.preventDefault();
+        alert("Email Invalido");
         contacts[1].focus();
           return false;
         }
 
       }
 
+     
+    
 enviar.addEventListener("click", verifyEmail);
 
 // TRABALHANDO AQUI=====================================================================
@@ -559,7 +564,7 @@ const hideAskHowToReceive = document.querySelectorAll(".title-form-container");
 const hideHowToSend = document.querySelector(".structure-howtosend-container");
 const hideSelectList = document.querySelector(".select-list");
 const formulary = document.querySelector(".formulary");
-// console.log(formulary);
+ console.log(formulary);
 
 const yesAnswer = new SelectRadio(offerDesitionSelected, 0, "radio-offer-selected", geInTouchAsk, 0, "input-yes-no", "Sim");
 const noAnswer = new SelectRadio(offerDesitionSelected, 1, "radio-offer-selected", geInTouchAsk, 1, "input-yes-no", "Não");
@@ -911,5 +916,8 @@ listDropDown.addEventListener("click", () => {
         listDropDown.style.transform = "rotate(0deg)";
     }
 })
+
+
+
 
 /* END Lista funcional ================================================================================================================ */
