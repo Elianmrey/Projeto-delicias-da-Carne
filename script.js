@@ -4,23 +4,7 @@ const contacts = document.querySelectorAll(".contact");
 // console.log(contacts);
 function verifyEmail() {
    
- 
   const validRegex = /^[\w-_.]+@[\w-_.]+\.[\w]{2,}/gi;
-  
-    const verifier = validRegex.test(email.value);
-    // console.log(verifier)
-    
-      if(verifier === true)
-    {
-      formValidate[1] = true;
-    } 
-      else if(verifier === false)
-      {
-      formValidate[1] = false;
-      spanNeedName[1].classList.add("showError");
-      spanNeedName[1].classList.remove("hideError");
-      email.classList.add("inputShowError");
-      };
       
     if (contacts[1].value.match(validRegex.test(contacts[1].value))) {
           alert("Email Valido");
