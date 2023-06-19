@@ -27,7 +27,7 @@ function verifyEmail() {
     
 enviar.addEventListener("click", verifyEmail);
 
-// TRABALHANDO AQUI=====================================================================
+
 const paragrafoUm = document.querySelector(".curiosityOne");
 const paragrafoDois = document.querySelector(".curiosityTwo");
 const paragrafoTres = document.querySelector(".curiosityThree");
@@ -84,17 +84,6 @@ setInterval(() => {
     }, 14000);
 }, 21000);
 })
-
-
-// paragrafoDois.style.display = "none";
-//                     //keyframes de animação
-//                     paragrafoUm.animate([{opacity: 0},
-//                         {opacity: 1},
-//                         //opções de tempo 
-//                         {duration: 500,
-//                          iterations: infinity}])
-//TRABALHANDO AQUI======^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^==================================================================
-
 
 
 /*====================================================FORMULARIO======================================================================*/
