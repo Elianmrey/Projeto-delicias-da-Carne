@@ -192,18 +192,7 @@ opacity: 1;
     height: fit-content;
     width: fit-content;
 }
-.buttonOverImage {
-    display: none;
-    color: white;
-    opacity: 1;
-    background-color: #000000;
-    position: relative;
-    top: 200px;
-    right: 25px;
-    width: 150px;
-    height: 50px;
-    outline: 1px solid white;
-}
+
 .day-offers
 {
     gap: 5px;
@@ -256,7 +245,7 @@ opacity: 1;
     transition: 1s;
     opacity: 1;
 }
-#offer-three:hover
+#offer-three:hover 
 {
     opacity: 0.5;
 }
@@ -277,10 +266,11 @@ opacity: 1;
     transition: 1s;
     opacity: 1;
 }
-#offer-fourth:hover
+#offer-fourth:hover 
 {
     opacity: 0.5;
 }
+
 .overlayFiveimage {
     display: flex;
     color: white;
@@ -291,8 +281,24 @@ opacity: 1;
     align-items: center;
 }
 
+.buttonOverImage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    opacity: 0;
+    position: absolute;
+    background-color: rgb(95, 20, 20);
+    width: 150px;
+    height: 50px;
+    outline: 1px solid white;
+    transition: 1s;
+}
 
-
+.buttonOverImage:hover
+{
+    opacity: 1;
+}
 
 /* ===========================================cards Stylization=============================== */
 
