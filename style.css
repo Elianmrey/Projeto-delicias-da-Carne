@@ -176,10 +176,10 @@ h2#exotic-meats
 {
 width: 300px;
 height: 400px;
-transition: 1s;
+transition: 0.5s;
 opacity: 1;
 } 
-#initial-offer:hover {
+.overlayFirstimage:hover #initial-offer {
     opacity: 0.5;
 }
 .overlayFirstimage {
@@ -202,10 +202,10 @@ opacity: 1;
 {
     width: 198px;
     height: 190px;
-    transition: 1s;
-        opacity: 1;
+    transition: 0.5s;
+    opacity: 1;
 }
-#offer-one:hover
+.overlaySecondimage:hover #offer-one
 {
     opacity: 0.5;
 }
@@ -222,10 +222,10 @@ opacity: 1;
 {
     width: 400px;
     height: 190px; 
-    transition: 1s;
+    transition: 0.5s;
     opacity: 1;
 }
-#offer-two:hover
+.overlayThirdimage:hover #offer-two
 {
     opacity: 0.5;
 }
@@ -242,10 +242,10 @@ opacity: 1;
 {
     width: 198px;
     height: 190px;
-    transition: 1s;
+    transition: 0.5s;
     opacity: 1;
 }
-#offer-three:hover 
+.overlayFourthdimage:hover #offer-three
 {
     opacity: 0.5;
 }
@@ -263,10 +263,10 @@ opacity: 1;
 {
     width: 805px;
     height: 200px;
-    transition: 1s;
+    transition: 0.5s;
     opacity: 1;
 }
-#offer-fourth:hover 
+.overlayFiveimage:hover #offer-fourth 
 {
     opacity: 0.5;
 }
@@ -291,11 +291,26 @@ opacity: 1;
     background-color: rgb(95, 20, 20);
     width: 150px;
     height: 50px;
-    outline: 1px solid white;
+    outline: 1px solid rgb(241, 149, 149);
     transition: 1s;
 }
-
-.buttonOverImage:hover
+.overlayFirstimage:hover .buttonOverImage
+{
+    opacity: 1;
+}
+.overlaySecondimage:hover .buttonOverImage
+{
+    opacity: 1;
+}
+.overlayThirdimage:hover .buttonOverImage
+{
+    opacity: 1;
+}
+.overlayFourthdimage:hover .buttonOverImage
+{
+    opacity: 1;
+}
+.overlayFiveimage:hover .buttonOverImage
 {
     opacity: 1;
 }
