@@ -32,28 +32,58 @@ const paragrafoUm = document.querySelector(".curiosityOne");
 const paragrafoDois = document.querySelector(".curiosityTwo");
 const paragrafoTres = document.querySelector(".curiosityThree");
 
+
+setTimeout(()=>{
+
+setTimeout(() => {
+    paragrafoUm.style.opacity = "1";
+    paragrafoDois.style.opacity = "0";
+    paragrafoTres.style.opacity = "0";
+    
+
+}, 0);
+
+setTimeout(() => {
+    
+    paragrafoDois.style.opacity = "1";
+    paragrafoUm.style.opacity = "0";
+    paragrafoTres.style.opacity = "0";
+   
+
+}, 7000);
+setTimeout(() => {
+    paragrafoTres.style.opacity = "1";
+    paragrafoDois.style.opacity = "0";
+    paragrafoUm.style.opacity = "0";
+   
+
+}, 14000);
 setInterval(() => {
   
     setTimeout(() => {
-        paragrafoUm.style.display = "flex";
-        paragrafoDois.style.display = "none";
-        paragrafoTres.style.display = "none";
+
+        paragrafoUm.style.opacity = "1";
+        paragrafoDois.style.opacity = "0";
+        paragrafoTres.style.opacity = "0";
+       
 
     }, 0);
 
     setTimeout(() => {
-        paragrafoDois.style.display = "flex";
-        paragrafoUm.style.display = "none";
-        paragrafoTres.style.display = "none";
+        paragrafoDois.style.opacity = "1";
+        paragrafoUm.style.opacity = "0";
+        paragrafoTres.style.opacity = "0";
+        
 
-    }, 5000);
+    }, 7000);
     setTimeout(() => {
-        paragrafoTres.style.display = "flex";
-        paragrafoUm.style.display = "none";
-        paragrafoDois.style.display = "none";
+        paragrafoTres.style.opacity = "1";
+        paragrafoDois.style.opacity = "0";
+        paragrafoUm.style.opacity = "0";
 
-    }, 10000);
-}, 15000);
+    }, 14000);
+}, 21000);
+})
 
 
 // paragrafoDois.style.display = "none";

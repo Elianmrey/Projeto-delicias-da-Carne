@@ -314,7 +314,13 @@ opacity: 1;
 {
     opacity: 1;
 }
-
+.link-button-overimage
+{
+    text-decoration: none;
+    color: white;
+    padding: 5px 15px;
+    
+}
 /* ===========================================cards Stylization=============================== */
 
 .card-title-container
@@ -533,7 +539,9 @@ width: 500px;
 }
 .curiosityOne
 {
-    display:none;
+    display:block;
+    opacity: 0;
+    position: absolute;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -541,7 +549,9 @@ width: 500px;
 }
 .curiosityTwo
 {
-display: none;
+display: block;
+position: absolute;
+opacity: 0;
 flex-direction: column;
 justify-content: center;
 align-items: center;
@@ -550,7 +560,9 @@ transition: 1s;
 }
 .curiosityThree
 {
-display: none;
+display: block;
+opacity: 0;
+position: absolute;
 flex-direction: column;
 justify-content: center;
 align-items: center;
